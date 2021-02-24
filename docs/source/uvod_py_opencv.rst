@@ -165,9 +165,10 @@ Vaja 3: globina slike (*image depth*) in prikazovanje slike
 
 Če uporabljate *Jupyter Notebook*, spremenljivke ostanejo v spominu tudi, ko se izvajanje skripte konča. V naslednjo celico napišite klic:
 
-.. code-block:: python
+.. code-block::
 	
 	print(type(frame[0, 0, 0]))
+	
 	output: <class 'numpy.uint8'>
    
 Slika v spremenljivki ``frame`` je v resnici trodimenzionalna matrika, vredsnoti znotraj oglatih oklepajev pa koordinata piksla, ki ga želimo izpisati: *prva* vrednost določa vrstico, *druga* stolpec in *tretja* kanal, če imamo RGB sliko. Če je slika sivinska moramo podati samo 2 vrednosti. Vidimo lahko, da je element tipa ``uint8``. To pomeni, da je *unsigned integer* (celo število brez predznaka) popisan z osmimi biti. Najmanjša vrednost, ki jo torej lahko opišemo je torej '0' (binarno *0000 0000*, hex *00*), največja pa *255* (binarno *1111 1111*, hex *ff*). **Vprašanje:** kaj se zgodi, če *uint8* spemelnjivki z vrednostjo *255* prištejemo *1*?
@@ -273,3 +274,35 @@ Median filter
 	
 Vaja 5: *kopiranje* slik
 =============================================
+
+Ustvarite povsem črno sliko in jo kopirajte. Potem na kopiji nekaj narišite in prikažite obe sliki.
+
+.. literalinclude:: code/uvod_v_py/vaja5.py
+	:language: python
+	:linenos:
+	
+
+Prikazali se bosta sliki, kot ju vidite na *sliki 8*.
+
+.. figure:: images/uvod_v_py/images/copy.png
+	:alt: reStructuredText, the markup syntax
+	:scale: 60 %
+	:align: center
+	
+	Slika 8. Izvorna in "kopirana" slika.
+
+Vidite lahko, da nekaj ni vredu; bel kvadratek naj bi narisali samo na ``slika2`` ampak očitno smo ga tudi na ``slika1``.
+
+Spremenite sedaj vrstico *6* v ``slika2 = slika1.copy()`` in ponovno zaženite program. Sedaj mi morali videti pričakovano.
+
+.. figure:: images/uvod_v_py/images/deep_copy.png
+	:alt: reStructuredText, the markup syntax
+	:scale: 60 %
+	:align: center
+	
+	Slika 8. Izvorna in **kopirana** slika.
+	
+
+.. warning::
+	Če za *kopiranje* uporabite samo ``=`` slike v resnici ne kopirate, ampak še vedno prek druge spremenljivke dostopate do istega objekta/spomina (v *C++* bi temu rekli *kazalec* (angl: *pointer*)). Če želite res *kopirati* sliko, morate skopirati tudi podatke/spomin (t.i. *deep copy*). To naredite z metodo ``copy()``.
+

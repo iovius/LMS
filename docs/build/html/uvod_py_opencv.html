@@ -395,7 +395,8 @@ Vidimo lahko tudi, da fukcija vrne <code class="docutils literal notranslate"><s
 <div class="section" id="vaja-3-globina-slike-image-depth-in-prikazovanje-slike">
 <h3>Vaja 3: globina slike (<em>image depth</em>) in prikazovanje slike<a class="headerlink" href="#vaja-3-globina-slike-image-depth-in-prikazovanje-slike" title="Permalink to this headline">¶</a></h3>
 <p>Če uporabljate <em>Jupyter Notebook</em>, spremenljivke ostanejo v spominu tudi, ko se izvajanje skripte konča. V naslednjo celico napišite klic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print(type(frame[0, 0, 0]))
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>print(type(frame[0, 0, 0]))
+
 output: &lt;class &#39;numpy.uint8&#39;&gt;
 </pre></div>
 </div>
@@ -609,6 +610,51 @@ V vrstici <em>4</em> določimo dmenzije slik. V vrsticah <em>6-8</em>, naredimo 
 </div>
 <div class="section" id="vaja-5-kopiranje-slik">
 <h3>Vaja 5: <em>kopiranje</em> slik<a class="headerlink" href="#vaja-5-kopiranje-slik" title="Permalink to this headline">¶</a></h3>
+<p>Ustvarite povsem črno sliko in jo kopirajte. Potem na kopiji nekaj narišite in prikažite obe sliki.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">slika1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+<span class="n">slika2</span> <span class="o">=</span> <span class="n">slika1</span>
+
+<span class="n">slika2</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;slika1&#39;</span><span class="p">,</span> <span class="n">slika1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;slika2&#39;</span><span class="p">,</span> <span class="n">slika2</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Prikazali se bosta sliki, kot ju vidite na <em>sliki 8</em>.</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="_images/copy.png"><img alt="reStructuredText, the markup syntax" src="_images/copy.png" style="width: 615.6px; height: 322.2px;" /></a>
+<p class="caption"><span class="caption-text">Slika 8. Izvorna in “kopirana” slika.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<p>Vidite lahko, da nekaj ni vredu; bel kvadratek naj bi narisali samo na <code class="docutils literal notranslate"><span class="pre">slika2</span></code> ampak očitno smo ga tudi na <code class="docutils literal notranslate"><span class="pre">slika1</span></code>.</p>
+<p>Spremenite sedaj vrstico <em>6</em> v <code class="docutils literal notranslate"><span class="pre">slika2</span> <span class="pre">=</span> <span class="pre">slika1.copy()</span></code> in ponovno zaženite program. Sedaj mi morali videti pričakovano.</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="_images/deep_copy.png"><img alt="reStructuredText, the markup syntax" src="_images/deep_copy.png" style="width: 615.6px; height: 322.2px;" /></a>
+<p class="caption"><span class="caption-text">Slika 8. Izvorna in <strong>kopirana</strong> slika.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Če za <em>kopiranje</em> uporabite samo <code class="docutils literal notranslate"><span class="pre">=</span></code> slike v resnici ne kopirate, ampak še vedno prek druge spremenljivke dostopate do istega objekta/spomina (v <em>C++</em> bi temu rekli <em>kazalec</em> (angl: <em>pointer</em>)). Če želite res <em>kopirati</em> sliko, morate skopirati tudi podatke/spomin (t.i. <em>deep copy</em>). To naredite z metodo <code class="docutils literal notranslate"><span class="pre">copy()</span></code>.</p>
+</div>
 </div>
 </div>
 </div>
