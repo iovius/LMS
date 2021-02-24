@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Razvoj programske opreme laserskega 3D merilnika &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Umeritev laserskega 3D merilnika" href="kalibracija.html" />
+    <link rel="prev" title="Računalniška analiza interferogramov" href="obdelava_interferogramov.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Razvoj programske opreme laserskega 3D merilnika</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uvod">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oprema">Oprema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potek-vaje">Potek vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#osnovni-pojmi">Osnovni pojmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#glavni-program">Glavni program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funkcija-detect-profile">Funkcija <code class="docutils literal notranslate"><span class="pre">detect_profile(...)</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rekonstrukcija-povrsine">Rekonstrukcija površine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vizualizacija-rezultatov">Vizualizacija rezultatov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#priloge">Priloge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Razvoj programske opreme laserskega 3D merilnika</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/laserskiprofilomer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="razvoj-programske-opreme-laserskega-3d-merilnika">
+<span id="laserskiprofilomer"></span><h1>Razvoj programske opreme laserskega 3D merilnika<a class="headerlink" href="#razvoj-programske-opreme-laserskega-3d-merilnika" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če še nimate nameščenega Pythona in OpenCVja sledite navodilom na povezavi: <a class="reference internal" href="navodila_python.html#navodila-python"><span class="std std-ref">Navodila za namestitev Pythona in OpenCVja</span></a>.</p>
+</div>
+<div class="section" id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h2>
+<p>Cilj vaje je praktično spoznati osnove laserske triangulacije in izdelati programsko opremo za enostaven linearni laserski profilomer. Sistem in programska oprema za zajem sekvence merilnih slik sta predhodno pripravljena, vaša naloga pa je, da napišete program, ki bo iz te sekvence slik rekonstruiral obliko merjene površine.</p>
+</div>
+<div class="section" id="oprema">
+<h2>Oprema<a class="headerlink" href="#oprema" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Linearna koračna miza</p></li>
+<li><p>Krmilnik koračne mize</p></li>
+<li><p>Linijski laserski projektor</p></li>
+<li><p>Kamera</p></li>
+</ul>
+</div>
+<div class="section" id="potek-vaje">
+<h2>Potek vaje<a class="headerlink" href="#potek-vaje" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ogled sistema (na koračno mizo sta pod kotom pritrjena kamera in laserski projektor, ogledamo si sliko na kameri pri različnih nastavitvah kamere in različnih odbojnostih).</p></li>
+<li><p>Zajem sekvence merilnih slik.</p></li>
+<li><p>Izdelava programa za transformacijo (<a class="reference external" href="https://www.python.org/">Python</a>  &amp; <a class="reference external" href="https://opencv.org/">OpenCV</a> ).</p></li>
+<li><p>Prikaz izmerkov; preverili bomo ujemanje rekonstruirane površine z referenčno.</p></li>
+</ul>
+</div>
+<div class="section" id="osnovni-pojmi">
+<h2>Osnovni pojmi<a class="headerlink" href="#osnovni-pojmi" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="reStructuredText, the markup syntax" src="_images/triangulacija2.png" />
+<p class="caption"><span class="caption-text">Slika 1. Shema triangulacije z označenimi merami.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Skica merilnega sistema je prikazana na <em>sliki 1</em>. Projektor je postavljen na mestu <em>P</em> in projicira svetlobno
+ravnino proti merjeni površini. Kamera je postavljena na mestu, označenem s <em>C</em>. <em>Koordinatni sistem</em> (<em>k.
+s.</em>) merilnika (<em>KS</em><sub>merilnika</sub>) je postavljen na presečišče laserske ravnine in pravokotne projekcije središčaleče na lasersko ravnino. Model preslikave temelji na uporabi perspektivne projekcije z enostavno
+geometrijo kamere z luknjico (<em>camera obscura</em>, angl. <em>pinhole camera</em>). Senzor je postavljen na razdalji
+<em>f</em> od koordinatnega izhodišča. Optična os objektiva prebada ravnino kamere na koordinati (<em>c</em><sub>U</sub>, <em>c</em><sub>V</sub>, <em>angl. principal point</em>)
+merjeno glede na zgornji levi rob senzorja (standard pri navajanju položaja točke pri senzorjih, zaslonih,
+slikah etc.). Projektor je glede na koordinatno izhodišče premaknjen le v <em>X</em> smeri za razdaljo <em>P</em><sub>X</sub> in
+projicira svetlobno ravnino pod kotom <em>α</em> glede na optično os objektiva kamere.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/merilna_slikaT.jpg"><img alt="reStructuredText, the markup syntax" src="_images/merilna_slikaT.jpg" style="width: 306.8px; height: 406.8px;" /></a>
+<p class="caption"><span class="caption-text">Slika 2. Ena iz množice slik. Poiskati moramo lokacijo sentra presečne krivulje v k.s. kamere.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Na <em>sliki 2</em> je prikazana slika, kot jo vidi kamera. Vidimo lahko, da je merjena površina v osrednjem delu
+nekoliko dvignjena glede na spodnji in zgornji del. Označena sta <em>k. s.</em> slike (<em>KS</em><sub>slike</sub>) in <em>k. s.</em> kamere
+(<em>KS</em><sub>kamere</sub>), ki leži na mestu preboda optične osi. Označeni sta tudi smer <em>u</em> in <em>v</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Slika 2</em> je transponirana, kar pomeni, da sta smeri <em>v</em> in <em>u</em> zamenjani. Sliko transponiramo zato, ker se je laže premikati po vrstici, kot po stolpcu.</p>
+</div>
+<p>Merilnik se med merjenjem translatorno premika v <em>X</em> smeri in ob tem zajel <em>N</em> slik. Glede na to, da sta
+hitrosti premikanja in zajemanja slik konstantni, lahko določimo premik merilnika med dvema
+zaporednima slikama kot:</p>
+<div class="math notranslate nohighlight">
+\[x_{\text{STEP}} = \frac{ x_{\text{MOVE}}}{N}\]</div>
+<p>kjer sta <em>x</em><sub>MOVE</sub> celoten premik med merjenjem in <em>x</em><sub>STEP</sub> premik med dvema zaporednima slikama. Z vsake slike pa lahko razberemo obliko osvetljenega profila površine in tako dobimo površino kot množico zaporednih profilov.
+Za izračun koordinate posamezne točke profila v <em>k. s.</em> merilnika, moramo najprej poiskati koordinate
+posamezne točke profila v <em>k. s.</em> kamere (na senzorju) na posamezni sliki. V praksi to pomeni, da moramo
+v vsaki vrstici (za vsak <em>v</em>) poiskati center presečne krivulje v smeri <em>u</em> (koordinato <em>u</em>) (glejte <em>sliko 2</em>).</p>
+</div>
+<div class="section" id="glavni-program">
+<h2>Glavni program<a class="headerlink" href="#glavni-program" title="Permalink to this headline">¶</a></h2>
+<p>V tem delu programa bomo spisali ogrodje programa. Njegova glavna naloga je, da prebere vsako sliko
+in s pomočjo funkcije za iskanje presečne krivulje (ki jo bomo napisali ločeno) na vsaki sliki najde
+lokacijo maksimumov intenzitete.
+Uporabljali bomo programski jezik <em>Python</em> v kombinaciji s knjižnico <em>OpenCV</em>. V pomoč pri izdelavi
+programa naj vam bo diagram poteka (glejte <a class="reference internal" href="priloga1.html#priloga1"><span class="std std-ref">Flow chart osnovnega programa</span></a>). Na predvideno mesto (osnova je že
+pripravljena) napišete jedro programa. Rekonstrukcijo površine boste naredili posebej, kot funkcijo na
+vnaprej pripravljenem mestu. Bodite pozorni, kako se naslavlja elemente v matriki (primer: <span class="math notranslate nohighlight">\(B(i,j)\)</span>  … je <em>i</em>
+koordinata vrstice ali stolpca ?).</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/zapisovanje_profilov.jpg"><img alt="reStructuredText, the markup syntax" src="_images/zapisovanje_profilov.jpg" style="width: 650.0px; height: 227.5px;" /></a>
+<p class="caption"><span class="caption-text">Slika 3. Skica povezava funkcije <code class="docutils literal notranslate"><span class="pre">DetectLine()</span></code> in matrike profilov.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Zaznane profile na sliki boste zapisali v matriko profilov. Logiko matrike profilov lahko vidite na sliki 3.
+Dolžina vrstic mora biti enaka dimenziji slike v v smeri (npr. če so slike visoke 640 slikovnih elementov
+(s. e.), mora vsaka vrstica sprejeti po 640 elementov), število vrstic pa mora biti enako številu zajetih
+slik <em>N</em> (npr. če smo zajeli 300 slik, torej mora imeti matrika profilov 300 vrstic). Na vsaki sliki bomo tako
+v vsaki vrstici poiskali položaj presečne krivulje v smeri <em>u</em>. Npr. če je na 17. sliki v 37. vrstici položaj
+presečne krivulje na koordinati 103, bomo zapisali <code class="docutils literal notranslate"><span class="pre">profiles(17,</span> <span class="pre">37)</span> <span class="pre">=</span> <span class="pre">103</span></code>.Pri pisanju programa naj vam bosta v pomoč Priloga 1 in template programa. Sledite naslednjemu
+postopku:</p>
+<ol class="arabic simple">
+<li><p>Na začetku programa najavite in nastavite globalne spremenljivke, ki jih bomo potrebovali tekom celotnega programa (npr. mapa, kjer se nahajajo datoteke, število merilnih slik, alociramo prostor za profile).</p></li>
+<li><p>Začnite zanko.</p></li>
+<li><p>Generirajte ime slike in jo naložite v spomin. Namig: Uporabite <code class="docutils literal notranslate"><span class="pre">cv2.imread()</span></code></p></li>
+<li><p>Sliko transponirajte (to storite izključno zaradi lažje obdelave, saj se je laže premikati po vrstici kot po stolpcu) in jo pretvorite v primeren format (32 bitna števila s plavajočo vejico). Namig: <code class="docutils literal notranslate"><span class="pre">cv2.transpose(...)</span></code>.</p></li>
+<li><p>Na tem mestu kličite funkcijo <code class="docutils literal notranslate"><span class="pre">detect_profile(...)</span></code>. Kot drugi parameter podajte kazalec na vrstico matrike profilov, ki ima isti indeks kot trenutna slika, ki jo obdelujemo (glejte <em>sliko 3</em>).</p></li>
+<li><p>Zaključite zanko.</p></li>
+<li><p>Rekonstruirajte površino.</p></li>
+</ol>
+</div>
+<div class="section" id="funkcija-detect-profile">
+<h2>Funkcija <code class="docutils literal notranslate"><span class="pre">detect_profile(...)</span></code><a class="headerlink" href="#funkcija-detect-profile" title="Permalink to this headline">¶</a></h2>
+<p>Uporabite predlogo <code class="docutils literal notranslate"><span class="pre">detect_profile(image,</span> <span class="pre">profile,</span> <span class="pre">filter_size)</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Filtrirajte sliko z <em>Gaussovim filtrom</em>. Širina filtrirnega okna mora biti širša od presečne krivulje na sliki! Namig: <code class="docutils literal notranslate"><span class="pre">cv2.GaussianBlur(...)</span></code></p></li>
+<li><p>Izračunajte odvod slike. Namig: <code class="docutils literal notranslate"><span class="pre">cv2.Sobel(...)</span></code></p></li>
+<li><p>Poiščite lokacijo prevoja na presečni krivulji.</p>
+<ol class="loweralpha simple">
+<li><p>Prevojev na sliki je lahko več, a uporabite predpostavko, da je intenziteta na mestu prevoja presečne krivulje večja od prevojev na drugih mestih. Namig: preverite, ali je intenziteta ne tem mestu večja, kot na predhodno zaznanem mestu prevoja.</p></li>
+<li><p>Poiščite lokacijo prevoja. Uporabite v prejšnjem koraku izračunani odvod intenzitete. Namig: Iščemo samo maksimume; razmislite, katere prehode torej iščemo.</p></li>
+<li><p>Napredno: Poiščite lokacijo središča presečne krivulje (prevoja) s podtočkovno ločljivostjo. Namig: Glejte spodnjo sliko (slika 4).</p></li>
+</ol>
+</li>
+</ol>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/subpixel_accuracy.jpg"><img alt="reStructuredText, the markup syntax" src="_images/subpixel_accuracy.jpg" style="width: 400.0px; height: 117.84px;" /></a>
+<p class="caption"><span class="caption-text">Slika 4. Skica za izračun podtočkovne ločljivosti.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Rezultat morala biti vektor, ki je enako dolg kot slika v smeri <em>v</em>.</p></li>
+</ol>
+</div>
+<div class="section" id="rekonstrukcija-povrsine">
+<h2>Rekonstrukcija površine<a class="headerlink" href="#rekonstrukcija-povrsine" title="Permalink to this headline">¶</a></h2>
+<p>Normalizirane lokacije presečne krivulje izračunamo po spodnjih enačbah:</p>
+<div class="math notranslate nohighlight">
+\[U_N = \frac{U_d \cdot du}{f} =  \frac{(U - c_u) \cdot du}{f}\]</div>
+<p>in</p>
+<div class="math notranslate nohighlight">
+\[V_N = \frac{V_d \cdot dv}{f} =  \frac{(V - c_v) \cdot dv}{f}\]</div>
+<p>kjer sta <em>U</em><sub>N</sub> in <em>V</em><sub>N</sub> normalizirani koordinati (smerna vektorja žarka, ki izhaja iz senzorja proti merjeni površini), <em>c</em><sub>u</sub> in <em>c</em><sub>v</sub> lokaciji centra slike v smeri <em>u</em> in <em>v</em>, <em>du</em> in <em>dv</em> velikosti senzorskega elementa v <em>u</em> in <em>v</em> smeri, ter f goriščna razdalja objektiva kamere.
+Oddaljenost merjene točke v koordinatnem sistemu merilnika v <em>z</em> smeri <em>z</em><sub>M</sub> izračunamo kot:</p>
+<div class="math notranslate nohighlight">
+\[z_M = \frac{P_X}{\tan(\alpha - \arctan(\frac{V_N}{f}))}\]</div>
+<p>kjer je α triangulacijski kot in <em>P</em><sub>X</sub> razdalja med kamero in projektorjem.
+Koordinato točke <em>x</em><sub>M</sub> izračunamo kot:</p>
+<div class="math notranslate nohighlight">
+\[y_M = z_M \cdot U_N\]</div>
+<p>Razmislite, kako izračunamo koordinato <em>x</em><sub>M</sub> . (Namig: izkoristite for zanko, kakšen je korak med
+mestoma zajema dveh zaporednih slik?)</p>
+</div>
+<div class="section" id="vizualizacija-rezultatov">
+<h2>Vizualizacija rezultatov<a class="headerlink" href="#vizualizacija-rezultatov" title="Permalink to this headline">¶</a></h2>
+<p>Za vizualizacijo rezultatov uporabite osnovno funkcionalnost Pythona.</p>
+</div>
+<div class="section" id="priloge">
+<h2>Priloge<a class="headerlink" href="#priloge" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="priloga1.html#priloga1"><span class="std std-ref">Flow chart osnovnega programa</span></a></p></li>
+<li><p><a class="reference internal" href="priloga2.html#priloga2"><span class="std std-ref">Flow chart zaznave presečne krivulje</span></a></p></li>
+<li><p><a class="reference internal" href="priloga3.html#priloga3"><span class="std std-ref">Ogrodje programa (Python)</span></a></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="kalibracija.html" class="btn btn-neutral float-right" title="Umeritev laserskega 3D merilnika" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="obdelava_interferogramov.html" class="btn btn-neutral float-left" title="Računalniška analiza interferogramov" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

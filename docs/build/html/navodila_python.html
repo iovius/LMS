@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Navodila za namestitev Pythona in OpenCVja &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Navodila za namestitev Pythona in OpenCVja</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/navodila_python.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navodila-za-namestitev-pythona-in-opencvja">
+<span id="navodila-python"></span><h1>Navodila za namestitev Pythona in OpenCVja<a class="headerlink" href="#navodila-za-namestitev-pythona-in-opencvja" title="Permalink to this headline">¶</a></h1>
+<p>V nadaljevanju so navodila, kako namestiti <strong>Python</strong> in <strong>OpenCV</strong>. Če imate drugo verzijo Windowsov, so možne manjše razlike napram tem navodilo, načeloma pa je postopek zelo podoben.</p>
+<div class="section" id="namestitev-pythona">
+<h2>Namestitev Pythona<a class="headerlink" href="#namestitev-pythona" title="Permalink to this headline">¶</a></h2>
+<p>Pojdite na <a class="reference external" href="https://www.anaconda.com/products/individual">povezavo</a>  in prenesite instalacijsko datoteko.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/1.JPG"><img alt="reStructuredText, the markup syntax" src="_images/1.JPG" style="width: 698.0px; height: 344.0px;" /></a>
+</div>
+<p>Če se vam pojavi spodnje okno, ga zaprite, saj se bo prenos datoteke izvršil v ozadju.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/2.JPG"><img alt="reStructuredText, the markup syntax" src="_images/2.JPG" style="width: 747.0px; height: 438.0px;" /></a>
+</div>
+<p>Ko je datoteka prenesena, jo zaženite.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/3.JPG"><img alt="reStructuredText, the markup syntax" src="_images/3.JPG" style="width: 428.0px; height: 326.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/4.JPG"><img alt="reStructuredText, the markup syntax" src="_images/4.JPG" style="width: 514.0px; height: 401.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/5.JPG"><img alt="reStructuredText, the markup syntax" src="_images/5.JPG" style="width: 514.0px; height: 399.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/6.JPG"><img alt="reStructuredText, the markup syntax" src="_images/6.JPG" style="width: 518.0px; height: 399.0px;" /></a>
+</div>
+<p>Izberite datoteko, kamor želite namestiti Python. V mojem primeru je to »C:\ProgramData\Anaconda3«. Zapomnite si to mesto!</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/7.JPG"><img alt="reStructuredText, the markup syntax" src="_images/7.JPG" style="width: 518.0px; height: 401.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/8.JPG"><img alt="reStructuredText, the markup syntax" src="_images/8.JPG" style="width: 519.0px; height: 398.0px;" /></a>
+</div>
+<p>Počakajte, da se namestitev dokonča.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/9.JPG"><img alt="reStructuredText, the markup syntax" src="_images/9.JPG" style="width: 516.0px; height: 399.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/10.JPG"><img alt="reStructuredText, the markup syntax" src="_images/10.JPG" style="width: 517.0px; height: 401.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/11.JPG"><img alt="reStructuredText, the markup syntax" src="_images/11.JPG" style="width: 512.0px; height: 406.0px;" /></a>
+</div>
+<p>S tem je namestitev Pythona končana.</p>
+<p>Sedaj je treba namestiti še OpenCV za Python. Pojdite na <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv">povezavo</a>  in prenesite datoteko <em>opencv_python-3.4.2-cp36-cp36m-win_amd64.whl</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/15.JPG"><img alt="reStructuredText, the markup syntax" src="_images/15.JPG" style="width: 454.0px; height: 512.0px;" /></a>
+</div>
+<p>Ko je datoteka prenesena, pojdite zopet v <strong>Anaconda Prompt</strong>. Premaknite se v mapo, kjer je prenesena datoteka. V mojem primeru je datoteka v »C:\Users\Urbanus Pavlovius\Downloads«, torej se v to mapo premaknem z ukazom »cd c:\Users\Urbanus Pavlovius\Downloads« (pri vas vpišite mapo, kjer je datoteka, spredaj pa mora biti »cd «). Nato namestite knjižnico z ukazom »<em>pip install opencv_python-3.4.2-cp36-cp36m-win_amd64.whl</em>«.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/16.JPG"><img alt="reStructuredText, the markup syntax" src="_images/16.JPG" style="width: 679.0px; height: 347.0px;" /></a>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/17.JPG"><img alt="reStructuredText, the markup syntax" src="_images/17.JPG" style="width: 682.0px; height: 344.0px;" /></a>
+</div>
+<p>Če vidite nekaj podobnega, je bila namestitev uspešna.
+Sedaj naredite še bližnjico za zagon Pythona. Da ne boste imeli težav s končnicami najprej omogočite končnice in skrite mape.
+Pojdite v <strong>Nadzono ploščo (Control Panel)</strong> in izberite <strong>Folder Options</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/18.JPG"><img alt="reStructuredText, the markup syntax" src="_images/18.JPG" style="width: 780.0px; height: 831.0px;" /></a>
+</div>
+<p>Označite »<strong>Show hidden files, folders, and drives</strong>« in odznačite »<strong>Hide extension for known file types</strong>«.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/19.JPG"><img alt="reStructuredText, the markup syntax" src="_images/19.JPG" style="width: 398.0px; height: 481.0px;" /></a>
+</div>
+<p>Poiščite, kje imate nameščen Python. V mojem primeru je to v mapi <em>C:\ProgramData\Anaconda3</em>. Pojdite v mapo <em>Scripts</em>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/20.JPG"><img alt="reStructuredText, the markup syntax" src="_images/20.JPG" style="width: 693.6px; height: 382.40000000000003px;" /></a>
+</div>
+<p>Sedaj odprite <strong>Notepad</strong> in napišite ukaz: <strong>»start /d »ime_mape_kjer je_Python_scripts«jupter notebook »ime_mape_kamor_želite_shranjevati_Python_datoteke««</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/21.JPG"><img alt="reStructuredText, the markup syntax" src="_images/21.JPG" style="width: 853.2px; height: 152.1px;" /></a>
+</div>
+<p>V mojem primeru je <strong>»ime_mape_kjer je_Python_scripts«</strong> enak <em>»C:\ProgramData\Anaconda3\Scripts«</em>, <strong>»ime_mape_kamor_želite_shranjevati_Python_datoteke«</strong> pa <em>»C:\Users\Urbanus Pavlovius\Documents\Python«</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pazite, da ta mapa obstaja in da se niste zatipkali!</p>
+</div>
+<p>V to mapo boste kasneje prenesli tudi vaše programe.
+Nato datoteko shranite kot <em>»Python.bat«</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pazite, da bo ime datoteke res <em>»Python.bat«</em> in ne naprimer <em>»Python.bat.txt«</em>, saj v tem primeru ne bo delovalo.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/22.JPG"><img alt="reStructuredText, the markup syntax" src="_images/22.JPG" style="width: 777.0px; height: 109.0px;" /></a>
+</div>
+<p>Zaprite <strong>Notepad</strong>.
+Dvokniknite na ikono <strong>Python.bat</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/23.JPG"><img alt="reStructuredText, the markup syntax" src="_images/23.JPG" style="width: 766.4000000000001px; height: 108.0px;" /></a>
+</div>
+<p>Moralo bi se zagnati takole okno.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/24.JPG"><img alt="reStructuredText, the markup syntax" src="_images/24.JPG" style="width: 728.0px; height: 85.60000000000001px;" /></a>
+</div>
+<p>Odprl se bo tudi <strong>Jupyter notebook</strong> v vašem brskalniku. Ko boste v <strong>»ime_mape_kamor_želite_shranjevati_Python_datoteke«</strong> skopirali tudi vaše programe, jih boste videli v Jupytru. Drugače pa nov program začnete pisati s klikom na <em>New→ Python 3</em>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

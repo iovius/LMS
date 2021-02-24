@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Prostorsko fitriranje in razširjevalnik laserskega snopa &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Preračun optičnega sistema s programom OSLO LT" href="oslo.html" />
+    <link rel="prev" title="Laboratorijske vaje pri predmetu Laserski merilni sistemi (LMS)" href="master_document.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Prostorsko fitriranje in razširjevalnik laserskega snopa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#naloge">Naloge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Prostorsko fitriranje in razširjevalnik laserskega snopa</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/prostorskofiltriranje.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prostorsko-fitriranje-in-razsirjevalnik-laserskega-snopa">
+<span id="prostorskofiltriranje"></span><h1>Prostorsko fitriranje in razširjevalnik laserskega snopa<a class="headerlink" href="#prostorsko-fitriranje-in-razsirjevalnik-laserskega-snopa" title="Permalink to this headline">¶</a></h1>
+<p>Navodila za laboratorijsko vajo so zaenkrat dostopna le v <em>.pdf</em> verziji na povezavi <a class="reference download internal" download="" href="_downloads/844c68eda5f81303dc7b9f5c2c0ddcaf/Prostorsko filtriranje in razširjevalnik žarek.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Prostorsko</span> <span class="pre">filtriranje</span> <span class="pre">in</span> <span class="pre">razširjevalnik</span> <span class="pre">žarek</span></code></a></p>
+<p>Pri tej vaji boste uporabljali polariziran <em>He-Ne</em> laser z valovno dolžino <em>633 nm</em> in premerom žarka <em>0,8 mm</em>.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/razsirjevalnik.png"><img alt="reStructuredText, the markup syntax" src="_images/razsirjevalnik.png" style="width: 758.0px; height: 282.0px;" /></a>
+<p class="caption"><span class="caption-text">Slika 1. Razširjevalnik žarka.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="naloge">
+<h2>Naloge<a class="headerlink" href="#naloge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Naravnajte <em>Ne-Ne</em> laser tako, da bo vzporeden z optično letvijo. Za preverbo vzporednosti uporabite zaslonko, ki ima odprtino približno <em>1/2</em> premera laserskega žarka. Zaslonko najprej postavite tik za laser in naravnajte izhodni konec laserja tako, da bo skozi zaslonko šlo čim več svetlobe. Nato zaslonko prestavite na drug konec letve in po istem postopku naravnajte drug konec laserja. Proceduro ponavljajte dokler ni laserski žarek naravnan tako, da sveti skozi zaslonko na katerikoli oddaljenosti od laserja.</p></li>
+<li><p>Med zaslonko in laser postavite lečo z goriščno razdaljo <em>7,5 mm</em> tako, da njeno gorišče sovpada z zaslonko. Pri tem pustite zaslonko in laser pri miru in v vseh treh oseh premikajte le lečo tako, da bo zopet šlo skozi zaslonko čim več svetlobe.</p></li>
+<li><p>Sedaj odstranite zaslonko in fotografirajte intenzitetno porazdelitev laserskega žarka na zaslonu, ki je oddaljen nekaj metrov od leče. Opišite intenzitetni vzorec. Kakšen bi moral biti v idealnem primeru? Zakaj ni takšen? Primerjajte tudi teoretični in dejanski premer oziroma divergenco žarka? Za to uporabite fotografijo, ki ste jo posneli.</p></li>
+<li><p>V gorišče leče tokrat postavite zaslonko, ki ima premer približno <em>1,5</em>-krat večji od premera žarka v gorišču. Zopet fotografirajte žarek in opišite novo stanje.</p></li>
+<li><p>Preizkusite še ostale zaslonke, ki so na voljo in pri vsaki izmerite premer prvega temnega <em>Airy</em>-jevega diska. Na osnovi teh izmerkov izračunajte premere zaslonk in jih primerjajte z dejanskimi.</p></li>
+<li><p>Sestavite razširjevalnik žarka z ustrezno zaslonko (<em>d</em><sub>zas</sub>=1,5 <em>d</em><sub>f</sub>), tako da dodate drugo lečo z goriščnico <em>f</em> = <em>150 mm</em>. Kje mora stati, da bo na izhodu žarek kolimiran? Preverite intenzitetni profil žarka <em>z</em> in <em>brez</em> zaslonke.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="oslo.html" class="btn btn-neutral float-right" title="Preračun optičnega sistema s programom OSLO LT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="master_document.html" class="btn btn-neutral float-left" title="Laboratorijske vaje pri predmetu Laserski merilni sistemi (LMS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

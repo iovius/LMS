@@ -1,0 +1,2633 @@
+---------------------------------- page 1 ----------------------------------
+#### DownExpandingContainer('title')
+  StaticGroupedFlowables()
+    Paragraph('Uvod v računalniško obdelavo sli...', style='title page title')
+         > (0,0,1,0,2) title page title
+           (0,0,0,0,2) body
+        MixedStyledText('Uvod v računalniško obdelavo sli...')
+          MixedStyledText('Uvod v računalniško obdelavo sli...')
+            SingleStyledText('Uvod v računalniško obdelavo sli...')
+    Paragraph('February 23, 2021', style='title page date')
+         > (0,0,1,0,2) title page date
+           (0,0,0,0,2) body
+        SingleStyledText('February 23, 2021')
+---------------------------------- page 2 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  StaticGroupedFlowables()
+    TableOfContentsSection(style='table of contents')
+         > (0,0,1,0,1) table of contents section
+           (0,0,0,1,1) chapter
+      Heading('Table of Contents', style='unnumbered')
+           x (0,0,1,1,3) table of contents title
+           > (0,0,1,1,2) unnumbered heading level 1
+             (0,0,0,1,2) heading level 1
+             (0,0,0,0,2) other heading levels
+          StringField('Table of Contents')
+            SingleStyledText('Table of Contents')
+      TableOfContents()   table of contents
+           > (0,0,0,0,2) table of contents
+        TableOfContentsEntry('1	Uvod	3')
+             > (0,0,0,1,2) toc level 1
+            ReferenceField('1')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('1')
+            Tab('	')
+            ReferenceField('Uvod')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Uvod')
+            Tab('	')
+            ReferenceField('3')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('3')
+        TableOfContentsEntry('1.1	Vaja 1: branje in pisanje sl...')
+             > (0,0,0,1,2) toc level 2
+            ReferenceField('1.1')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('1.1')
+            Tab('	')
+            ReferenceField('Vaja 1: branje in pisanje slik z...')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Vaja 1: branje in pisanje slik z...')
+            Tab('	')
+            ReferenceField('3')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('3')
+        TableOfContentsEntry('1.2	Vaja 2: zajemanje in prikazo...')
+             > (0,0,0,1,2) toc level 2
+            ReferenceField('1.2')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('1.2')
+            Tab('	')
+            ReferenceField('Vaja 2: zajemanje in prikazovanj...')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Vaja 2: zajemanje in prikazovanj...')
+            Tab('	')
+            ReferenceField('6')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('6')
+        TableOfContentsEntry('1.3	Vaja 3: globina slike (image...')
+             > (0,0,0,1,2) toc level 2
+            ReferenceField('1.3')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('1.3')
+            Tab('	')
+            ReferenceField('Vaja 3: globina slike (image dep...')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Vaja 3: globina slike (image dep...')
+            Tab('	')
+            ReferenceField('7')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('7')
+        TableOfContentsEntry('1.4	Vaja 4: filtriranje slik	9')
+             > (0,0,0,1,2) toc level 2
+            ReferenceField('1.4')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('1.4')
+            Tab('	')
+            ReferenceField('Vaja 4: filtriranje slik')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Vaja 4: filtriranje slik')
+            Tab('	')
+            ReferenceField('9')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('9')
+        TableOfContentsEntry('2	Median filter	10')
+             > (0,0,0,1,2) toc level 1
+            ReferenceField('2')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('2')
+            Tab('	')
+            ReferenceField('Median filter')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('Median filter')
+            Tab('	')
+            ReferenceField('10')
+                 x (0,0,0,1,3) toc linked reference
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('10')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('​ Table of Contents')
+         > (0,0,0,0,2) header
+        MixedStyledText('​ Table of Contents')
+          MixedStyledText('​ Table of Contents')
+            Field('​')
+              SingleStyledText('​')
+            SingleStyledText(' ')
+            Field('Table of Contents')
+              SingleStyledText('Table of Contents')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	2/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	2/11')
+          MixedStyledText('	2/11')
+            Tab('	')
+            Field('2')
+              SingleStyledText('2')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 3 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  StaticGroupedFlowables()
+    DocumentTree()
+      Admonition()   uvod_py_opencv.rst:None <note>
+           > (0,0,0,1,2) note admonition
+             (0,0,0,0,2) admonition
+        Paragraph('Note Če še nimate nameščenega Py...')
+             > (0,0,0,0,2) body
+            MixedStyledText('Note Če še nimate nameščenega Py...')
+              MixedStyledText('Note Če še nimate nameščenega Py...')
+                MixedStyledText('Note', style='inline title')
+                     x (0,0,1,1,3) note admonition inline title
+                     > (0,0,1,0,3) admonition inline title
+                  SingleStyledText('Note')
+                SingleStyledText(' ')
+                MixedStyledText('Če še nimate nameščenega Python-...')
+                  SingleStyledText('Če še nimate nameščenega ')
+                  MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Python')
+                  SingleStyledText('-a in ')
+                  MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('OpenCV')
+                  SingleStyledText('-ja sledite navodilom na povezav...')
+                  SingleStyledText(':ref:`navodila_python`', style='error')   None:None <problematic>
+                       > (0,0,1,0,1) error
+                  SingleStyledText('.')
+      Paragraph('Na tej vaji se boste spoznali z ...')   uvod_py_opencv.rst:9 <paragraph>
+           > (0,0,0,0,2) body
+          MixedStyledText('Na tej vaji se boste spoznali z ...')
+            MixedStyledText('Na tej vaji se boste spoznali z ...')
+              SingleStyledText('Na tej vaji se boste spoznali z ...')
+              MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                   > (0,0,1,0,1) emphasis
+                SingleStyledText('Python')
+              SingleStyledText(' (predpostavljamo, da ste osnovn...')
+              AnnotatedText('Programiranje in numerične metod...', style='external link')   None:None <reference>
+                   > (0,0,1,0,1) external hyperlink
+                MixedStyledText('Programiranje in numerične metod...')
+                  SingleStyledText('Programiranje in numerične metod...')
+              AnnotatedText('')   None:None <target>
+                MixedStyledText('')
+              SingleStyledText(') in predvsem s programsko knjiž...')
+              MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                   > (0,0,1,0,1) emphasis
+                SingleStyledText('OpenCV')
+              SingleStyledText('.')
+      Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        Heading('1 Uvod')   uvod_py_opencv.rst:12 <title>
+             > (0,0,0,1,2) heading level 1
+               (0,0,0,0,2) other heading levels
+            MixedStyledText('1 ')
+              SingleStyledText('1')
+              SingleStyledText(' ')
+            MixedStyledText('Uvod')
+              MixedStyledText('Uvod')
+                SingleStyledText('Uvod')
+        Paragraph('OpenCV (Open Source Computer Vis...')   uvod_py_opencv.rst:14 <paragraph>
+             > (0,0,0,0,2) body
+            MixedStyledText('OpenCV (Open Source Computer Vis...')
+              MixedStyledText('OpenCV (Open Source Computer Vis...')
+                MixedStyledText('OpenCV', style='strong')   None:None <strong>
+                     > (0,0,1,0,1) strong
+                  SingleStyledText('OpenCV')
+                SingleStyledText(' (')
+                MixedStyledText('Open Source Computer Vision Libr...', style='emphasis')   None:None <emphasis>
+                     > (0,0,1,0,1) emphasis
+                  SingleStyledText('Open Source Computer Vision Libr...')
+                SingleStyledText(') je knjižnica programskih funkc...')
+                AnnotatedText('prosta za uporabo', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('prosta za uporabo')
+                    SingleStyledText('prosta za uporabo')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText('. Prav v tem leži ena njenih naj...')
+                AnnotatedText('C++', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('C++')
+                    SingleStyledText('C++')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('Python', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('Python')
+                    SingleStyledText('Python')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('Java', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('Java')
+                    SingleStyledText('Java')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('MATLAB', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('MATLAB')
+                    SingleStyledText('MATLAB')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(') in v različnih operacijskih si...')
+                AnnotatedText('Windows', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('Windows')
+                    SingleStyledText('Windows')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('Linux', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('Linux')
+                    SingleStyledText('Linux')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('macOS', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('macOS')
+                    SingleStyledText('macOS')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('Android', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('Android')
+                    SingleStyledText('Android')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(', ')
+                AnnotatedText('iOS', style='external link')   None:None <reference>
+                     > (0,0,1,0,1) external hyperlink
+                  MixedStyledText('iOS')
+                    SingleStyledText('iOS')
+                AnnotatedText('')   None:None <target>
+                  MixedStyledText('')
+                SingleStyledText(').')
+        Paragraph('Na današnji vaji bomo spoznali o...')   uvod_py_opencv.rst:16 <paragraph>
+             > (0,0,0,0,2) body
+            MixedStyledText('Na današnji vaji bomo spoznali o...')
+              MixedStyledText('Na današnji vaji bomo spoznali o...')
+                SingleStyledText('Na današnji vaji bomo spoznali o...')
+        Admonition()   uvod_py_opencv.rst:None <note>
+             > (0,0,0,1,2) note admonition
+               (0,0,0,0,2) admonition
+          Paragraph('Note', style='title')
+               x (0,0,1,1,4) note admonition title
+               > (0,0,1,0,4) admonition title
+                 (0,0,1,0,2) title
+                 (0,0,0,0,2) body
+              SingleStyledText('Note')
+          Paragraph('Kot velikokrat v življenju, tudi...')   uvod_py_opencv.rst:19 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Kot velikokrat v življenju, tudi...')
+                MixedStyledText('Kot velikokrat v življenju, tudi...')
+                  SingleStyledText('Kot velikokrat v življenju, tudi...')
+                  MixedStyledText('neskončno', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('neskončno')
+                  SingleStyledText(') mnogo. Različne poti se lahko ...')
+                  AnnotatedText('Programiranje in numerične metod...', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('Programiranje in numerične metod...')
+                      SingleStyledText('Programiranje in numerične metod...')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText('); včasih najbrž neuspešno. Koda...')
+                  MixedStyledText('skriptna', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('skriptna')
+                  SingleStyledText(' in čim bolj podobna ')
+                  AnnotatedText('pseudo kodi', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('pseudo kodi')
+                      SingleStyledText('pseudo kodi')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText('.')
+        Section(id='vaja-1-branje-in-pisanje-slik-z-diska')   uvod_py_opencv.rst:22 <section>
+          Heading('1.1 Vaja 1: branje in pisanje sl...')   uvod_py_opencv.rst:22 <title>
+               > (0,0,0,1,2) heading level 2
+                 (0,0,0,0,2) other heading levels
+              MixedStyledText('1.1 ')
+                SingleStyledText('1.1')
+                SingleStyledText(' ')
+              MixedStyledText('Vaja 1: branje in pisanje slik z...')
+                MixedStyledText('Vaja 1: branje in pisanje slik z...')
+                  SingleStyledText('Vaja 1: branje in pisanje slik z...')
+          Paragraph('Napišimo za začetek enostaven Py...')   uvod_py_opencv.rst:24 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Napišimo za začetek enostaven Py...')
+                MixedStyledText('Napišimo za začetek enostaven Py...')
+                  SingleStyledText('Napišimo za začetek enostaven ')
+                  MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Python')
+                  SingleStyledText(' skripto, ki bo z diska prebrala...')
+          Paragraph('Če pogedamo sedaj vrstico po vrs...')   uvod_py_opencv.rst:30 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Če pogedamo sedaj vrstico po vrs...')
+                MixedStyledText('Če pogedamo sedaj vrstico po vrs...')
+                  SingleStyledText('Če pogedamo sedaj vrstico po vrs...')
+          Paragraph('V prvi vrstici vljučimo OpenCV.')   uvod_py_opencv.rst:36 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V prvi vrstici vljučimo OpenCV.')
+                MixedStyledText('V prvi vrstici vljučimo OpenCV.')
+                  SingleStyledText('V prvi vrstici vljučimo ')
+                  MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('OpenCV')
+                  SingleStyledText('.')
+          Paragraph('V vrstici 3 preberemo sliko z di...')   uvod_py_opencv.rst:42 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrstici 3 preberemo sliko z di...')
+                MixedStyledText('V vrstici 3 preberemo sliko z di...')
+                  SingleStyledText('V vrstici ')
+                  MixedStyledText('3', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('3')
+                  SingleStyledText(' preberemo sliko z diska s klico...')
+                  MixedStyledText('cv2.imread()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cv2.imread()')
+                  SingleStyledText('. ')
+                  MixedStyledText('cv.', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cv.')
+                  SingleStyledText(' pomeni, da bomo sedaj klicali f...')
+                  MixedStyledText('imread', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('imread')
+                  SingleStyledText(' pa je ime funkcije. Vidite lahk...')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Ta navodila so pisana v OS ...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Ta navodila so pisana v OS ...')
+                  MixedStyledText('Note Ta navodila so pisana v OS ...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Ta navodila so pisana v OS Ubunt...')
+                      SingleStyledText('Ta navodila so pisana v ')
+                      MixedStyledText('OS', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('OS')
+                      SingleStyledText(' ')
+                      MixedStyledText('Ubuntu/Linux', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('Ubuntu/Linux')
+                      SingleStyledText('. Zato so vse poti napisane v Li...')
+                      MixedStyledText('OS', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('OS')
+                      SingleStyledText(' ')
+                      MixedStyledText('Windows', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('Windows')
+                      SingleStyledText(', je zadeva nekoliko bolj zaplet...')
+                      MixedStyledText('"C:\SomeFolder\SomeOtherFolder\m...', style='monospaced')   None:None <literal>
+                           > (0,0,1,0,1) monospaced
+                        SingleStyledText('"C:\SomeFolder\SomeOtherFolder\m...')
+                      SingleStyledText('.')
+            List(style='enumerated')   None:None <enumerated_list>
+                 > (0,0,1,0,2) enumerated list
+              ListItem()   None:None <list_item>
+                   x (0,0,1,0,4) enumerated list item
+                   > fallback to default style
+                ListItemLabel('1.')
+                     > (0,0,1,0,6) enumerated list item label
+                       (0,0,0,0,2) list item label
+                    MixedStyledText('1.')
+                      SingleStyledText('1')
+                      SingleStyledText('.')
+                StaticGroupedFlowables()
+                     > (0,0,0,0,3) list item body
+                  Paragraph('pot podate z dvojno levo poševni...')   uvod_py_opencv.rst:47 <paragraph>
+                       > (0,0,0,0,5) list item paragraph
+                         (0,0,0,0,2) body
+                      MixedStyledText('pot podate z dvojno levo poševni...')
+                        MixedStyledText('pot podate z dvojno levo poševni...')
+                          SingleStyledText('pot podate z dvojno levo poševni...')
+                          MixedStyledText('backslash', style='emphasis')   None:None <emphasis>
+                               > (0,0,1,0,1) emphasis
+                            SingleStyledText('backslash')
+                          SingleStyledText('-om), torej: ')
+                          MixedStyledText('"C:'\\SomeFolder\\SomeOtherFolde...', style='monospaced')   None:None <literal>
+                               > (0,0,1,0,1) monospaced
+                            SingleStyledText('"C:'\\SomeFolder\\SomeOtherFolde...')
+              ListItem()   None:None <list_item>
+                   x (0,0,1,0,4) enumerated list item
+                   > fallback to default style
+                ListItemLabel('2.')
+                     > (0,0,1,0,6) enumerated list item label
+                       (0,0,0,0,2) list item label
+                    MixedStyledText('2.')
+                      SingleStyledText('2')
+                      SingleStyledText('.')
+                StaticGroupedFlowables()
+                     > (0,0,0,0,3) list item body
+                  Paragraph('pot podate s poševnico (slash-om...')   uvod_py_opencv.rst:48 <paragraph>
+                       > (0,0,0,0,5) list item paragraph
+                         (0,0,0,0,2) body
+                      MixedStyledText('pot podate s poševnico (slash-om...')
+                        MixedStyledText('pot podate s poševnico (slash-om...')
+                          SingleStyledText('pot podate s poševnico (')
+                          MixedStyledText('slash', style='emphasis')   None:None <emphasis>
+                               > (0,0,1,0,1) emphasis
+                            SingleStyledText('slash')
+                          SingleStyledText('-om), torej: ')
+                          MixedStyledText('"C:/SomeFolder/SomeOtherFolder/m...', style='monospaced')   None:None <literal>
+                               > (0,0,1,0,1) monospaced
+                            SingleStyledText('"C:/SomeFolder/SomeOtherFolder/m...')
+              ListItem()   None:None <list_item>
+                   x (0,0,1,0,4) enumerated list item
+                   > fallback to default style
+                ListItemLabel('3.')
+                     > (0,0,1,0,6) enumerated list item label
+                       (0,0,0,0,2) list item label
+                    MixedStyledText('3.')
+                      SingleStyledText('3')
+                      SingleStyledText('.')
+                StaticGroupedFlowables()
+                     > (0,0,0,0,3) list item body
+                  Paragraph('pot podate kot dobeseden string ...')   uvod_py_opencv.rst:49 <paragraph>
+                       > (0,0,0,0,5) list item paragraph
+                         (0,0,0,0,2) body
+                      MixedStyledText('pot podate kot dobeseden string ...')
+                        MixedStyledText('pot podate kot dobeseden string ...')
+                          SingleStyledText('pot podate kot ')
+                          MixedStyledText('dobeseden string', style='emphasis')   None:None <emphasis>
+                               > (0,0,1,0,1) emphasis
+                            SingleStyledText('dobeseden string')
+                          SingleStyledText(' (')
+                          MixedStyledText('literal string', style='emphasis')   None:None <emphasis>
+                               > (0,0,1,0,1) emphasis
+                            SingleStyledText('literal string')
+                          SingleStyledText('), torej: ')
+                          MixedStyledText('r"C:\SomeFolder\SomeOtherFolder\...', style='monospaced')   None:None <literal>
+                               > (0,0,1,0,1) monospaced
+                            SingleStyledText('r"C:\SomeFolder\SomeOtherFolder\...')
+            Paragraph('Težava je v tem, da če pot kopir...')   uvod_py_opencv.rst:51 <paragraph>
+                 > (0,0,0,0,2) body
+                MixedStyledText('Težava je v tem, da če pot kopir...')
+                  MixedStyledText('Težava je v tem, da če pot kopir...')
+                    SingleStyledText('Težava je v tem, da če pot kopir...')
+                    MixedStyledText('posebne znake', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('posebne znake')
+                    SingleStyledText(' (')
+                    MixedStyledText('special characters', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('special characters')
+                    SingleStyledText(', npr. ')
+                    MixedStyledText('"\n"', style='monospaced')   None:None <literal>
+                         > (0,0,1,0,1) monospaced
+                      SingleStyledText('"\n"')
+                    SingleStyledText(' pomeni novo vrstico, ')
+                    MixedStyledText('"\t"', style='monospaced')   None:None <literal>
+                         > (0,0,1,0,1) monospaced
+                      SingleStyledText('"\t"')
+                    SingleStyledText(' pomeni ')
+                    MixedStyledText('tab', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('tab')
+                    SingleStyledText(', ')
+                    MixedStyledText('"\s"', style='monospaced')   None:None <literal>
+                         > (0,0,1,0,1) monospaced
+                      SingleStyledText('"\s"')
+                    SingleStyledText(' presledek itd...). Python ne lo...')
+                    MixedStyledText('"', style='monospaced')   None:None <literal>
+                         > (0,0,1,0,1) monospaced
+                      SingleStyledText('"')
+                    SingleStyledText(' in ')
+                    MixedStyledText(''', style='monospaced')   None:None <literal>
+                         > (0,0,1,0,1) monospaced
+                      SingleStyledText(''')
+                    SingleStyledText(', torej lahko uporabljete katere...')
+                    MixedStyledText('v paru enaka znaka', style='strong')   None:None <strong>
+                         > (0,0,1,0,1) strong
+                      SingleStyledText('v paru enaka znaka')
+                    SingleStyledText('.')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	3/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	3/11')
+          MixedStyledText('	3/11')
+            Tab('	')
+            Field('3')
+              SingleStyledText('3')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 4 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-1-branje-in-pisanje-slik-z-diska')   uvod_py_opencv.rst:22 <section>
+          (continued) Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            (continued) Paragraph('Težava je v tem, da če pot kopir...')   uvod_py_opencv.rst:51 <paragraph>
+                 > (0,0,0,0,2) body
+          Admonition()   uvod_py_opencv.rst:None <warning>
+               > (0,0,0,1,2) warning admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Warning Ne glede na operacijski ...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Warning Ne glede na operacijski ...')
+                  MixedStyledText('Warning Ne glede na operacijski ...')
+                    MixedStyledText('Warning', style='inline title')
+                         x (0,0,1,1,3) warning admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Warning')
+                    SingleStyledText(' ')
+                    MixedStyledText('Ne glede na operacijski sistem p...')
+                      SingleStyledText('Ne glede na operacijski sistem p...')
+                      MixedStyledText('morate podati celotno pot; torej...', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('morate podati celotno pot; torej...')
+                      SingleStyledText(' Izjema so t.i. ')
+                      MixedStyledText('relativne poti', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('relativne poti')
+                      SingleStyledText('.')
+          Paragraph('V četrti vrstici sliko prikažemo...')   uvod_py_opencv.rst:61 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V četrti vrstici sliko prikažemo...')
+                MixedStyledText('V četrti vrstici sliko prikažemo...')
+                  SingleStyledText('V četrti vrstici sliko prikažemo...')
+                  MixedStyledText('cv2.imshow()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cv2.imshow()')
+                  SingleStyledText('. Funkcija ima 2 parametra: prvi...')
+                  MixedStyledText('sliko 1', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('sliko 1')
+                  SingleStyledText('), z drugim pa podamo sliko/matr...')
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/Lenna_(test_image).png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.1. Slika 1. Prikazana s...')   uvod_py_opencv.rst:68 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.1. Slika 1. Prikazana s...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.1. ')
+                    SingleStyledText('1.1')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 1. Prikazana slika.')
+                    SingleStyledText('Slika 1. Prikazana slika.')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Slike so v računalništvu ma...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Slike so v računalništvu ma...')
+                  MixedStyledText('Note Slike so v računalništvu ma...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Slike so v računalništvu matrike...')
+                      SingleStyledText('Slike so v računalništvu matrike...')
+                      MixedStyledText('640x480', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('640x480')
+                      SingleStyledText(' (')
+                      MixedStyledText('širina', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('širina')
+                      SingleStyledText(' x ')
+                      MixedStyledText('višina', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('višina')
+                      SingleStyledText(') pikslov, imamo torej matriko ')
+                      MixedStyledText('480x640', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('480x640')
+                      SingleStyledText(' (pazite, pri matrikah ')
+                      MixedStyledText('najprej podamo štelivo vrstic, p...', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('najprej podamo štelivo vrstic, p...')
+                      SingleStyledText(') kjer vrednost vsakega elementa...')
+                      MixedStyledText('grayscale', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('grayscale')
+                      SingleStyledText(' slike). Če imamo opravka z barv...')
+                      MixedStyledText('RGB', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('RGB')
+                      SingleStyledText(' barvni model) imamo 3 matrike, ...')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	4/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	4/11')
+          MixedStyledText('	4/11')
+            Tab('	')
+            Field('4')
+              SingleStyledText('4')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 5 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-1-branje-in-pisanje-slik-z-diska')   uvod_py_opencv.rst:22 <section>
+          (continued) Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            (continued) Paragraph('Note Slike so v računalništvu ma...')
+                 > (0,0,0,0,2) body
+          Paragraph('V peti vrstici s fukcijo cv2.wai...')   uvod_py_opencv.rst:77 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V peti vrstici s fukcijo cv2.wai...')
+                MixedStyledText('V peti vrstici s fukcijo cv2.wai...')
+                  SingleStyledText('V peti vrstici s fukcijo ')
+                  MixedStyledText('cv2.waitKey()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cv2.waitKey()')
+                  SingleStyledText(' čakamo na pritisk katerikoli ti...')
+                  AnnotatedText('dokumentacijo', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('dokumentacijo')
+                      SingleStyledText('dokumentacijo')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' fukcije, je tam zapisamo ')
+                  MixedStyledText('retval = cv.waitKey([, delay] )', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('retval = cv.waitKey([, delay] )')
+                  SingleStyledText('. Branje in razumevanje dokument...')
+                  MixedStyledText('()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('()')
+                  SingleStyledText(' vidimo ')
+                  MixedStyledText('[, delay]', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('[, delay]')
+                  SingleStyledText('. To pomeni, da fukcija sprejme ...')
+                  MixedStyledText('[]', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('[]')
+                  SingleStyledText('): to pomeni, da ga lahko podamo...')
+                  MixedStyledText('"The function waitKey waits for ...', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('"The function waitKey waits for ...')
+                  SingleStyledText('. Torej, če argumenta ')
+                  MixedStyledText('delay', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('delay')
+                  SingleStyledText(' ne podamo, bo funkcija čakala n...')
+                  MixedStyledText('delay', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('delay')
+                  SingleStyledText('. Vidimo lahko tudi, da fukcija ...')
+                  MixedStyledText('retval', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('retval')
+                  SingleStyledText('. V dokumentacij piše: ')
+                  MixedStyledText('"It returns the code of the pres...', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('"It returns the code of the pres...')
+                  SingleStyledText('. Ugotovimo lahko, katero tipko ...')
+                  MixedStyledText('ASCII', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('ASCII')
+                  SingleStyledText(' kodo, najdete jo lahko v stolpc...')
+                  MixedStyledText('Dec', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('Dec')
+                  SingleStyledText(' v ')
+                  AnnotatedText('tabeli', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('tabeli')
+                      SingleStyledText('tabeli')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(', ali s ')
+                  MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Python')
+                  SingleStyledText(' klicom ')
+                  MixedStyledText('ord('<vaša črka>')', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('ord('<vaša črka>')')
+                  SingleStyledText(').')
+          Paragraph('Po 5. vrstici bi se torej izvaja...')   uvod_py_opencv.rst:81 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Po 5. vrstici bi se torej izvaja...')
+                MixedStyledText('Po 5. vrstici bi se torej izvaja...')
+                  SingleStyledText('Po 5. vrstici bi se torej izvaja...')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Če ne kličemo funkcije cv2....')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Če ne kličemo funkcije cv2....')
+                  MixedStyledText('Note Če ne kličemo funkcije cv2....')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Če ne kličemo funkcije cv2.destr...')
+                      SingleStyledText('Če ne kličemo funkcije ')
+                      MixedStyledText('cv2.destroyAllWindows()', style='monospaced')   None:None <literal>
+                           > (0,0,1,0,1) monospaced
+                        SingleStyledText('cv2.destroyAllWindows()')
+                      SingleStyledText(' običajno okno ostane odprto in ...')
+          Paragraph('Kot lahko vidimo, je prikazana s...')   uvod_py_opencv.rst:86 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Kot lahko vidimo, je prikazana s...')
+                MixedStyledText('Kot lahko vidimo, je prikazana s...')
+                  SingleStyledText('Kot lahko vidimo, je prikazana s...')
+          Paragraph('Dodali smo vrstice 5-10, 12 in 1...')   uvod_py_opencv.rst:92 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Dodali smo vrstice 5-10, 12 in 1...')
+                MixedStyledText('Dodali smo vrstice 5-10, 12 in 1...')
+                  SingleStyledText('Dodali smo vrstice ')
+                  MixedStyledText('5-10', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('5-10')
+                  SingleStyledText(', ')
+                  MixedStyledText('12', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('12')
+                  SingleStyledText(' in ')
+                  MixedStyledText('15', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('15')
+                  SingleStyledText('.')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Čeprav običajo slišite "RGB...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Čeprav običajo slišite "RGB...')
+                  MixedStyledText('Note Čeprav običajo slišite "RGB...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Čeprav običajo slišite "RGB", Op...')
+                      SingleStyledText('Čeprav običajo slišite "RGB", ')
+                      MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('OpenCV')
+                      SingleStyledText(' uporablja zaporedje ')
+                      MixedStyledText('blue, green, red', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('blue, green, red')
+                      SingleStyledText('.')
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/Lenna+merged.png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.2. Slika 2. Originalna ...')   uvod_py_opencv.rst:103 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.2. Slika 2. Originalna ...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.2. ')
+                    SingleStyledText('1.2')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 2. Originalna Lenna in Len...')
+                    SingleStyledText('Slika 2. Originalna ')
+                    MixedStyledText('Lenna', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('Lenna')
+                    SingleStyledText(' in ')
+                    MixedStyledText('Lenna', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('Lenna')
+                    SingleStyledText(' s premešanimi kanali.')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	5/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	5/11')
+          MixedStyledText('	5/11')
+            Tab('	')
+            Field('5')
+              SingleStyledText('5')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 6 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-1-branje-in-pisanje-slik-z-diska')   uvod_py_opencv.rst:22 <section>
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/channels.png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.3. Slika 3. Posamezni k...')   uvod_py_opencv.rst:109 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.3. Slika 3. Posamezni k...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.3. ')
+                    SingleStyledText('1.3')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 3. Posamezni kanali.')
+                    SingleStyledText('Slika 3. Posamezni kanali.')
+        Section(id='vaja-2-zajemanje-in-prikazovanje-slike-s-kamere')   uvod_py_opencv.rst:113 <section>
+          Heading('1.2 Vaja 2: zajemanje in prikazo...')   uvod_py_opencv.rst:113 <title>
+               > (0,0,0,1,2) heading level 2
+                 (0,0,0,0,2) other heading levels
+              MixedStyledText('1.2 ')
+                SingleStyledText('1.2')
+                SingleStyledText(' ')
+              MixedStyledText('Vaja 2: zajemanje in prikazovanj...')
+                MixedStyledText('Vaja 2: zajemanje in prikazovanj...')
+                  SingleStyledText('Vaja 2: zajemanje in prikazovanj...')
+          Paragraph('V tem delu vaje bomo pogledali, ...')   uvod_py_opencv.rst:115 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V tem delu vaje bomo pogledali, ...')
+                MixedStyledText('V tem delu vaje bomo pogledali, ...')
+                  SingleStyledText('V tem delu vaje bomo pogledali, ...')
+                  MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('OpenCV')
+                  SingleStyledText('-ja zajamemo sliko s kamere, ki ...')
+          Paragraph('Skripta je sedaj nekoliko daljša...')   uvod_py_opencv.rst:121 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Skripta je sedaj nekoliko daljša...')
+                MixedStyledText('Skripta je sedaj nekoliko daljša...')
+                  SingleStyledText('Skripta je sedaj nekoliko daljša...')
+          Paragraph('Najpomembnejša razlika v primerj...')   uvod_py_opencv.rst:127 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Najpomembnejša razlika v primerj...')
+                MixedStyledText('Najpomembnejša razlika v primerj...')
+                  SingleStyledText('Najpomembnejša razlika v primerj...')
+                  MixedStyledText('3', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('3')
+                  SingleStyledText('. ')
+                  MixedStyledText('VideoCapture', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('VideoCapture')
+                  SingleStyledText(' je ')
+                  AnnotatedText('razred', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('razred')
+                      SingleStyledText('razred')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' za zajem videa iz različnih vid...')
+                  MixedStyledText('hardware', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('hardware')
+                  SingleStyledText('-a - kamer. Če podrobneje pogled...')
+                  AnnotatedText('dokumentacij', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('dokumentacij')
+                      SingleStyledText('dokumentacij')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' omenjenega razreda lahko vidimo...')
+                  AnnotatedText('konstruktorjev', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('konstruktorjev')
+                      SingleStyledText('konstruktorjev')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' :')
+          List(style='enumerated')   uvod_py_opencv.rst:129 <enumerated_list>
+               > (0,0,1,0,2) enumerated list
+            ListItem()   uvod_py_opencv.rst:None <list_item>
+                 x (0,0,1,0,4) enumerated list item
+                 > fallback to default style
+              ListItemLabel('1.')
+                   > (0,0,1,0,6) enumerated list item label
+                     (0,0,0,0,2) list item label
+                  MixedStyledText('1.')
+                    SingleStyledText('1')
+                    SingleStyledText('.')
+              StaticGroupedFlowables()
+                   > (0,0,0,0,3) list item body
+                Paragraph('<VideoCapture object> = cv.Video...')   uvod_py_opencv.rst:129 <paragraph>
+                     > (0,0,0,0,5) list item paragraph
+                       (0,0,0,0,2) body
+                    MixedStyledText('<VideoCapture object> = cv.Video...')
+                      MixedStyledText('<VideoCapture object> = cv.Video...')
+                        MixedStyledText('<VideoCapture object> = cv.Video...', style='monospaced')   None:None <literal>
+                             > (0,0,1,0,1) monospaced
+                          SingleStyledText('<VideoCapture object> = cv.Video...')
+                        SingleStyledText(' ... ')
+                        MixedStyledText('default', style='emphasis')   None:None <emphasis>
+                             > (0,0,1,0,1) emphasis
+                          SingleStyledText('default')
+                        SingleStyledText(' konstruktor, za enkrat za nas n...')
+            ListItem()   uvod_py_opencv.rst:None <list_item>
+                 x (0,0,1,0,4) enumerated list item
+                 > fallback to default style
+              ListItemLabel('2.')
+                   > (0,0,1,0,6) enumerated list item label
+                     (0,0,0,0,2) list item label
+                  MixedStyledText('2.')
+                    SingleStyledText('2')
+                    SingleStyledText('.')
+              StaticGroupedFlowables()
+                   > (0,0,0,0,3) list item body
+                Paragraph('<VideoCapture object> = cv.Video...')   uvod_py_opencv.rst:130 <paragraph>
+                     > (0,0,0,0,5) list item paragraph
+                       (0,0,0,0,2) body
+                    MixedStyledText('<VideoCapture object> = cv.Video...')
+                      MixedStyledText('<VideoCapture object> = cv.Video...')
+                        MixedStyledText('<VideoCapture object> = cv.Video...', style='monospaced')   None:None <literal>
+                             > (0,0,1,0,1) monospaced
+                          SingleStyledText('<VideoCapture object> = cv.Video...')
+                        SingleStyledText(' ... "odpremo" video datototeko')
+            ListItem()   uvod_py_opencv.rst:None <list_item>
+                 x (0,0,1,0,4) enumerated list item
+                 > fallback to default style
+              ListItemLabel('3.')
+                   > (0,0,1,0,6) enumerated list item label
+                     (0,0,0,0,2) list item label
+                  MixedStyledText('3.')
+                    SingleStyledText('3')
+                    SingleStyledText('.')
+              StaticGroupedFlowables()
+                   > (0,0,0,0,3) list item body
+                Paragraph('<VideoCapture object> = cv.Video...')   uvod_py_opencv.rst:131 <paragraph>
+                     > (0,0,0,0,5) list item paragraph
+                       (0,0,0,0,2) body
+                    MixedStyledText('<VideoCapture object> = cv.Video...')
+                      MixedStyledText('<VideoCapture object> = cv.Video...')
+                        MixedStyledText('<VideoCapture object> = cv.Video...', style='monospaced')   None:None <literal>
+                             > (0,0,1,0,1) monospaced
+                          SingleStyledText('<VideoCapture object> = cv.Video...')
+                        SingleStyledText(' ... "odpremo" video datototeko ...')
+                        MixedStyledText('video', style='emphasis')   None:None <emphasis>
+                             > (0,0,1,0,1) emphasis
+                          SingleStyledText('video')
+                        SingleStyledText(' knjižnico')
+            ListItem()   uvod_py_opencv.rst:None <list_item>
+                 x (0,0,1,0,4) enumerated list item
+                 > fallback to default style
+              ListItemLabel('4.')
+                   > (0,0,1,0,6) enumerated list item label
+                     (0,0,0,0,2) list item label
+                  MixedStyledText('4.')
+                    SingleStyledText('4')
+                    SingleStyledText('.')
+              StaticGroupedFlowables()
+                   > (0,0,0,0,3) list item body
+                Paragraph('<VideoCapture object> = cv.Video...')   uvod_py_opencv.rst:132 <paragraph>
+                     > (0,0,0,0,5) list item paragraph
+                       (0,0,0,0,2) body
+                    MixedStyledText('<VideoCapture object> = cv.Video...')
+                      MixedStyledText('<VideoCapture object> = cv.Video...')
+                        MixedStyledText('<VideoCapture object> = cv.Video...', style='monospaced')   None:None <literal>
+                             > (0,0,1,0,1) monospaced
+                          SingleStyledText('<VideoCapture object> = cv.Video...')
+                        SingleStyledText(' ... "odpremo" kamero')
+            ListItem()   uvod_py_opencv.rst:None <list_item>
+                 x (0,0,1,0,4) enumerated list item
+                 > fallback to default style
+              ListItemLabel('5.')
+                   > (0,0,1,0,6) enumerated list item label
+                     (0,0,0,0,2) list item label
+                  MixedStyledText('5.')
+                    SingleStyledText('5')
+                    SingleStyledText('.')
+              StaticGroupedFlowables()
+                   > (0,0,0,0,3) list item body
+                Paragraph('<VideoCapture object> = cv.Video...')   uvod_py_opencv.rst:133 <paragraph>
+                     > (0,0,0,0,5) list item paragraph
+                       (0,0,0,0,2) body
+                    MixedStyledText('<VideoCapture object> = cv.Video...')
+                      MixedStyledText('<VideoCapture object> = cv.Video...')
+                        MixedStyledText('<VideoCapture object> = cv.Video...', style='monospaced')   None:None <literal>
+                             > (0,0,1,0,1) monospaced
+                          SingleStyledText('<VideoCapture object> = cv.Video...')
+                        SingleStyledText(' ... "odpremo" kamero in določim...')
+                        MixedStyledText('video', style='emphasis')   None:None <emphasis>
+                             > (0,0,1,0,1) emphasis
+                          SingleStyledText('video')
+                        SingleStyledText(' knjižnico')
+          Admonition()   uvod_py_opencv.rst:None <warning>
+               > (0,0,0,1,2) warning admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Warning Kadarkoli "odpremo" nek ...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Warning Kadarkoli "odpremo" nek ...')
+                  MixedStyledText('Warning Kadarkoli "odpremo" nek ...')
+                    MixedStyledText('Warning', style='inline title')
+                         x (0,0,1,1,3) warning admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Warning')
+                    SingleStyledText(' ')
+                    MixedStyledText('Kadarkoli "odpremo" nek kos hard...')
+                      SingleStyledText('Kadarkoli "odpremo" nek kos ')
+                      MixedStyledText('hardware', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('hardware')
+                      SingleStyledText('-a, ga moramo potem tudi zapreti...')
+                      MixedStyledText('20', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('20')
+                      SingleStyledText('). Če tega ne storimo, v ob nasl...')
+                      MixedStyledText('In C API, when you finished work...', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('In C API, when you finished work...')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Dokumentacija OpenCV-ja je ...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Dokumentacija OpenCV-ja je ...')
+                  MixedStyledText('Note Dokumentacija OpenCV-ja je ...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Dokumentacija OpenCV-ja je prima...')
+                      SingleStyledText('Dokumentacija ')
+                      MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('OpenCV')
+                      SingleStyledText('-ja je primarno napisana za ')
+                      MixedStyledText('C++', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('C++')
+                      SingleStyledText('; za ')
+                      MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('Python')
+                      SingleStyledText(' je precej skopa in moramo velik...')
+                      MixedStyledText('C++', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('C++')
+                      SingleStyledText(' in to "preversti" v ')
+                      MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('Python')
+                      SingleStyledText('.')
+          Paragraph('V vrstici 3 lahko vidite, da smo...')   uvod_py_opencv.rst:141 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrstici 3 lahko vidite, da smo...')
+                MixedStyledText('V vrstici 3 lahko vidite, da smo...')
+                  SingleStyledText('V vrstici ')
+                  MixedStyledText('3', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('3')
+                  SingleStyledText(' lahko vidite, da smo uporabiti ...')
+                  MixedStyledText('4', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('4')
+                  SingleStyledText('. ')
+                  MixedStyledText('index', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('index')
+                  SingleStyledText(' je tipa ')
+                  MixedStyledText('int', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('int')
+                  SingleStyledText(' in določa, katero kamero želimo...')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Python tako kot vsak resen ...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Python tako kot vsak resen ...')
+                  MixedStyledText('Note Python tako kot vsak resen ...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Python tako kot vsak resen progr...')
+                      MixedStyledText('Python', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('Python')
+                      SingleStyledText(' tako kot vsak resen programski ...')
+                      MixedStyledText('0', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('0')
+                      SingleStyledText(' in ne z ')
+                      MixedStyledText('1', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('1')
+                      SingleStyledText(' (')
+                      MixedStyledText('I'm looking at you, MATLAB!', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('I'm looking at you, MATLAB!')
+                      SingleStyledText('); torej, ')
+                      MixedStyledText('index prvega elementa', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('index prvega elementa')
+                      SingleStyledText(' je ')
+                      MixedStyledText('0', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('0')
+                      SingleStyledText('!')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	6/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	6/11')
+          MixedStyledText('	6/11')
+            Tab('	')
+            Field('6')
+              SingleStyledText('6')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 7 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-2-zajemanje-in-prikazovanje-slike-s-kamere')   uvod_py_opencv.rst:113 <section>
+          (continued) Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            (continued) Paragraph('Note Python tako kot vsak resen ...')
+                 > (0,0,0,0,2) body
+          Paragraph('Klic nam vrne objekt tipa VideoC...')   uvod_py_opencv.rst:147 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Klic nam vrne objekt tipa VideoC...')
+                MixedStyledText('Klic nam vrne objekt tipa VideoC...')
+                  SingleStyledText('Klic nam vrne ')
+                  AnnotatedText('objekt', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('objekt')
+                      SingleStyledText('objekt')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' tipa ')
+                  MixedStyledText('VideoCapture', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('VideoCapture')
+                  SingleStyledText(', ki ga "ujamemo" v spremenljivo...')
+                  MixedStyledText('cam', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cam')
+                  SingleStyledText('. V vrstivi 6 začnemo neskončno ')
+                  MixedStyledText('while', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('while')
+                  SingleStyledText(' zanko.')
+          Paragraph('V vrstici 7 kličemo metodo razre...')   uvod_py_opencv.rst:153 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrstici 7 kličemo metodo razre...')
+                MixedStyledText('V vrstici 7 kličemo metodo razre...')
+                  SingleStyledText('V vrstici ')
+                  MixedStyledText('7', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('7')
+                  SingleStyledText(' kličemo metodo razreda ')
+                  MixedStyledText('VideoCapture', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('VideoCapture')
+                  SingleStyledText(' ')
+                  MixedStyledText('read()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('read()')
+                  SingleStyledText('. V dokumentaciji lahko preberem...')
+                  MixedStyledText('Grabs, decodes and returns the n...', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Grabs, decodes and returns the n...')
+                  SingleStyledText('. Sintaksa je zapisana kot ')
+                  MixedStyledText('retval, image = cv.VideoCapture....', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('retval, image = cv.VideoCapture....')
+                  SingleStyledText('. Spet lahko vidimo, da sprejme ...')
+                  MixedStyledText('image', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('image')
+                  SingleStyledText(', ki pa ga lahko "ujamemo" tudi ...')
+                  MixedStyledText('retval', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('retval')
+                  SingleStyledText(' pa piše ')
+                  MixedStyledText('false if no frames has been grab...', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('false if no frames has been grab...')
+                  SingleStyledText('. Tako v vrsticah ')
+                  MixedStyledText('8-9', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('8-9')
+                  SingleStyledText(' preverim, ali je branje uspelo ...')
+                  MixedStyledText('neskončno', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('neskončno')
+                  SingleStyledText(' zanko zaključimo.')
+          Paragraph('V vrstici 10 preverimo, kakšno j...')   uvod_py_opencv.rst:155 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrstici 10 preverimo, kakšno j...')
+                MixedStyledText('V vrstici 10 preverimo, kakšno j...')
+                  SingleStyledText('V vrstici ')
+                  MixedStyledText('10', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('10')
+                  SingleStyledText(' preverimo, kakšno je treutno st...')
+                  MixedStyledText('flip', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('flip')
+                  SingleStyledText(' in eventuelno izvedemo vrstico ')
+                  MixedStyledText('11', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('11')
+                  SingleStyledText('. ')
+                  MixedStyledText('Vaša naloga je', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('Vaša naloga je')
+                  SingleStyledText(', da na spletu poiščete dokument...')
+                  MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('OpenCV')
+                  SingleStyledText(' funkcije ')
+                  MixedStyledText('cv2.flip()', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('cv2.flip()')
+                  SingleStyledText(' in ')
+                  MixedStyledText('ugotovite', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('ugotovite')
+                  SingleStyledText(', kaj funkcija naredi in kaj sta...')
+          Paragraph('V vrsticah 14-17 imamo 2 klica p...')   uvod_py_opencv.rst:161 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrsticah 14-17 imamo 2 klica p...')
+                MixedStyledText('V vrsticah 14-17 imamo 2 klica p...')
+                  SingleStyledText('V vrsticah ')
+                  MixedStyledText('14-17', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('14-17')
+                  SingleStyledText(' imamo 2 klica povezana s tipko,...')
+                  MixedStyledText('13', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('13')
+                  SingleStyledText('. ')
+                  MixedStyledText('27', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('27')
+                  SingleStyledText(' je koda tipke ')
+                  MixedStyledText('ESC', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('ESC')
+                  SingleStyledText(' in v tem primeru zanko zaključi...')
+                  MixedStyledText('f', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('f')
+                  SingleStyledText(' spremenimo ')
+                  MixedStyledText('True/False', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('True/False')
+                  SingleStyledText(' stanje spremenljivke ')
+                  MixedStyledText('flip', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('flip')
+                  SingleStyledText('.')
+        Section(id='vaja-3-globina-slike-image-depth-in-prikazovanje-slike')   uvod_py_opencv.rst:164 <section>
+          Heading('1.3 Vaja 3: globina slike (image...')   uvod_py_opencv.rst:164 <title>
+               > (0,0,0,1,2) heading level 2
+                 (0,0,0,0,2) other heading levels
+              MixedStyledText('1.3 ')
+                SingleStyledText('1.3')
+                SingleStyledText(' ')
+              MixedStyledText('Vaja 3: globina slike (image dep...')
+                MixedStyledText('Vaja 3: globina slike (image dep...')
+                  SingleStyledText('Vaja 3: globina slike (')
+                  MixedStyledText('image depth', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('image depth')
+                  SingleStyledText(') in prikazovanje slike')
+          Paragraph('Če uporabljate Jupyter Notebook,...')   uvod_py_opencv.rst:166 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Če uporabljate Jupyter Notebook,...')
+                MixedStyledText('Če uporabljate Jupyter Notebook,...')
+                  SingleStyledText('Če uporabljate ')
+                  MixedStyledText('Jupyter Notebook', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Jupyter Notebook')
+                  SingleStyledText(', spremenljivke ostanejo v spomi...')
+          CodeBlock('print(type(frame[0, 0, 0]))\noutp...')   uvod_py_opencv.rst:172 <literal_block>
+               > (1,0,0,0,2) code block
+                 (0,0,0,0,1) body
+              MixedStyledText('print(type(frame[0, 0, 0]))\noutp...')
+                MixedStyledText('print(type(frame[0, 0, 0]))\noutp...')
+                  Token('print', type=Token.Name.Builtin)
+                       > (0,0,0,1,2) (pygments)Token.Name.Builtin
+                  Token('(', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('type', type=Token.Name.Builtin)
+                       > (0,0,0,1,2) (pygments)Token.Name.Builtin
+                  Token('(', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('frame', type=Token.Name)
+                       > (0,0,0,1,2) (pygments)Token.Name
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0', type=Token.Literal.Number.Integer)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Integer
+                  Token(',', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0', type=Token.Literal.Number.Integer)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Integer
+                  Token(',', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0', type=Token.Literal.Number.Integer)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Integer
+                  Token(']))', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('output', type=Token.Name)
+                       > (0,0,0,1,2) (pygments)Token.Name
+                  Token(':', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('<', type=Token.Operator)
+                       > (0,0,0,1,2) (pygments)Token.Operator
+                  Token('class', type=Token.Keyword)
+                       > (0,0,0,1,2) (pygments)Token.Keyword
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token(''', type=Token.Error)
+                       > (0,0,0,1,2) (pygments)Token.Error
+                  Token('numpy', type=Token.Name.Class)
+                       > (0,0,0,1,2) (pygments)Token.Name.Class
+                  Token('.', type=Token.Operator)
+                       > (0,0,0,1,2) (pygments)Token.Operator
+                  Token('uint8', type=Token.Name)
+                       > (0,0,0,1,2) (pygments)Token.Name
+                  Token(''>', type=Token.Literal.String.Single)
+                       > (0,0,0,1,2) (pygments)Token.Literal.String.Single
+                  Token('\n', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+          Paragraph('Slika v spremenljivki frame je v...')   uvod_py_opencv.rst:173 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Slika v spremenljivki frame je v...')
+                MixedStyledText('Slika v spremenljivki frame je v...')
+                  SingleStyledText('Slika v spremenljivki ')
+                  MixedStyledText('frame', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('frame')
+                  SingleStyledText(' je v resnici trodimenzionalna m...')
+                  MixedStyledText('prva', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('prva')
+                  SingleStyledText(' vrednost določa vrstico, ')
+                  MixedStyledText('druga', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('druga')
+                  SingleStyledText(' stolpec in ')
+                  MixedStyledText('tretja', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('tretja')
+                  SingleStyledText(' kanal, če imamo RGB sliko. Če j...')
+                  MixedStyledText('uint8', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('uint8')
+                  SingleStyledText('. To pomeni, da je ')
+                  MixedStyledText('unsigned integer', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('unsigned integer')
+                  SingleStyledText(' (celo število brez predznaka) p...')
+                  MixedStyledText('0000 0000', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('0000 0000')
+                  SingleStyledText(', hex ')
+                  MixedStyledText('00', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('00')
+                  SingleStyledText('), največja pa ')
+                  MixedStyledText('255', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('255')
+                  SingleStyledText(' (binarno ')
+                  MixedStyledText('1111 1111', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('1111 1111')
+                  SingleStyledText(', hex ')
+                  MixedStyledText('ff', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('ff')
+                  SingleStyledText('). ')
+                  MixedStyledText('Vprašanje:', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('Vprašanje:')
+                  SingleStyledText(' kaj se zgodi, če ')
+                  MixedStyledText('uint8', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('uint8')
+                  SingleStyledText(' spemelnjivki z vrednostjo ')
+                  MixedStyledText('255', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('255')
+                  SingleStyledText(' prištejemo ')
+                  MixedStyledText('1', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('1')
+                  SingleStyledText('?')
+          Paragraph('Napišimo kratko skripto, ki bo i...')   uvod_py_opencv.rst:175 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Napišimo kratko skripto, ki bo i...')
+                MixedStyledText('Napišimo kratko skripto, ki bo i...')
+                  SingleStyledText('Napišimo kratko skripto, ki bo i...')
+          Paragraph('Kot lahko vidite, smo sedaj uvoz...')   uvod_py_opencv.rst:181 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Kot lahko vidite, smo sedaj uvoz...')
+                MixedStyledText('Kot lahko vidite, smo sedaj uvoz...')
+                  SingleStyledText('Kot lahko vidite, smo sedaj uvoz...')
+                  AnnotatedText('numpy', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('numpy')
+                      SingleStyledText('numpy')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText(' (vrstica ')
+                  MixedStyledText('1', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('1')
+                  SingleStyledText('). Gre za "')
+                  MixedStyledText('The fundamental package for scie...', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('The fundamental package for scie...')
+                  SingleStyledText('". Ker je njeno ime dolgo, ga ok...')
+                  MixedStyledText('np.', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('np.')
+                  SingleStyledText('. V vrstici ')
+                  MixedStyledText('4', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('4')
+                  SingleStyledText(' določimo dmenzije slik. V vrsti...')
+                  MixedStyledText('6-8', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('6-8')
+                  SingleStyledText(', naredimo najprej 3 matrike eni...')
+                  MixedStyledText('0', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('0')
+                  SingleStyledText(' za črno sliko, ')
+                  MixedStyledText('126', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('126')
+                  SingleStyledText(' za sivo in ')
+                  MixedStyledText('255', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('255')
+                  SingleStyledText(' za belo. Ko slike izrišemo, vid...')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	7/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	7/11')
+          MixedStyledText('	7/11')
+            Tab('	')
+            Field('7')
+              SingleStyledText('7')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 8 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-3-globina-slike-image-depth-in-prikazovanje-slike')   uvod_py_opencv.rst:164 <section>
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/w_s_b.png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.4. Slika 4. Bela, siva ...')   uvod_py_opencv.rst:189 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.4. Slika 4. Bela, siva ...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.4. ')
+                    SingleStyledText('1.4')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 4. Bela, siva in črna gene...')
+                    SingleStyledText('Slika 4. Bela, siva in črna gene...')
+          Paragraph('V vrsticah 6-8 smo nastavili, da...')   uvod_py_opencv.rst:191 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrsticah 6-8 smo nastavili, da...')
+                MixedStyledText('V vrsticah 6-8 smo nastavili, da...')
+                  SingleStyledText('V vrsticah ')
+                  MixedStyledText('6-8', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('6-8')
+                  SingleStyledText(' smo nastavili, da je posamezen ...')
+                  MixedStyledText('uint8', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('uint8')
+                  SingleStyledText('. To imenujemo ')
+                  MixedStyledText('image depth', style='strong')   None:None <strong>
+                       > (0,0,1,0,1) strong
+                    SingleStyledText('image depth')
+                  SingleStyledText(' (v prostem prevodu ')
+                  MixedStyledText('"globina"', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('"globina"')
+                  SingleStyledText(' ')
+                  MixedStyledText('slike', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('slike')
+                  SingleStyledText('). Spremenimo sedaj ')
+                  MixedStyledText('globino', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('globino')
+                  SingleStyledText(' naših slik v ')
+                  MixedStyledText('float32', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('float32')
+                  SingleStyledText(', torej število s plavajočo veji...')
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/w_s_b_f32.png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.5. Slika 5. Enake 3 sli...')   uvod_py_opencv.rst:198 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.5. Slika 5. Enake 3 sli...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.5. ')
+                    SingleStyledText('1.5')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 5. Enake 3 slike kot na sl...')
+                    SingleStyledText('Slika 5. Enake 3 slike kot na ')
+                    MixedStyledText('sliki 4', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('sliki 4')
+                    SingleStyledText(', le da so sedaj v formatu ')
+                    MixedStyledText('float32', style='emphasis')   None:None <emphasis>
+                         > (0,0,1,0,1) emphasis
+                      SingleStyledText('float32')
+                    SingleStyledText('.')
+          Paragraph('Opazimo lahko, da sta sedaj tako...')   uvod_py_opencv.rst:200 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Opazimo lahko, da sta sedaj tako...')
+                MixedStyledText('Opazimo lahko, da sta sedaj tako...')
+                  SingleStyledText('Opazimo lahko, da sta sedaj tako...')
+                  MixedStyledText('gray', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('gray')
+                  SingleStyledText(' kot slika ')
+                  MixedStyledText('white', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('white')
+                  SingleStyledText(' beli. Zakaj?')
+          Admonition()   uvod_py_opencv.rst:None <note>
+               > (0,0,0,1,2) note admonition
+                 (0,0,0,0,2) admonition
+            Paragraph('Note Zapomnite si: če z OpenCV f...')
+                 > (0,0,0,0,2) body
+                MixedStyledText('Note Zapomnite si: če z OpenCV f...')
+                  MixedStyledText('Note Zapomnite si: če z OpenCV f...')
+                    MixedStyledText('Note', style='inline title')
+                         x (0,0,1,1,3) note admonition inline title
+                         > (0,0,1,0,3) admonition inline title
+                      SingleStyledText('Note')
+                    SingleStyledText(' ')
+                    MixedStyledText('Zapomnite si: če z OpenCV funkci...')
+                      MixedStyledText('Zapomnite si:', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('Zapomnite si:')
+                      SingleStyledText(' če z ')
+                      MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('OpenCV')
+                      SingleStyledText(' funkcijo ')
+                      MixedStyledText('imshow()', style='monospaced')   None:None <literal>
+                           > (0,0,1,0,1) monospaced
+                        SingleStyledText('imshow()')
+                      SingleStyledText(' izrisujemo slike ')
+                      MixedStyledText('globine', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('globine')
+                      SingleStyledText(' ')
+                      MixedStyledText('integer', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('integer')
+                      SingleStyledText(', bo ')
+                      MixedStyledText('0 ... črna', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('0 ... črna')
+                      SingleStyledText(', ')
+                      MixedStyledText('255 ... bela', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('255 ... bela')
+                      SingleStyledText(', če pa izrisujemo slike ')
+                      MixedStyledText('globine', style='emphasis')   None:None <emphasis>
+                           > (0,0,1,0,1) emphasis
+                        SingleStyledText('globine')
+                      SingleStyledText(' ')
+                      MixedStyledText('float', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('float')
+                      SingleStyledText(', bo ')
+                      MixedStyledText('0.0 ... črna', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('0.0 ... črna')
+                      SingleStyledText(', ')
+                      MixedStyledText('1.0 ... bela', style='strong')   None:None <strong>
+                           > (0,0,1,0,1) strong
+                        SingleStyledText('1.0 ... bela')
+                      SingleStyledText('!')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	8/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	8/11')
+          MixedStyledText('	8/11')
+            Tab('	')
+            Field('8')
+              SingleStyledText('8')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 9 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        Section(id='vaja-4-filtriranje-slik')   uvod_py_opencv.rst:206 <section>
+          Heading('1.4 Vaja 4: filtriranje slik')   uvod_py_opencv.rst:206 <title>
+               > (0,0,0,1,2) heading level 2
+                 (0,0,0,0,2) other heading levels
+          Paragraph('Pri procesiranju slik se pogosto...')   uvod_py_opencv.rst:208 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Pri procesiranju slik se pogosto...')
+                MixedStyledText('Pri procesiranju slik se pogosto...')
+                  SingleStyledText('Pri procesiranju slik se pogosto...')
+                  AnnotatedText('konvolucije', style='external link')   None:None <reference>
+                       > (0,0,1,0,1) external hyperlink
+                    MixedStyledText('konvolucije')
+                      SingleStyledText('konvolucije')
+                  AnnotatedText('')   None:None <target>
+                    MixedStyledText('')
+                  SingleStyledText('. V ')
+                  MixedStyledText('OpenCV', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('OpenCV')
+                  SingleStyledText('-ju imamo na voljo različne pred...')
+                  MixedStyledText('jedro', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('jedro')
+                  SingleStyledText(' (')
+                  MixedStyledText('angl. kernel', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('angl. kernel')
+                  SingleStyledText('). Poglejmo si primer enega najb...')
+                  MixedStyledText('Gaussov filter', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Gaussov filter')
+                  SingleStyledText('.')
+          CodeBlock('kernel:\n [[0.17820325]\n [0.21052...')   uvod_py_opencv.rst:225 <literal_block>
+               > (1,0,0,0,2) code block
+                 (0,0,0,0,1) body
+              MixedStyledText('kernel:\n [[0.17820325]\n [0.21052...')
+                MixedStyledText('kernel:\n [[0.17820325]\n [0.21052...')
+                  Token('kernel', type=Token.Name)
+                       > (0,0,0,1,2) (pygments)Token.Name
+                  Token(':', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.17820325', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.21052228', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.22254895', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.21052228', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.17820325', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']]', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n\n', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('difference', type=Token.Name)
+                       > (0,0,0,1,2) (pygments)Token.Name
+                  Token(':', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.0', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token('\n', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+          Paragraph('V vrstici 7 uporabimo predefinir...')   uvod_py_opencv.rst:226 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrstici 7 uporabimo predefinir...')
+                MixedStyledText('V vrstici 7 uporabimo predefinir...')
+                  SingleStyledText('V vrstici ')
+                  MixedStyledText('7', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('7')
+                  SingleStyledText(' uporabimo predefiniran ')
+                  MixedStyledText('Gaussov', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Gaussov')
+                  SingleStyledText(' filter v funkciji ')
+                  MixedStyledText('GaussianBlur', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('GaussianBlur')
+                  SingleStyledText('. Medtem v vrstici 9 generiramo ...')
+                  MixedStyledText('sepFilter2D', style='monospaced')   None:None <literal>
+                       > (0,0,1,0,1) monospaced
+                    SingleStyledText('sepFilter2D')
+                  SingleStyledText('. Tej funkciji podamo posebej ti...')
+                  MixedStyledText('X', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('X')
+                  SingleStyledText(' in ')
+                  MixedStyledText('Y', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Y')
+                  SingleStyledText(' smeri. V ')
+                  MixedStyledText('output', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('output')
+                  SingleStyledText(' oknu lahko vidimo izpisa; vredn...')
+                  MixedStyledText('kernela', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('kernela')
+                  SingleStyledText(' in pa razliko med obema slikama...')
+          Paragraph('Naredimo sedaj lasten Moving Ave...')   uvod_py_opencv.rst:228 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('Naredimo sedaj lasten Moving Ave...')
+                MixedStyledText('Naredimo sedaj lasten Moving Ave...')
+                  SingleStyledText('Naredimo sedaj lasten ')
+                  MixedStyledText('Moving Average', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('Moving Average')
+                  SingleStyledText(' filter.')
+          CodeBlock('[[0.00826446 0.00826446 0.008264...')   uvod_py_opencv.rst:247 <literal_block>
+               > (1,0,0,0,2) code block
+                 (0,0,0,0,1) body
+              MixedStyledText('[[0.00826446 0.00826446 0.008264...')
+                MixedStyledText('[[0.00826446 0.00826446 0.008264...')
+                  Token('[[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('[', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(' ', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+                  Token('0.00826446', type=Token.Literal.Number.Float)
+                       > (0,0,0,1,2) (pygments)Token.Literal.Number.Float
+                  Token(']]', type=Token.Punctuation)
+                       > (0,0,0,1,2) (pygments)Token.Punctuation
+                  Token('\n', type=Token.Text)
+                       > (0,0,0,1,2) (pygments)Token.Text
+          Paragraph('V vrsticah 7 in 8 generiamo 11x1...')   uvod_py_opencv.rst:248 <paragraph>
+               > (0,0,0,0,2) body
+              MixedStyledText('V vrsticah 7 in 8 generiamo 11x1...')
+                MixedStyledText('V vrsticah 7 in 8 generiamo 11x1...')
+                  SingleStyledText('V vrsticah ')
+                  MixedStyledText('7', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('7')
+                  SingleStyledText(' in ')
+                  MixedStyledText('8', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('8')
+                  SingleStyledText(' generiamo ')
+                  MixedStyledText('11x11', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('11x11')
+                  SingleStyledText(' matriko enic in jo v normalizir...')
+                  MixedStyledText('1.0', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('1.0')
+                  SingleStyledText('). Na ')
+                  MixedStyledText('sliki 6', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('sliki 6')
+                  SingleStyledText(' sta prikazani izvorna in filtri...')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('1 Uvod')
+         > (0,0,0,0,2) header
+        MixedStyledText('1 Uvod')
+          MixedStyledText('1 Uvod')
+            Field('1')
+              SingleStyledText('1')
+            SingleStyledText(' ')
+            Field('Uvod')
+              SingleStyledText('Uvod')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	9/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	9/11')
+          MixedStyledText('	9/11')
+            Tab('	')
+            Field('9')
+              SingleStyledText('9')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 10 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='uvod')   uvod_py_opencv.rst:12 <section>
+           > (0,0,0,1,2) chapter
+        (continued) Section(id='vaja-4-filtriranje-slik')   uvod_py_opencv.rst:206 <section>
+          Figure()   uvod_py_opencv.rst:None <figure>
+               > (0,0,0,0,2) figure
+            Image('uvod_v_py/images/moving_average.png')   None:None <image>
+                 > (0,0,0,0,4) figure image
+                   (0,0,0,0,2) image
+            Caption('Figure 1.6. Slika 6. Izvorna in ...')   uvod_py_opencv.rst:255 <caption>
+                 > (0,0,0,0,4) figure caption
+                MixedStyledText('Figure 1.6. Slika 6. Izvorna in ...')
+                  SingleStyledText('Figure ')
+                  MixedStyledText('1.6. ')
+                    SingleStyledText('1.6')
+                    SingleStyledText('. ')
+                  MixedStyledText('Slika 6. Izvorna in filtrirana s...')
+                    SingleStyledText('Slika 6. Izvorna in filtrirana s...')
+      Section(id='median-filter')   uvod_py_opencv.rst:258 <section>
+           > (0,0,0,1,2) chapter
+        Heading('2 Median filter')   uvod_py_opencv.rst:258 <title>
+             > (0,0,0,1,2) heading level 1
+               (0,0,0,0,2) other heading levels
+            MixedStyledText('2 ')
+              SingleStyledText('2')
+              SingleStyledText(' ')
+            MixedStyledText('Median filter')
+              MixedStyledText('Median filter')
+                SingleStyledText('Median filter')
+        Paragraph('Median filter je filter, kjer ak...')   uvod_py_opencv.rst:260 <paragraph>
+             > (0,0,0,0,2) body
+            MixedStyledText('Median filter je filter, kjer ak...')
+              MixedStyledText('Median filter je filter, kjer ak...')
+                MixedStyledText('Median', style='emphasis')   None:None <emphasis>
+                     > (0,0,1,0,1) emphasis
+                  SingleStyledText('Median')
+                SingleStyledText(' filter je filter, kjer aktivnem...')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('2 Median filter')
+         > (0,0,0,0,2) header
+        MixedStyledText('2 Median filter')
+          MixedStyledText('2 Median filter')
+            Field('2')
+              SingleStyledText('2')
+            SingleStyledText(' ')
+            Field('Median filter')
+              SingleStyledText('Median filter')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	10/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	10/11')
+          MixedStyledText('	10/11')
+            Tab('	')
+            Field('10')
+              SingleStyledText('10')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')
+---------------------------------- page 11 ----------------------------------
+#### FootnoteContainer('footnotes')
+  StaticGroupedFlowables()
+#### DownExpandingContainer('floats')
+  StaticGroupedFlowables()
+#### ChainedContainer('column1')
+  (continued) StaticGroupedFlowables()
+    (continued) DocumentTree()
+      (continued) Section(id='median-filter')   uvod_py_opencv.rst:258 <section>
+           > (0,0,0,1,2) chapter
+        Figure()   uvod_py_opencv.rst:None <figure>
+             > (0,0,0,0,2) figure
+          Image('uvod_v_py/images/median.png')   None:None <image>
+               > (0,0,0,0,4) figure image
+                 (0,0,0,0,2) image
+          Caption('Figure 2.1. Slika 7. Izvorna in ...')   uvod_py_opencv.rst:272 <caption>
+               > (0,0,0,0,4) figure caption
+              MixedStyledText('Figure 2.1. Slika 7. Izvorna in ...')
+                SingleStyledText('Figure ')
+                MixedStyledText('2.1. ')
+                  SingleStyledText('2.1')
+                  SingleStyledText('. ')
+                MixedStyledText('Slika 7. Izvorna in filtrirana s...')
+                  SingleStyledText('Slika 7. Izvorna in filtrirana s...')
+                  MixedStyledText('median', style='emphasis')   None:None <emphasis>
+                       > (0,0,1,0,1) emphasis
+                    SingleStyledText('median')
+                  SingleStyledText(' filtrom.')
+#### UpExpandingContainer('header')
+  StaticGroupedFlowables()
+    Header('2 Median filter')
+         > (0,0,0,0,2) header
+        MixedStyledText('2 Median filter')
+          MixedStyledText('2 Median filter')
+            Field('2')
+              SingleStyledText('2')
+            SingleStyledText(' ')
+            Field('Median filter')
+              SingleStyledText('Median filter')
+#### DownExpandingContainer('footer')
+  StaticGroupedFlowables()
+    Footer('	11/11')
+         > (0,0,0,0,2) footer
+        MixedStyledText('	11/11')
+          MixedStyledText('	11/11')
+            Tab('	')
+            Field('11')
+              SingleStyledText('11')
+            SingleStyledText('/')
+            Field('11')
+              SingleStyledText('11')

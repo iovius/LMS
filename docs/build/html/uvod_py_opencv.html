@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Uvod v računalniško obdelavo slik &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Računalniška analiza interferogramov" href="obdelava_interferogramov.html" />
+    <link rel="prev" title="Twyman-Greenov interferometer" href="twyman_green.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Uvod v računalniško obdelavo slik</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uvod">Uvod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vaja-1-branje-in-pisanje-slik-z-diska">Vaja 1: branje in pisanje slik z diska</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vaja-2-zajemanje-in-prikazovanje-slike-s-kamere">Vaja 2: zajemanje in prikazovanje slike s kamere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vaja-3-globina-slike-image-depth-in-prikazovanje-slike">Vaja 3: globina slike (<em>image depth</em>) in prikazovanje slike</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vaja-4-filtriranje-slik">Vaja 4: filtriranje slik</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#median-filter">Median filter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vaja-5-kopiranje-slik">Vaja 5: <em>kopiranje</em> slik</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Uvod v računalniško obdelavo slik</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/uvod_py_opencv.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="uvod-v-racunalnisko-obdelavo-slik">
+<span id="uvod-py-opencv"></span><h1>Uvod v računalniško obdelavo slik<a class="headerlink" href="#uvod-v-racunalnisko-obdelavo-slik" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če še nimate nameščenega <em>Python</em>-a in <em>OpenCV</em>-ja sledite navodilom na povezavi: <a class="reference internal" href="navodila_python.html#navodila-python"><span class="std std-ref">Navodila za namestitev Pythona in OpenCVja</span></a>.</p>
+</div>
+<p>Na tej vaji se boste spoznali z osnovnimi koncepti računalniške obdelave slik, programskim jezikom <em>Python</em> (predpostavljamo, da ste osnovno znanje že osvojili pri predmetu <a class="reference external" href="https://jankoslavic.github.io/pypinm.io/">Programiranje in numerične metode v ekosistemu Pythona</a>) in predvsem s programsko knjižnico <em>OpenCV</em>.</p>
+<div class="section" id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h2>
+<p><strong>OpenCV</strong> (<em>Open Source Computer Vision Library</em>) je knjižnica programskih funkcij, ki je v osnovi namenjena procesiranju slik v realnem času. Gre za cross-platform knjižnjico in je <a class="reference external" href="https://en.wikipedia.org/wiki/Apache_License">prosta za uporabo</a>. Prav v tem leži ena njenih največjih prednosti, saj jo lahko uporabljamo v različnih programskih jezikih (<a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B">Python</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/MATLAB">MATLAB</a>) in v različnih operacijskih sistemih (<a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Windows">Windows</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/MacOS">macOS</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Android_(operating_system)">Android</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/IOS">iOS</a>).</p>
+<p>Na današnji vaji bomo spoznali osnovno fukcionalnost, trike in pasti.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kot velikokrat v življenju, tudi v programiraju velja, da do končnega cilja ne vodi le ena (pravilna) pot, ampak je le-teh (skorajda <em>neskončno</em>) mnogo. Različne poti se lahko bolj ali manj primerne, boli ali manj upoštavajo različne konvencije ipd… Pri predmetu LMS se bomo poskušali čim bolj držati pravil, ki ste jih spoznali pri predmetu <a class="reference external" href="https://jankoslavic.github.io/pypinm.io/">Programiranje in numerične metode v ekosistemu Pythona</a>); včasih najbrž neuspešno. Koda, ki jo bomo pisali bo daleč od optimalne Python kode, ampak bo zelo <em>skriptna</em> in čim bolj podobna <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudocode">pseudo kodi</a>.</p>
+</div>
+<div class="section" id="vaja-1-branje-in-pisanje-slik-z-diska">
+<h3>Vaja 1: branje in pisanje slik z diska<a class="headerlink" href="#vaja-1-branje-in-pisanje-slik-z-diska" title="Permalink to this headline">¶</a></h3>
+<p>Napišimo za začetek enostaven <em>Python</em> skripto, ki bo z diska prebrala sliko in jo prikazala.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/home/iovius/Downloads/Lenna_(test_image).png&#39;</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;my image&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Če pogedamo sedaj vrstico po vrstico.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+</pre></div>
+</div>
+<p>V prvi vrstici vljučimo <em>OpenCV</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/home/iovius/Downloads/Lenna_(test_image).png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V vrstici <em>3</em> preberemo sliko z diska s klicom <code class="docutils literal notranslate"><span class="pre">cv2.imread()</span></code>. <code class="docutils literal notranslate"><span class="pre">cv.</span></code> pomeni, da bomo sedaj klicali funkcijo iz knjičnice, <code class="docutils literal notranslate"><span class="pre">imread</span></code> pa je ime funkcije. Vidite lahko, da funkcija sprejme samo en argument. Ta je tipa string in opisuje pot na disku do slike.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ta navodila so pisana v <em>OS</em> <em>Ubuntu/Linux</em>. Zato so vse poti napisane v Linux “stilu”. Če uporabaljte <em>OS</em> <em>Windows</em>, je zadeva nekoliko bolj zapletena. Za opisovanje poti imate nekako 3 možnosti. Recimo, da je vaša slika na lokaciji <code class="docutils literal notranslate"><span class="pre">&quot;C:\SomeFolder\SomeOtherFolder\my_image.jpg&quot;</span></code>.</p>
+<ol class="arabic simple">
+<li><p>pot podate z dvojno levo poševnico (<em>backslash</em>-om), torej: <code class="docutils literal notranslate"><span class="pre">&quot;C:'\\SomeFolder\\SomeOtherFolder\\my_image.jpg&quot;</span></code></p></li>
+<li><p>pot podate s poševnico (<em>slash</em>-om), torej: <code class="docutils literal notranslate"><span class="pre">&quot;C:/SomeFolder/SomeOtherFolder/my_image.jpg&quot;</span></code></p></li>
+<li><p>pot podate kot <em>dobeseden string</em> (<em>literal string</em>), torej: <code class="docutils literal notranslate"><span class="pre">r&quot;C:\SomeFolder\SomeOtherFolder\my_image.jpg&quot;</span></code></p></li>
+</ol>
+<p>Težava je v tem, da če pot kopirate, bodo v imenu leve poševnice, ti pa so rezervisani za <em>posebne znake</em> (<em>special characters</em>, npr. <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> pomeni novo vrstico, <code class="docutils literal notranslate"><span class="pre">&quot;\t&quot;</span></code> pomeni <em>tab</em>, <code class="docutils literal notranslate"><span class="pre">&quot;\s&quot;</span></code> presledek itd…).
+Python ne loči med <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">'</span></code>, torej lahko uporabljete kateregakoli, morata pa biti <strong>v paru enaka znaka</strong>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ne glede na operacijski sistem pa <strong>morate podati celotno pot; torej od diska do končnice!</strong> Izjema so t.i. <em>relativne poti</em>.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;my image&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V četrti vrstici sliko prikažemo s klicom funkcije <code class="docutils literal notranslate"><span class="pre">cv2.imshow()</span></code>. Funkcija ima 2 parametra: prvi je ime okna (glej <em>sliko 1</em>), z drugim pa podamo sliko/matriko, ki jo želimo izrisati.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/Lenna_(test_image).png"><img alt="reStructuredText, the markup syntax" src="_images/Lenna_(test_image).png" style="width: 414.40000000000003px; height: 439.20000000000005px;" /></a>
+<p class="caption"><span class="caption-text">Slika 1. Prikazana slika.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Slike so v računalništvu matrike. Če ima slika <em>640x480</em> (<em>širina</em> x <em>višina</em>) pikslov, imamo torej matriko <em>480x640</em> (pazite, pri matrikah <strong>najprej podamo štelivo vrstic, potem število stolpcev!</strong>) kjer vrednost vsakega elementa popoisuje intenziteto posameznega piksla (v primeru sivinske - <em>grayscale</em> slike). Če imamo opravka z barvno sliko (npr. <em>RGB</em> barvni model) imamo 3 matrike, po eno za posamezen kanal (barvo).</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>V peti vrstici s fukcijo <code class="docutils literal notranslate"><span class="pre">cv2.waitKey()</span></code> čakamo na pritisk katerikoli tipke.
+Če pogledamo v <a class="reference external" href="https://docs.opencv.org/4.0.0/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7">dokumentacijo</a> fukcije, je tam zapisamo <code class="docutils literal notranslate"><span class="pre">retval</span> <span class="pre">=</span> <span class="pre">cv.waitKey([,</span> <span class="pre">delay]</span> <span class="pre">)</span></code>. Branje in razumevanje dokumentacije je ena najpomembnejših vrlin, ki jo kot programerji moramo osvojiti. Poglejmo, kaj lahko iz tega razberemo. Znotaj <code class="docutils literal notranslate"><span class="pre">()</span></code> vidimo <code class="docutils literal notranslate"><span class="pre">[,</span> <span class="pre">delay]</span></code>. To pomeni, da fukcija sprejme 1 argument, ki pa je opcijski (to povesta <code class="docutils literal notranslate"><span class="pre">[]</span></code>): to pomeni, da ga lahko podamo, ni pa nujno. Če nadalnje preberemo dokumentacijo piše: <em>“The function waitKey waits for a key event infinitely (when delay≤0 ) or for delay milliseconds, when it is positive.”</em>. Torej, če argumenta <code class="docutils literal notranslate"><span class="pre">delay</span></code> ne podamo, bo funkcija čakala na pritist tipke “v neskončnost”, če pa jo, bo počakala samo število milisekund, kot smo ga podali s parametrom <code class="docutils literal notranslate"><span class="pre">delay</span></code>.
+Vidimo lahko tudi, da fukcija vrne <code class="docutils literal notranslate"><span class="pre">retval</span></code>. V dokumentacij piše: <em>“It returns the code of the pressed key or -1 if no key was pressed before the specified time had elapsed.”</em>. Ugotovimo lahko, katero tipko smo pritisni (vrne <strong>ASCII</strong> kodo, najdete jo lahko v stolpcu <strong>Dec</strong> v <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII#Printable_characters">tabeli</a>, ali s <em>Python</em> klicom <code class="docutils literal notranslate"><span class="pre">ord('&lt;vaša</span> <span class="pre">črka&gt;')</span></code>).</p>
+<p>Po 5. vrstici bi se torej izvajanje programa moralo ustaviti in prikazati sliko. Ko pritisnemo tipko ze izvajanje skripte nadaljuje z zadnjo vrstico, kjer vsa odprta okna zapremo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če ne kličemo funkcije <code class="docutils literal notranslate"><span class="pre">cv2.destroyAllWindows()</span></code> običajno okno ostane odprto in neodzivno (ne moremo ga zapreti), kar je lahko moteče.</p>
+</div>
+<p>Kot lahko vidimo, je prikazana slika barvna, torej jo sestavljajo 3 kanali, rdeč, zelen in model. Dopolnimo skripto tako, da sliko razdelimo na posamezne kanale, jih prikažemo, premešamo in sliko spet shranimo.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/home/iovius/Downloads/Lenna_(test_image).png&#39;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">blue</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">red</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">image_merged</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">])</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">green</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;my image&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image merged&#39;</span><span class="p">,</span> <span class="n">image_merged</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;/home/iovius/Downloads/Lenna_(test_image).png&#39;</span><span class="p">,</span> <span class="n">image_merged</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Dodali smo vrstice <em>5-10</em>, <em>12</em> in <em>15</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Čeprav običajo slišite “RGB”, <em>OpenCV</em> uporablja zaporedje <strong>blue, green, red</strong>.</p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="reStructuredText, the markup syntax" src="_images/Lenna+merged.png" />
+<p class="caption"><span class="caption-text">Slika 2. Originalna <em>Lenna</em> in <em>Lenna</em> s premešanimi kanali.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="reStructuredText, the markup syntax" src="_images/channels.png" />
+<p class="caption"><span class="caption-text">Slika 3. Posamezni kanali.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="vaja-2-zajemanje-in-prikazovanje-slike-s-kamere">
+<h3>Vaja 2: zajemanje in prikazovanje slike s kamere<a class="headerlink" href="#vaja-2-zajemanje-in-prikazovanje-slike-s-kamere" title="Permalink to this headline">¶</a></h3>
+<p>V tem delu vaje bomo pogledali, kako s pomočjo <em>OpenCV</em>-ja zajamemo sliko s kamere, ki je priklopljena na računalnik.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">cam</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">flip</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">retval</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cam</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">retval</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">flip</span><span class="p">:</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;frame&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">):</span>
+        <span class="n">flip</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">flip</span>
+        
+        
+<span class="n">cam</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+    
+</pre></div>
+</td></tr></table></div>
+<p>Skripta je sedaj nekoliko daljša.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Najpomembnejša razlika v primerjavi s prejšnjo skripto je vrstica <em>3</em>. <code class="docutils literal notranslate"><span class="pre">VideoCapture</span></code> je <a class="reference external" href="https://en.wikipedia.org/wiki/Class_(computer_programming)">razred</a> za zajem videa iz različnih video datotek, sekvenc slik in <em>hardware</em>-a - kamer. Če podrobneje pogledamo <a class="reference external" href="https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html#details">dokumentacij</a> omenjenega razreda lahko vidimo, da imamo na voljo 5 razlčnih <a class="reference external" href="https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)">konstruktorjev</a> :</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;VideoCapture</span> <span class="pre">object&gt;</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture(</span> <span class="pre">)</span></code> … <em>default</em> konstruktor, za enkrat za nas ni zanimiv</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;VideoCapture</span> <span class="pre">object&gt;</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture(</span> <span class="pre">filename</span> <span class="pre">)</span></code> … “odpremo” video datototeko</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;VideoCapture</span> <span class="pre">object&gt;</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture(</span> <span class="pre">filename,</span> <span class="pre">apiPreference</span>&#160;&#160; <span class="pre">)</span></code> … “odpremo” video datototeko in določimo s katero <em>video</em> knjižnico</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;VideoCapture</span> <span class="pre">object&gt;</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture(</span> <span class="pre">index</span> <span class="pre">)</span></code> … “odpremo” kamero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;VideoCapture</span> <span class="pre">object&gt;</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture(</span> <span class="pre">index,</span> <span class="pre">apiPreference</span> <span class="pre">)</span></code> … “odpremo” kamero in določimo s katero <em>video</em> knjižnico</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Kadarkoli “odpremo” nek kos <em>hardware</em>-a, ga moramo potem tudi zapreti (glejte vrstico <em>20</em>). Če tega ne storimo, v ob naslednjem poskusu odpiranja to ne bo mogoče, saj je npr. kamera že odprta. Tudi v dokumentaciji piše: <em>In C API, when you finished working with video, release CvCapture structure with cvReleaseCapture()…</em></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dokumentacija <em>OpenCV</em>-ja je primarno napisana za <em>C++</em>; za <em>Python</em> je precej skopa in moramo velikokrat prebrati kaj piše za <em>C++</em> in to “preversti” v <em>Python</em>.</p>
+</div>
+<p>V vrstici <em>3</em> lahko vidite, da smo uporabiti opcijo <em>4</em>. <code class="docutils literal notranslate"><span class="pre">index</span></code> je tipa <code class="docutils literal notranslate"><span class="pre">int</span></code> in določa, katero kamero želimo odpreti.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Python</em> tako kot vsak resen programski jezik začenja šteti z <strong>0</strong> in ne z <strong>1</strong> (<em>I’m looking at you, MATLAB!</em>); torej, <em>index prvega elementa</em> je <em>0</em>!</p>
+</div>
+<p>Klic nam vrne <a class="reference external" href="https://en.wikipedia.org/wiki/Object_(computer_science)">objekt</a> tipa <em>VideoCapture</em>, ki ga “ujamemo” v spremenljivo <code class="docutils literal notranslate"><span class="pre">cam</span></code>. V vrstivi 6 začnemo neskončno <strong>while</strong> zanko.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">retval</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cam</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>V vrstici <em>7</em> kličemo metodo razreda <em>VideoCapture</em> <code class="docutils literal notranslate"><span class="pre">read()</span></code>. V dokumentaciji lahko preberemo, da metoda <em>Grabs, decodes and returns the next video frame.</em>. Sintaksa je zapisana kot <code class="docutils literal notranslate"><span class="pre">retval,</span> <span class="pre">image</span> <span class="pre">=</span> <span class="pre">cv.VideoCapture.read(</span> <span class="pre">[,</span> <span class="pre">image]</span> <span class="pre">)</span></code>. Spet lahko vidimo, da sprejme en opcijski parameter <code class="docutils literal notranslate"><span class="pre">image</span></code>, ki pa ga lahko “ujamemo” tudi na izhodnji strani. Glede <code class="docutils literal notranslate"><span class="pre">retval</span></code> pa piše <em>false if no frames has been grabbed</em>. Tako v vrsticah <em>8-9</em> preverim, ali je branje uspelo in če ni <em>neskončno</em> zanko zaključimo.</p>
+<p>V vrstici <em>10</em> preverimo, kakšno je treutno stanje spremenljivke <code class="docutils literal notranslate"><span class="pre">flip</span></code> in eventuelno izvedemo vrstico <em>11</em>. <strong>Vaša naloga je</strong>, da na spletu poiščete dokumentacijo <em>OpenCV</em> funkcije <code class="docutils literal notranslate"><span class="pre">cv2.flip()</span></code> in <strong>ugotovite</strong>, kaj funkcija naredi in kaj sta oba parametra.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">):</span>
+        <span class="n">flip</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">flip</span>
+</pre></div>
+</div>
+<p>V vrsticah <em>14-17</em> imamo 2 klica povezana s tipko, ki smo jo (eventuelno) pritisnili v vrstici <em>13</em>. <em>27</em> je koda tipke <em>ESC</em> in v tem primeru zanko zaključimo, če pa pritisnemo tipko <em>f</em> spremenimo <em>True/False</em> stanje spremenljivke <code class="docutils literal notranslate"><span class="pre">flip</span></code>.</p>
+</div>
+<div class="section" id="vaja-3-globina-slike-image-depth-in-prikazovanje-slike">
+<h3>Vaja 3: globina slike (<em>image depth</em>) in prikazovanje slike<a class="headerlink" href="#vaja-3-globina-slike-image-depth-in-prikazovanje-slike" title="Permalink to this headline">¶</a></h3>
+<p>Če uporabljate <em>Jupyter Notebook</em>, spremenljivke ostanejo v spominu tudi, ko se izvajanje skripte konča. V naslednjo celico napišite klic:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print(type(frame[0, 0, 0]))
+output: &lt;class &#39;numpy.uint8&#39;&gt;
+</pre></div>
+</div>
+<p>Slika v spremenljivki <code class="docutils literal notranslate"><span class="pre">frame</span></code> je v resnici trodimenzionalna matrika, vredsnoti znotraj oglatih oklepajev pa koordinata piksla, ki ga želimo izpisati: <em>prva</em> vrednost določa vrstico, <em>druga</em> stolpec in <em>tretja</em> kanal, če imamo RGB sliko. Če je slika sivinska moramo podati samo 2 vrednosti. Vidimo lahko, da je element tipa <code class="docutils literal notranslate"><span class="pre">uint8</span></code>. To pomeni, da je <em>unsigned integer</em> (celo število brez predznaka) popisan z osmimi biti. Najmanjša vrednost, ki jo torej lahko opišemo je torej ‘0’ (binarno <em>0000 0000</em>, hex <em>00</em>), največja pa <em>255</em> (binarno <em>1111 1111</em>, hex <em>ff</em>). <strong>Vprašanje:</strong> kaj se zgodi, če <em>uint8</em> spemelnjivki z vrednostjo <em>255</em> prištejemo <em>1</em>?</p>
+<p>Napišimo kratko skripto, ki bo izrisala 3 slike: črno, sivo in belo.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">]</span>
+
+<span class="n">black</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">*</span><span class="mi">0</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">*</span><span class="mi">126</span>
+<span class="n">white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">*</span><span class="mi">255</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">white</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">black</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Kot lahko vidite, smo sedaj uvozili še eno knjižnico, <a class="reference external" href="https://numpy.org/">numpy</a> (vrstica <em>1</em>). Gre za “<em>The fundamental package for scientific computing with Python</em>”. Ker je njeno ime dolgo, ga okrajšamo, tako da jo lahko kličemo kot <code class="docutils literal notranslate"><span class="pre">np.</span></code>.
+V vrstici <em>4</em> določimo dmenzije slik. V vrsticah <em>6-8</em>, naredimo najprej 3 matrike enic, ki jih potem pomnožimo z <em>0</em> za črno sliko, <em>126</em> za sivo in <em>255</em> za belo. Ko slike izrišemo, vidimo nekaj takega:</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/w_s_b.png"><img alt="reStructuredText, the markup syntax" src="_images/w_s_b.png" style="width: 609.6px; height: 214.8px;" /></a>
+<p class="caption"><span class="caption-text">Slika 4. Bela, siva in črna generirana slika.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>V vrsticah <em>6-8</em> smo nastavili, da je posamezen element matrik tipa <code class="docutils literal notranslate"><span class="pre">uint8</span></code>. To imenujemo <strong>image depth</strong> (v prostem prevodu <em>“globina”</em> <em>slike</em>). Spremenimo sedaj <em>globino</em> naših slik v <code class="docutils literal notranslate"><span class="pre">float32</span></code>, torej število s plavajočo vejico in 32 biti, in skripto ponovno poženimo.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/w_s_b_f32.png"><img alt="reStructuredText, the markup syntax" src="_images/w_s_b_f32.png" style="width: 615.6px; height: 216.4px;" /></a>
+<p class="caption"><span class="caption-text">Slika 5. Enake 3 slike kot na <em>sliki 4</em>, le da so sedaj v formatu <em>float32</em>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Opazimo lahko, da sta sedaj tako slika <em>gray</em> kot slika <em>white</em> beli. Zakaj?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Zapomnite si:</strong> če z <em>OpenCV</em> funkcijo <code class="docutils literal notranslate"><span class="pre">imshow()</span></code> izrisujemo slike <em>globine</em> <strong>integer</strong>, bo <strong>0 … črna</strong>, <strong>255 … bela</strong>, če pa izrisujemo slike <em>globine</em> <strong>float</strong>, bo <strong>0.0 … črna</strong>, <strong>1.0 … bela</strong>!</p>
+</div>
+</div>
+<div class="section" id="vaja-4-filtriranje-slik">
+<h3>Vaja 4: filtriranje slik<a class="headerlink" href="#vaja-4-filtriranje-slik" title="Permalink to this headline">¶</a></h3>
+<p>Pri procesiranju slik se pogosto poslužujemo različnih filtriranj. Filtriranje običajno temelji na principu <a class="reference external" href="https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1">konvolucije</a>. V <em>OpenCV</em>-ju imamo na voljo različne predefinirane filtre, lahko pa ga ustvarimo sami. Karakteristike filtra določa njegovo <em>jedro</em> (<em>angl. kernel</em>). Poglejmo si primer enega najbolj uporablajnih filtrov - <em>Gaussov filter</em>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;/home/iovius/Documents/docs/source/uvod_v_py/images/Lenna_(test_image).png&#39;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">image_filter_1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getGaussianKernel</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CV_32F</span><span class="p">)</span>
+<span class="n">image_filter_2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">sepFilter2D</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CV_32F</span><span class="p">,</span><span class="n">kernel</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
+
+<span class="n">difference</span> <span class="o">=</span> <span class="n">image_filter_1</span> <span class="o">-</span> <span class="n">image_filter_2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kernel:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">difference:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">difference</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kernel</span><span class="p">:</span>
+ <span class="p">[[</span><span class="mf">0.17820325</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.21052228</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.22254895</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.21052228</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.17820325</span><span class="p">]]</span>
+
+<span class="n">difference</span><span class="p">:</span>
+ <span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>V vrstici <em>7</em> uporabimo predefiniran <em>Gaussov</em> filter v funkciji <code class="docutils literal notranslate"><span class="pre">GaussianBlur</span></code>. Medtem v vrstici 9 generiramo eno-dimenzionalen Gaussov filter z enakimi parametri, potem pa ga uporabimo v <code class="docutils literal notranslate"><span class="pre">sepFilter2D</span></code>. Tej funkciji podamo posebej tilter v <em>X</em> in <em>Y</em> smeri. V <em>output</em> oknu lahko vidimo izpisa; vrednosti <em>kernela</em> in pa razliko med obema slikama, ki nam potrdi, da smo v obeh primerih sliko enako sfiltrirali.</p>
+<p>Naredimo sedaj lasten <em>Moving Average</em> filter.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">image</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">kernel</span> <span class="o">/=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kernel</span><span class="p">)</span>
+
+<span class="n">image_filt</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;filtered&quot;</span><span class="p">,</span> <span class="n">image_filt</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span> <span class="mf">0.00826446</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>V vrsticah <em>7</em> in <em>8</em> generiamo <em>11x11</em> matriko enic in jo v normaliziramo (vsota vseh uteži mora biti <em>1.0</em>). Na <em>sliki 6</em> sta prikazani izvorna in filtrirana slika.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/moving_average.png"><img alt="reStructuredText, the markup syntax" src="_images/moving_average.png" style="width: 611.4px; height: 323.4px;" /></a>
+<p class="caption"><span class="caption-text">Slika 6. Izvorna in filtrirana slika.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="median-filter">
+<h2>Median filter<a class="headerlink" href="#median-filter" title="Permalink to this headline">¶</a></h2>
+<p><em>Median</em> filter je filter, kjer aktivnemu pikslu pripišemo vrednost mediane znotraj konvolucijskega okna. Gre za filter, s katerim lahko odstranimo npr. termičen šum.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dimensions</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">*</span><span class="mi">126</span>
+
+<span class="n">ind_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">ind_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">ind_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">ind_u</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">ind_v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">ind_u</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">255</span>
+
+<span class="n">image_med</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+    
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;image_med&quot;</span><span class="p">,</span> <span class="n">image_med</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/median.png"><img alt="reStructuredText, the markup syntax" src="_images/median.png" style="width: 609.6px; height: 322.2px;" /></a>
+<p class="caption"><span class="caption-text">Slika 7. Izvorna in filtrirana slika z <em>median</em> filtrom.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="vaja-5-kopiranje-slik">
+<h3>Vaja 5: <em>kopiranje</em> slik<a class="headerlink" href="#vaja-5-kopiranje-slik" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="obdelava_interferogramov.html" class="btn btn-neutral float-right" title="Računalniška analiza interferogramov" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="twyman_green.html" class="btn btn-neutral float-left" title="Twyman-Greenov interferometer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

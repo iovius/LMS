@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Preračun optičnega sistema s programom OSLO LT &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fizeauev interferometer" href="fizeau.html" />
+    <link rel="prev" title="Prostorsko fitriranje in razširjevalnik laserskega snopa" href="prostorskofiltriranje.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preračun optičnega sistema s programom OSLO LT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#naloge">Naloge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zagon-programa">Zagon programa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vnos-geometrijskih-podatkov">Vnos geometrijskih podatkov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#izris-opticnega-sistema">Izris optičnega sistema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#karakterizacija-preslikave-tockovnega-svetlobnega-izvora">Karakterizacija preslikave točkovnega svetlobnega izvora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#primerjava-treh-tipov-lec-pri-preslikavi-iz-neskoncnosti-v-koncnost">Primerjava treh tipov leč pri preslikavi iz neskončnosti v končnost</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Preračun optičnega sistema s programom OSLO LT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/oslo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="oslo"></span><div class="section" id="preracun-opticnega-sistema-s-programom-oslo-lt">
+<h1>Preračun optičnega sistema s programom OSLO LT<a class="headerlink" href="#preracun-opticnega-sistema-s-programom-oslo-lt" title="Permalink to this headline">¶</a></h1>
+<p>Navodila za laboratorijsko vajo so zaenkrat dostopna le v <em>.pdf</em> verziji na povezavi <a class="reference download internal" download="" href="_downloads/0ea25491cc12d391a7fb5b66377cb81d/Preračun optičnega sistema s programom OSLO LT.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Preračun</span> <span class="pre">optičnega</span> <span class="pre">sistema</span> <span class="pre">s</span> <span class="pre">programom</span> <span class="pre">OSLO</span> <span class="pre">LT</span></code></a></p>
+<div class="section" id="naloge">
+<h2>Naloge<a class="headerlink" href="#naloge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Zmodelirate optični sistem z dvema lečama.</p></li>
+<li><p>Vizualizirajte optični sistem in izrišite potek žarkovnega stožca skozi optični sistem.</p></li>
+<li><p>Okarakterizirajte kvaliteto preslikave točkovnega svetlobnega izvora.</p></li>
+<li><p>Naredite primerjavo treh tipov leč za primer preslikave iz neskončnosti v končnost.</p></li>
+<li><p>Zmodelirajte razširjevalnik žarka.</p></li>
+</ol>
+</div>
+<div class="section" id="zagon-programa">
+<h2>Zagon programa<a class="headerlink" href="#zagon-programa" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Ob zagonu izberite:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/1.png"><img alt="reStructuredText, the markup syntax" src="_images/1.png" style="width: 457.0px; height: 167.0px;" /></a>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Po potrditvi (<em>OK</em>) se v programu pojavijo tri podokna (<em>Surface Data</em>, <em>TW</em> in <em>GW</em>):</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/2.png"><img alt="reStructuredText, the markup syntax" src="_images/2.png" style="width: 560.0px; height: 468.0px;" /></a>
+</div>
+<p>Zadnji dve služita tekstovnemu (<em>TW</em>) in grafičnemu prikazu (<em>GW</em>) rezultatov. Okno <em>Surface Data</em> je v prvi fazi modeliranja najpomembnejše, saj vanj vnašamo geometrijske
+in optične podatke proučevanega lečja.</p>
+</div>
+<div class="section" id="vnos-geometrijskih-podatkov">
+<h2>Vnos geometrijskih podatkov<a class="headerlink" href="#vnos-geometrijskih-podatkov" title="Permalink to this headline">¶</a></h2>
+<p>1. V oknu <em>Surface Data</em> so torej shranjeni podatki optičnega sistema:
+ime optičnega sistema:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/3.png"><img alt="reStructuredText, the markup syntax" src="_images/3.png" style="width: 601.0px; height: 275.0px;" /></a>
+</div>
+<p>V tabeli površin so ob pričetku že tri površine in sicer: objektna površina (<em>OBJ</em>), zaslonka (<em>AST</em>) in slikovna ravnina (<em>IMS</em>).</p>
+<ol class="arabic simple" start="2">
+<li><p>Nove površine vnesemo z desnim klikom in ukazom <strong>Insert Before</strong> oziroma <strong>Insert After</strong>. Tako vnesite štiri nove površine med <em>OBJ</em> in <em>AST</em>. Tabela mora ob koncu imeti sledeč izgled:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/4.png"><img alt="reStructuredText, the markup syntax" src="_images/4.png" style="width: 594.0px; height: 342.0px;" /></a>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Določite 3. površino kot zaslonko. To storite z desnim klikom na gumb v stolpcu <strong>APERTURE RADIUS</strong>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/5.png"><img alt="reStructuredText, the markup syntax" src="_images/5.png" style="width: 675.0px; height: 444.0px;" /></a>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Vnesite razdalje med posameznimi površinami tako, da spremenite vrednosti v stolpcu <strong>THICKENSS</strong>. Razdaljo med objektno ravnino in 1. lečo vnesete v prvo vrstico (<em>OBJ</em>). Debelino 1. leče vnesete kot debelino 1. površine. Tako nadaljujete z vsemi debelinami, vključno z debelino 5. površine, ki popisuje razdaljo med zadnjo optično površino in slikovno ravnino.</p></li>
+</ol>
+<p>5. Vnesite tudi krivinske radije posameznih površin. Zato spremenite vrednosti v stolpcu <strong>RADIUS</strong>.
+.. note::
+Pri tem upoštevajte dogovor o predznaku: pozitiven, če je center sfere na desni strani površine!</p>
+<p>Ob koncu mora imeti tabela sledeč izgled:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/6.png"><img alt="reStructuredText, the markup syntax" src="_images/6.png" style="width: 601.0px; height: 316.0px;" /></a>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Dodajte še materialne podatke in sicer v stolpec <strong>GLASS</strong>. Prva leča je iz stekla z oznako <em>BK7</em>, zato v celico 1. površine vpišite <em>BK7</em>. Ob tem opazimo, da se je na gumbu desno pojavila oznaka <strong>C</strong>, kar pomeni, da je program oznako prepoznal in podatke črpa iz knjižnice o različnih steklih. Enako storimo tudi za drugo lečo, ki je iz stekla <em>SF11</em>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/7.png"><img alt="reStructuredText, the markup syntax" src="_images/7.png" style="width: 600.0px; height: 312.0px;" /></a>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Nastavite polmer žarka na vstopu v prvo lečo. Pritisnite na gumb <em>SETUP</em> in spremenite parameter <strong>Entr beam rad</strong> na vrednost <em>7.5</em>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/8.png"><img alt="reStructuredText, the markup syntax" src="_images/8.png" style="width: 598.0px; height: 254.0px;" /></a>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Poimenujte optični sistem, tako da v okno <em>Surface Data</em>, v polje <strong>Lens</strong> vpišete <em>LMS – vaja 2</em>.</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/9.png"><img alt="reStructuredText, the markup syntax" src="_images/9.png" style="width: 597.0px; height: 310.0px;" /></a>
+</div>
+<p>Vidimo, da tabela poleg stolpcev <strong>RADIUS</strong>, <strong>THICKNESS</strong> in <strong>GLASS</strong> vsebuje tudi stolpca <strong>APERTURE RADIUS</strong> in <strong>SPECIAL</strong>. Prvi stolpec, torej <strong>APERTURE RADIUS</strong>, določa polmer posamezne optične površine, ki se ob privzetem načinu samodejno izračuna glede na polmer žarkovnega stožca. Zato je na gumbih znak <strong>S</strong>, ki pomeni <em>Solved</em>. Stolpec <strong>SPECIAL</strong> pa služi za dodatne nastavitve posamezne površine, kot so na primer asferičnost, reflektivnost, ekscentričnost in, kot bomo videli v nadaljevanju, način grafičnega prikaza.</p>
+</div>
+<div class="section" id="izris-opticnega-sistema">
+<h2>Izris optičnega sistema<a class="headerlink" href="#izris-opticnega-sistema" title="Permalink to this headline">¶</a></h2>
+<p>Tako smo vnesli večino geometrijskih in materialnih podatkov. Čas je, da sistem izrišemo in
+vizualno preverimo ustreznost podatkov.</p>
+<ol class="arabic simple">
+<li><p>V ta namen pritisnemo gumb <strong>Draw Off</strong>, ki se nahaja v oknu <em>Surface Data</em>. Po pritisku se gumb preimenuje v <strong>Draw On</strong>, izriše pa se tudi okno <em>Autodraw</em>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/10.png"><img alt="reStructuredText, the markup syntax" src="_images/10.png" style="width: 690.0px; height: 503.0px;" /></a>
+</div>
+<p>V oknu se v osrednjem delu izriše stranski pogled na optični sistem ter centralni in marginalna žarka. V glavi okna (zgoraj) je izpisano ime optičnega sistema ter goriščna razdalja in numerična odprtina slikovnega prostora (<em>NA</em>). Pri tem se numerična odprtina izračuna po enačbi:</p>
+<div class="math notranslate nohighlight">
+\[NA' = n' \cdot sin{\Phi'}\]</div>
+<p><span class="math notranslate nohighlight">\({n}'\)</span> … lomni količnik medija med zadnjo lečo in slikovno ravnino, <span class="math notranslate nohighlight">\({\Phi}'\)</span> … prostorski kot žarkovnega snopa na izhodu iz optičnega sistema</p>
+<p>Okno <em>Autodraw</em> osveži geometrijo ob vsaki spremembi podatkov, ki so shranjeni v <em>Surface Data</em>. Kot vidimo, je privzet način izrisa takšen, da vidimo zgolj stranski pogled leč, brez zaslonke ter objektne in slikovne ravnine.</p>
+<ol class="arabic simple" start="2">
+<li><p>Manjkajoče optične površine (zaslonko in objektno ter slikovno ravnino) izrišemo tako, da pritisnemo na gumb izbrane površine, v stolpcu <strong>SPECIAL</strong>, in izberemo <em>Surface Control</em>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/11.png"><img alt="reStructuredText, the markup syntax" src="_images/11.png" style="width: 947.0px; height: 332.0px;" /></a>
+</div>
+<p>V oknu <em>Surface Data</em> poiščemo polje <strong>Surface appearance in lens drawings</strong> in izberemo možnost <em>Drawn</em>:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/12.png"><img alt="reStructuredText, the markup syntax" src="_images/12.png" style="width: 650.0px; height: 337.0px;" /></a>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Isti postopek ponovimo za ostali dve površini. Na koncu mora se mora v <em>Autodraw</em> oknu izrisati sledeča slika:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/13.png"><img alt="reStructuredText, the markup syntax" src="_images/13.png" style="width: 691.0px; height: 503.0px;" /></a>
+</div>
+<p>Sedaj vidimo, da se žarki širijo iz objektne točke, ki leži na optični osi, proti optičnemu sistemu, tako da ima snop na vstopu v 1. lečo premer 15 mm. Skozi sistem se žarki lomijo in imajo na izhodu skupno sečišče nekaj milimetrov pred slikovno ravnino. To sečišče ne sovpada s slikovno ravnino, ker smo njeno lego izračunali na osnovi paraksialne aproksimacije, marginalna žarka pa oklepata že relativno velik kot z optično osjo.</p>
+<ol class="arabic simple" start="3">
+<li><p>Nastavimo izris tako, da bomo poleg omenjenih treh žarkov videli še štiri vmesne. Izberemo meni <em>Lens-&gt;Lens drawing Conditions…</em> Nato v oknu <em>Surface Data</em> nastavimo število objektnih točk (<strong>Nuber of field points for ray fans</strong>), iz katerih se širijo žarkovni snopi na <em>1</em>. Naš optični sistem uporabljamo zgolj za preslikavo točkovnega svetlobnega izvora, ki leži na optični osi, zato je ena objektna dovolj. Nato pa v polju pod <strong>Rays</strong> vnesemo željeno število izrisanih žarkov, torej <em>7</em>:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/14.png"><img alt="reStructuredText, the markup syntax" src="_images/14.png" style="width: 599.0px; height: 351.0px;" /></a>
+</div>
+<p>Spremenljivki <strong>Min pupil</strong> in <strong>Max Pupil</strong> določata relativno višino zgornjega in spodnjega žarka na vstopni odprtini in sicer glede na njen polmer. Po potrditvi sprememb se mora v Autodraw oknu izrisati sledeča slika:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/15.png"><img alt="reStructuredText, the markup syntax" src="_images/15.png" style="width: 694.0px; height: 500.0px;" /></a>
+</div>
+<p>Vidimo, da se žarki, ki so blizu optične osi, dejansko sekajo na slikovni ravnini, tisti bolj oddaljeni pa se zaradi sferične aberacije sekajo bližje sistemu.</p>
+</div>
+<div class="section" id="karakterizacija-preslikave-tockovnega-svetlobnega-izvora">
+<h2>Karakterizacija preslikave točkovnega svetlobnega izvora<a class="headerlink" href="#karakterizacija-preslikave-tockovnega-svetlobnega-izvora" title="Permalink to this headline">¶</a></h2>
+<p>Oddaljenost med sečiščema opazovanega in glavnega žarka s slikovno ravnino se spreminja v odvisnosti od višine opazovanega žarka na vstopni odprtini. To odvisnost lahko prikažemo grafično s tako imenovano žarkovno presečno krivuljo (<em>angl.: ray intercept curve</em>), kjer abscisna os predstavlja relativno višino žarka na vstopni odprtini (imenovana <em>FX</em> oziroma <em>FY</em>), ordinatna os pa oddaljenost (<em>DX</em> oziroma <em>DY</em>).</p>
+<p>Spodnja slika prikazuje primer treh žarkovnih presečnih krivulj, ki pripadajo trem legam slikovne ravnine. Vidimo, da se s spreminjanjem lege slikovne ravnine spreminja naklon presečne krivulje, ne pa tudi njena ukrivljenost. Krivulja b predstavlja potek oddaljenosti, kadar je slikovna ravnina na mestu paraksialnega nastanka slike. V tem primeru sekajo žarki, ki imajo na izhodu iz leče pozitivno višino, pod glavnim žarkom (zato ima krivulja negativno vrednost).</p>
+<p>Žarki, ki izhajajo iz spodnje strani leče, pa sekajo slikovno ravnino nad glavnim žarkom.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/16.png"><img alt="reStructuredText, the markup syntax" src="_images/16.png" style="width: 562.0px; height: 318.0px;" /></a>
+</div>
+<ol class="arabic simple">
+<li><p>V programu <em>OSLO LT</em> izrišemo žarkovno presečno krivuljo v oknu <em>UW 1</em> (za grafični prikaz) tako, da izberemo <strong>Ray Analysis</strong> v meniju <strong>Setup Window</strong> (skrajno levi gumb, zgoraj). Nato pa izberemo <strong>RIC Plot</strong>. V oknu se nam izriše sledeč diagram:</p></li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/17.png"><img alt="reStructuredText, the markup syntax" src="_images/17.png" style="width: 690.0px; height: 451.0px;" /></a>
+</div>
+<p>Dejansko sta prikazana dva diagrama: <em>DY(FX)</em> in <em>DX(FX)</em>, ki pa se za primer osno postavljene objektne točke medsebojno ne razlikujeta. Poleg tega so na vsakem diagramu tri krivulje, ki predstavljajo žarkovna presečišča za različne valovne dolžine: <em>modra</em> barva za modro svetlobo, <em>zelena</em> za zeleno in <em>rdeča</em> za rdečo barvo svetlobe. Natančne vrednosti valovnih dolžin posamezne barve lahko spreminjate v oknu <em>Surface Data</em> s klikom na gumb <strong>Wavelengths</strong>.</p>
+<p>Iz diagrama vidimo, da se s povečevanjem vstopnega premera žarkovnega snopa vedno hitreje (po kubični odvisnosti) povečuje tudi razdalja DY oziroma DX. Maksimalna vrednost znaša približno 1 mm.</p>
+<p>Takšen način prikazovanja optične napake je zelo učinkovit, saj lahko enostavno vidimo kakšen je še sprejemljiva velikost vstopne odprtine oziroma zaslonke.</p>
+</div>
+<div class="section" id="primerjava-treh-tipov-lec-pri-preslikavi-iz-neskoncnosti-v-koncnost">
+<h2>Primerjava treh tipov leč pri preslikavi iz neskončnosti v končnost<a class="headerlink" href="#primerjava-treh-tipov-lec-pri-preslikavi-iz-neskoncnosti-v-koncnost" title="Permalink to this headline">¶</a></h2>
+<p>Primerjajte <strong>bikonveksno</strong>, <strong>plankonveksno</strong> in <strong>»Best-Form«</strong> lečo za primer preslikave iz neskončnosti v končnost. <em>Plankonveksna</em> in <em>»Best-Form«</em> leča naj bosta obrnjeni <em>prav</em> in <em>narobe</em>.</p>
+<ol class="arabic simple">
+<li><p>Podatke o lečah poiščite na spletu. Uporabite leče brez antirefleksnega nanosa, z goriščno razdaljo <strong>50 mm</strong> in premerom <strong>1 inčo</strong>. Material leče naj bo <strong>BK7</strong>.</p></li>
+<li><p>V leče naj vstopata svetlobna snopa s polmeroma <strong>2 mm</strong> in <strong>10 mm</strong>.</p></li>
+<li><p>Primerjajte radije preslikane točke v:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>gorišči točki, kot jo navaja dokumentacija leče (<em>BFL</em>)</p></li>
+<li><p>v paraksialnem gorišču</p></li>
+<li><p>na mestu najmanjše točke (<strong>autofocus – minimal RMS spot size</strong>).</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="fizeau.html" class="btn btn-neutral float-right" title="Fizeauev interferometer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="prostorskofiltriranje.html" class="btn btn-neutral float-left" title="Prostorsko fitriranje in razširjevalnik laserskega snopa" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

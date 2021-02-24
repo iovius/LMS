@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Umeritev laserskega 3D merilnika &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Obdelava 3D meritev" href="obdelava_3D_meritev.html" />
+    <link rel="prev" title="Razvoj programske opreme laserskega 3D merilnika" href="laserskiprofilomer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Umeritev laserskega 3D merilnika</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uvod">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oprema">Oprema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potek-vaje">Potek vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#predstavitev-parametrov-rekonstrukcije">Predstavitev parametrov rekonstrukcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nastavitev-programa">Nastavitev programa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zagon-optimizacije">Zagon optimizacije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zabelezite-rezultate">Zabeležite rezultate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Umeritev laserskega 3D merilnika</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/kalibracija.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="umeritev-laserskega-3d-merilnika">
+<span id="kalibracija"></span><h1>Umeritev laserskega 3D merilnika<a class="headerlink" href="#umeritev-laserskega-3d-merilnika" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h2>
+<p>Cilj vaje je spoznati osnovne pristope in praktično izvesti umeritev laserskega rotacijskega merilnika.</p>
+</div>
+<div class="section" id="oprema">
+<h2>Oprema<a class="headerlink" href="#oprema" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Laserski rotacijski 3D merilnik – Merkur.</p></li>
+<li><p>Koračna miza.</p></li>
+<li><p>Referenčna površina.</p></li>
+<li><p>Programska oprema za izračun optimalnih transformacijskih parametrov.</p></li>
+</ul>
+</div>
+<div class="section" id="potek-vaje">
+<h2>Potek vaje<a class="headerlink" href="#potek-vaje" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ogled sistema.</p></li>
+<li><p>Zajem sekvence umeritvenih meritev.</p></li>
+<li><p>Izvedba umeritve.</p></li>
+<li><p>Primerjava površin pred in po umeritvi.</p></li>
+</ul>
+</div>
+<div class="section" id="predstavitev-parametrov-rekonstrukcije">
+<h2>Predstavitev parametrov rekonstrukcije<a class="headerlink" href="#predstavitev-parametrov-rekonstrukcije" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Notranji parametri:</dt><dd><ul>
+<li><p><strong>f</strong>              goriščna razdalja leče  [mm]</p></li>
+<li><p><strong>cu</strong>             lokacija presečišča optične osi leče in senzorske ravnine v U smeri                                                             [št. senzorskih elementov]</p></li>
+<li><p><strong>cv</strong>             lokacija presečišča optične osi leče in senzorske ravnine v V smeri                                                             [št. senzorskih elementov]</p></li>
+<li><p><strong>alfa</strong>   triangulacijski kot                                     [°]</p></li>
+<li><p><strong>beta</strong>   kot nagiba senzorskega elementa glede na pravokotnico optične osi kamere; pozitivna smer je proti Scheimpflugovi korekciji                      [°]</p></li>
+<li><p><strong>psi</strong>            rotacija kamere okrog lastne optične osi                [°]</p></li>
+<li><p><strong>Py</strong>             lega projektorja glede na kamerin k. s. v Y smeri       [mm]</p></li>
+<li><p><strong>Pz</strong>             lega projektorja glede na kamerin k. s. v Z smeri       [mm]</p></li>
+<li><p><strong>du</strong>             dimenzija senzorskega elementa v U smeri                [mm]</p></li>
+<li><p><strong>dv</strong>             dimenzija senzorskega elementa v V smeri                [mm]</p></li>
+<li><p><strong>k0</strong>             parameter distorzije kamere</p></li>
+<li><p><strong>k1</strong>             parameter distorzije kamere</p></li>
+<li><p><strong>k2</strong>             parameter distorzije kamere</p></li>
+<li><p><strong>k3</strong>             parameter distorzije kamere</p></li>
+<li><p><strong>Ry</strong>             lega k. s. projektorja glede na vrtičše merilnika (k. s. modula) v Y smeri      [mm]</p></li>
+<li><p><strong>Rz</strong>             lega k. s. projektorja glede na vrtičše merilnika (k. s. modula) v Z smeri      [mm]</p></li>
+<li><p><strong>Ko_rot</strong> korekcija zasuka projektorja okrog njegove osi (odstopanje od vzporednosti s kamero)                                                            [°]</p></li>
+<li><p><strong>domega</strong> kotni zasuk mizice pri nem koraku motorja               [°]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Zunanji parametri</dt><dd><ul>
+<li><p><strong>TX</strong>             translacija v X smeri   [mm]</p></li>
+<li><p><strong>TY</strong>             translacija v Y smeri   [mm]</p></li>
+<li><p><strong>TZ</strong>             translacija v Z smeri   [mm]</p></li>
+<li><p><strong>RX</strong>             rotacija okrog X osi    [°]</p></li>
+<li><p><strong>RY</strong>             rotacija okrog Y osi    [°]</p></li>
+<li><p><strong>RZ</strong>             rotacija okrog Z osi    [°]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="nastavitev-programa">
+<h2>Nastavitev programa<a class="headerlink" href="#nastavitev-programa" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Z uporabo merilnega traku, kotomera in priložene dokumentacije ocenite začetne približke transformacijskih parametrov. Parametri, ki jih je potrebno oceniti so:</p>
+<ul class="simple">
+<li><p><strong>cu</strong>;    kot začetni približek vzemite polovično število slikovnih elementov v U smeri</p></li>
+<li><p><strong>cv</strong>;    kot začetni približek vzemite polovično število slikovnih elementov v V smeri</p></li>
+<li><p><strong>alfa</strong></p></li>
+<li><p><strong>Py</strong></p></li>
+<li><p><strong>Pz</strong></p></li>
+<li><p><strong>du</strong>; poglejte v dokumentacijo kamere</p></li>
+<li><p><strong>dv</strong>; poglejte v dokumentacijo kamere</p></li>
+<li><p><strong>domega</strong></p></li>
+</ul>
+</li>
+<li><p>Ostale parametre bomo določili s pomočjo umeritvenega programa.</p></li>
+<li><p>Ko ste ocenili začetne približke, odprite LabView program calibration for rotational profilomer (ver 2_0 for prf). Spreminjate lahko naslednje nastavitve:</p>
+<ol class="loweralpha simple">
+<li><p><strong>Detection parameters</strong>:</p>
+<ol class="lowerroman simple">
+<li><p><strong>NofSurf</strong> … število odprtih umeritvenih meritev</p></li>
+<li><p><strong>first srf</strong> … indeks prve meritve</p></li>
+<li><p><strong>SurfIncr</strong> … kolikšen je inkrement med dvema meritvama (1 … zaporedne meritve, 2 … vsaka druga itd …); če povečujete, je potrebno ustrezno povečati DZ (pomik med dvema zaporednima odprtima meritvam)</p></li>
+<li><p><strong>first N prf.</strong>, <strong>last N prf.</strong>, <strong>prf. start</strong>, <strong>prf. end</strong> … parametri, s katerimi »obrežemo meritev«, uporabite v primeru šuma o robovih meritve</p></li>
+</ol>
+</li>
+<li><p><strong>TRP &amp; opt out</strong></p></li>
+</ol>
+</li>
+<li><p>Ostale parametre spreminjaje le v nujnih primerih in po posvetovanju z asistentom.</p></li>
+</ol>
+</div>
+<div class="section" id="zagon-optimizacije">
+<h2>Zagon optimizacije<a class="headerlink" href="#zagon-optimizacije" title="Permalink to this headline">¶</a></h2>
+<p>Predlagamo, da za umerjanje uporabite naslednji »algoritem«:</p>
+<ol class="arabic simple">
+<li><p>Ob nastavljenih začetnih približkih odprite eno samo meritev in jo vizualno primerjaje z idealno meritvijo (<strong>gumb draw</strong> ideal). Če so odstopanja res velika (predvsem <strong>merilo</strong>), preverite začetne približke.</p></li>
+<li><p>Če meritev <em>ni vsaj približno</em> v merilu (na merilo v Y smeri vpliva predvsem parameter <strong>domega</strong>), poskusite ročno spreminjati kot triangulacije (<strong>alfa</strong>), kot med dvema profiloma (<strong>domega</strong>) in razdaljo med kamero in projektorjem (<strong>Py</strong>) ter goriščno razdaljo leče (<strong>f</strong>).</p></li>
+<li><p>Zaženite optimizacijo zunanjih parametrov (<strong>TX</strong>, <strong>TY</strong>, <strong>TZ</strong>, <strong>RX</strong>, <strong>RY</strong>, <strong>RZ</strong>), da poravnate površino z referenčno (kanali morajo sovpadati).</p></li>
+<li><p>Ko standardna deviacija odstopkov med izmerjeno in referenčno površino pade pod 3-4 mm, lahko (za kratek čas) poskusite vklopiti tudi optimizacijo kota triangulacije (<strong>alfa</strong>), goriščne razdalje objektiva (<strong>f</strong>), kota med dvema profiloma (<strong>domega</strong>), sredine slike (<strong>cu</strong>, <strong>cv</strong>) in razdalje med kamero in projektorjem (<strong>Py</strong>). Rezultat vseskozi vizualno nadzorujte. Če se meritev povsem »podre«, optimizacijo ustavite.</p></li>
+<li><p>Če se oblika površine ni povsem »podrla«, odprite dodatne meritve in preverite, kako vplivajo na standardno deviacijo odstopkov (SDO). Če je oblika vseh rekonstruiranih površin približno pravilna, SDO pa je drastično narasla, preverite, ali sta <strong>SurfInc</strong> in <strong>DZ</strong> pravilna.</p></li>
+<li><p>Če imate občutek, da umeritev konvergira v pravo smer (smo v globalnem minimum),vklopite umeritev vseh parametrov, se udobno namestite in čakajte … Ko pade standardna deviacija pod približno 1,3 mm ste (skoraj) zagotovo v globalnem minimumu in <strong>lahko optimirate vse parametre</strong>.</p></li>
+</ol>
+<p>Če se vam meritev povsem podre, preverite, kateri parameter je ušel in se vrnite korak ali dva nazaj.</p>
+</div>
+<div class="section" id="zabelezite-rezultate">
+<h2>Zabeležite rezultate<a class="headerlink" href="#zabelezite-rezultate" title="Permalink to this headline">¶</a></h2>
+<p>Končni rezultat, ki ga morate predstaviti v poročilu, je SDO med referenčno in izmerjeno površino in dobljeni transformacijski parametri. Naredite tudi »screen shot« polja odstopkov (gumb <strong>draw diff</strong>) in ga priložite poročilu.
+Primerjajte začetno in končno referenčno površino, ter preverite, kako parametri, ki so težko izmerljivi/ocenljivi vplivajo na obliko rekonstruirane površine in SDO.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="obdelava_3D_meritev.html" class="btn btn-neutral float-right" title="Obdelava 3D meritev" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="laserskiprofilomer.html" class="btn btn-neutral float-left" title="Razvoj programske opreme laserskega 3D merilnika" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

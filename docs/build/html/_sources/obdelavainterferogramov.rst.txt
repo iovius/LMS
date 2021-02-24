@@ -1,0 +1,10 @@
+.. _obdelava_interferogramov:
+
+Računalniška analiza interferogramov
+---------------
+
+.. note::
+   Če še nimate nameščenega *Python*-a in *OpenCV*-ja sledite navodilom na povezavi: :ref:`navodila_python`.
+
+Na prejšnji vaji smo zajeli slike interferogramov, ki jih želimo sedaj računalniško obdelati.
+

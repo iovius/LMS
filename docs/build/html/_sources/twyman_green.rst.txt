@@ -1,0 +1,30 @@
+.. _twyman_green:
+
+Twyman-Greenov interferometer
+-------------------------------------------
+
+.. |2pi| replace:: :math:`{2\pi}`
+.. |pi_pol| replace:: :math:`{\pi/2}`
+.. |dfi| replace:: :math:`{\Delta\phi}`
+.. |dx_pos| replace:: :math:`{\Delta x_{poz.miz}}`
+
+Navodila za laboratorijsko vajo so zaenkrat dostopna le v *.pdf* verziji na povezavi :download:`Twyman-Greenov interferometer s faznim zamikanjem <Twyman-Green.pdf>`
+
+
+Pri tej vaji boste uporabljali polariziran *He-Ne* laser z valovno dolžino *633 nm* in premerom žarka *0.8 mm*.
+
+Praktične naloge:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Razširjevalnik žarka je sestavljen iz leč *f*\ :sub:`1`\ = *7,5 mm* in *f*\ :sub:`2`\ = *150 mm* ter zaslonke za prostorsko filtriranje žarka. Razdaljo med lečama nastavite z uporabo strižnega interferometra. V ta namen uporabite okroglo plan-paralelno steklo premera *40 mm*, s katero boste razdelili žarek za razširjevalnikom in žarka medsebojno prečno zamaknili, kakor je prikazano na sliki 3.6. Fotografirajte in razložite interferograme, ko je kolimacijska leča preblizu, predaleč in v pravilni poziciji.
+#. Sestavite *Twyman-Greenov* interferometer. Pri tem uporabite ploščati delilnik žarka dimenzij *25×35 mm*, kvadratno zrcalo *25×25 mm* (kot referenčno zrcalo – *M1*) in zrcalo (*M2*), katerega obliko površine morate izmeriti. Sestavljajte po naslednjem vrstnem redu:
+
+	* Za kolimator postavite delilnik žarka pod kotom *45°*. Delilnik vpnite v prijemalo tako, da zagotovite nemoteno širjenje prepuščenega in odbitega žarka!
+	* Kakšna mora biti smer polarizacije glede na delilnik žarka, da je sekundarni odboj z delilnika žarka minimalen? Skicirajte! Laserja ne obračajte, da se ne spremeni lokacija žarka glede na zaslonko v razširjevalniku žarka!
+	* Zrcali postavite tako, da sta pravokotni glede na posamezen žarek. Postopek je enak, kot pri *Fizeaujevem* interferometru.
+	* S finim nastavljanjem orientacije enega od zrcal skušajte doseči interferogram, ki bo imel približno deset prog orientiranih enkrat vertikalno in drugič horizontalno. Interferograma fotografirajte in razložite, kakšna je ukrivljenost valovnih front.
+	
+#. Pripravite mehanizem za fazno zamikanje zrcala *M2*. Na optično letev, za merjeno površino, namestite pozicionirno mizico z mikrometrskim vijakom. Pozicionirno mizico in nosilec merjene površine povežite z natezno vzmetjo. Razmik med obema elementoma nastavite tako, da bo vzmet raztegnjena za približno *10 %* glede na prvotno dolžino. Preverite, da so vse mehanske komponente dobro pritrjene! Slabo stisnjeni kontaktni spoji imajo namreč izrazito nelinearno karakteristiko deformacije v odvisnosti od obremenitve. Sprva je krivulja strma, nato pa vedno položnejša. Še večjo nevšečnost predstavlja kontaktno trenje, ki rezultira k veliki histerezi omenjene karakteristike.
+#. Opravite umeritev aktuacijskega mehanizma tako, da povečate fazo merilnemu žarku petkrat po |2pi| in pri tem izmerite potreben pomik pozicionirne mizice. Spremembo faze izmerite s štetjem interferenčnih maksimumov. Rezultat umeritve prikažite na diagramu |dfi| (sprememba faze) v odvisnosti od |dx_pos| (premik pozicionirne mizice). V kolikor je nelinearnost večja od *20 %*, preverite pritrditev vseh komponent. Poizkusite tudi s povečanjem prednapetja natezne vzmeti.
+#. Fotoaparat brez objektiva namestite na mesto kjer sicer uporabljate zaslon za vizualno opazovanje interferograma. Preverite, da je na fotoaparatu izbran ročni način osvetlitve (program *M*), ter da je občutljivost *ISO* enaka *100* ter izbran najkrajši čas osvetlitve (*1/4000 s*). Interferogram centrirajte na sredino senzorskega elementa s premikanjem nosilne plošče fotoaparata. Pri tem imejte na fotoaparatu vključen predogled slike (*angl.: Liveview*). Izvedite poskusno fotografijo in preverite osvetljenost slike. V ta namen uporabite histogram intenzitete, ki ga fotoaparat prikaže ob posneti sliki. Rdeča barva se nikakor ne sme prelivati v rumeno oziroma belo! Če se to vseeno zgodi, dodajte pred fotoaparat atenuator – zatemnjeno steklo.
+#. Zrcalo *M2* naravnajte tako, da bo približno *8* interferenčnih prog v vertikalni smeri in posnemite serijo 10-ih fotografij, med katerimi povečujete fazo po |pi_pol|! Med meritvijo skušajte zagotoviti čim boljše pogoje v smislu zmanjšanja vibracij. Na koncu serijo fotografij vizualno preverite v smislu kontrole enakomernega premikanja interferenčnih prog v vertikalni smeri.

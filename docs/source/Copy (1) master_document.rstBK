@@ -1,0 +1,31 @@
+.. test_docs documentation master file, created by
+   sphinx-quickstart on Tue Aug 11 12:16:01 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Pozdravljeni na vajah LMS!
+====================================================
+
+Tole je super zakomplicirano.
+
+.. code-block:: cpp
+   :linenos:
+
+       printf("This is line one.");
+       printf("This is line two.");
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+   
+   license
+   help
+
+
+
+Vaje
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

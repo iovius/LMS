@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Računalniška analiza interferogramov &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Razvoj programske opreme laserskega 3D merilnika" href="laserskiprofilomer.html" />
+    <link rel="prev" title="Uvod v računalniško obdelavo slik" href="uvod_py_opencv.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Računalniška analiza interferogramov</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/obdelava_interferogramov.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="racunalniska-analiza-interferogramov">
+<span id="obdelava-interferogramov"></span><h1>Računalniška analiza interferogramov<a class="headerlink" href="#racunalniska-analiza-interferogramov" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če še nimate nameščenega <em>Python</em>-a in <em>OpenCV</em>-ja sledite navodilom na povezavi: <a class="reference internal" href="navodila_python.html#navodila-python"><span class="std std-ref">Navodila za namestitev Pythona in OpenCVja</span></a>.</p>
+</div>
+<p>Na prejšnji vaji smo zajeli slike interferogramov, ki jih želimo sedaj računalniško obdelati. Ker bo skripta razmeroma dolga, jo bomo razdelili na več celic. Sledite navodilom, ki so zapisana v komentarjih.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če ne uporabljate <em>Jupyter Notebooka</em>, boste morali vse celice zapisati v eno skripto.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Besedilo se vedno nanaša na <strong>sledečo celico</strong>.</p>
+</div>
+<p>V prvi celici bomo uvozili knjižnice, ki jih potrebujemo (<code class="docutils literal notranslate"><span class="pre">cv2</span></code> in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>). Prav tako lahko definiramo spremenljivki π in 2π (ker se ime spremenljivke v Pythonu ne sme začeti s števil, jo bomo poimenovali π2).</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#definiramo spremenjivko π</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="c1">#definiramo spremenjivko 2*π</span>
+<span class="n">π2</span> <span class="o">=</span> <span class="n">π</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</td></tr></table></div>
+<p>V naslednji celici bomo napisali funkcijo, ki bo prebrala in sprocesirala posamezno sliko. Definicijo funkcije moramo začeti z ukazom <code class="docutils literal notranslate"><span class="pre">def</span></code>. <code class="docutils literal notranslate"><span class="pre">read_and_process_image(filename,</span> <span class="pre">images,</span> <span class="pre">resize_factor)</span></code> pomeni, da je <em>read_and_process_image</em> ime funkcije, <em>filename</em>, <em>images</em> in <em>resize_factor</em> pa so argumenti, ki jih bomo morali podati.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#funkcija za branje in procesiranje slik</span>
+<span class="c1">#filename ... lokacija slike na disku</span>
+<span class="c1">#images ... seznam, kamor shranimo slike</span>
+<span class="c1">#resize_factor ... faktor, za keterega spremenimo velikost slik</span>
+<span class="k">def</span> <span class="nf">read_and_process_image</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">resize_factor</span><span class="p">):</span>
+    <span class="c1">#preberite sliko v barvah s funkcijo cv2.imread()</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="c1">#preberite dimenzije slike z metodo .shape</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1">#spremenite dimenzije slike s funkcijo cv2.resize()</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">resize_factor</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="n">resize_factor</span><span class="p">)</span>
+    <span class="c1">#&quot;razbite&quot; sliko po posameznih kanalih; cv2.split()</span>
+    <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">R</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+    <span class="c1">#filtrirajte sliko; cv2.GaussianBlur()</span>
+    <span class="n">R_f</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">R</span><span class="p">,(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="c1">#spremenite podatkovni tip vrednosti v float32 in ustrezno skalirajte</span>
+    <span class="n">R_f</span> <span class="o">=</span> <span class="n">R_f</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">/</span><span class="mi">255</span>
+    <span class="c1">#v seznam images dodajte končno sliko</span>
+    <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R_f</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>V tej celici podamo imena posameznih slik in jih zapišemo v <em>list</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Spomnite se, kako navajamo poti na disku!</p>
+</div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#dodajte ime prve slike</span>
+<span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;e:\Podatki\FS\vaje\LMS\2019-20\RAI\sk1\0001.jpg&#39;</span><span class="p">)</span>
+<span class="c1">#dodajte ime druge slike</span>
+<span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;e:\Podatki\FS\vaje\LMS\2019-20\RAI\sk1\0005.jpg&#39;</span><span class="p">)</span>
+<span class="c1">#dodajte ime tretje slike</span>
+<span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;e:\Podatki\FS\vaje\LMS\2019-20\RAI\sk1\0011.jpg&#39;</span><span class="p">)</span>
+<span class="c1">#dodajte ime četrte slike</span>
+<span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;e:\Podatki\FS\vaje\LMS\2019-20\RAI\sk1\0015.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>S sledčo celico bomo prebrali slike, jih dodali v <em>list</em> <code class="docutils literal notranslate"><span class="pre">images</span></code> in prikazali.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#&quot;za vsako ime v seznamu filenames&quot;</span>
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+    <span class="c1">#uporabite funkcijo read_and_process_image</span>
+    <span class="n">read_and_process_image</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+    
+<span class="c1">#preberite dimenzije slike; h ... višina, w ... širina</span>
+<span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">image</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;slika&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">image</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Sedaj bomo začeli z izračunom. V pomoč naj vam bodo <em>slajdi</em> s predavanj (<a class="reference internal" href="carre.html#carre"><span class="std std-ref">Carrejev algoritem za izračun faze</span></a>). V tej celici želimo izračunati vrednost <span class="math notranslate nohighlight">\({\alpha}(x,y)\)</span>. Če pogledate, kaj bomo morali storiti v naslednjem koraku, vidite, da je izračun <span class="math notranslate nohighlight">\(arctan\)</span> nekoliko nesmiselen, saj bomo morali potem v naslednjem koraku izračunati <span class="math notranslate nohighlight">\(tan\)</span>, tako da namesto <span class="math notranslate nohighlight">\({\alpha}(x,y)\)</span> izračunajmo kar <span class="math notranslate nohighlight">\(tan({\alpha}(x,y))\)</span>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#odštejte vrednosti slike 2 od vrednosti slike 1</span>
+<span class="n">I1m2</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">images</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">#odštejte vrednosti slike 3 od vrednosti slike 0</span>
+<span class="n">I0m3</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">images</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="c1">#izračunajte števec</span>
+<span class="n">dividend</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">I1m2</span> <span class="o">-</span> <span class="n">I0m3</span>
+<span class="c1">#izračunajte imenovalec</span>
+<span class="n">divisor</span> <span class="o">=</span> <span class="n">I0m3</span> <span class="o">+</span> <span class="n">I1m2</span>
+
+<span class="c1">#preverite, da imenovalec ni enak 0</span>
+<span class="n">divisor</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.0000001</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0000001</span>
+
+<span class="c1">#izračunajte tan_alpha</span>
+<span class="n">tan_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dividend</span><span class="o">/</span><span class="n">divisor</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ko smo izračunali <span class="math notranslate nohighlight">\(tan({\alpha}(x,y))\)</span> nadaljujemo z izračunom <em>faze</em> (<span class="math notranslate nohighlight">\({\Delta}{\Phi}(x,y)\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Izračun <em>arkustangensa kvocienta dveh števil</em> je precej “zahtevna” operacija, saj imamo <em>6</em> možnih primerov. Zato ima praktično vsaka <em>matematična</em> knjižnica (ki da kaj nase) fukcijo <a class="reference external" href="https://en.wikipedia.org/wiki/Atan2">atan2</a>. V <code class="docutils literal notranslate"><span class="pre">numpy</span></code> jo najdemo kot <code class="docutils literal notranslate"><span class="pre">arctan2</span></code>.</p>
+</div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#izračunajte sinusni del</span>
+<span class="n">sine</span> <span class="o">=</span> <span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">images</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">+</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">images</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1">#pomnožite sinusni del z tan_alpha</span>
+<span class="n">sine</span> <span class="o">*=</span> <span class="n">tan_alpha</span>
+<span class="c1">#izračunajte cosinusni del</span>
+<span class="n">cosine</span> <span class="o">=</span> <span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">images</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">images</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="c1">#izračunajte fazo</span>
+<span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">sine</span><span class="p">,</span> <span class="n">cosine</span><span class="p">)</span>
+
+<span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;Phase&quot;</span><span class="p">,</span><span class="n">phase</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<span class="c1"># save_float_mtx(&quot;e:\\temp\\M&quot;,phase)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ker smo za izračun faze uporabili fukcijo <span class="math notranslate nohighlight">\(arctan\)</span> (v našem primeru v resnici <span class="math notranslate nohighlight">\(arctan2\)</span>) je <em>faza</em> omejena na inteval <span class="math notranslate nohighlight">\([-\frac{\pi}{2}, \frac{\pi}{2} ]\)</span> (ker smo uporabili <span class="math notranslate nohighlight">\(arctan2\)</span> smo v resnici omejeni na inteval <span class="math notranslate nohighlight">\([-\pi, \pi ]\)</span>). Kakorkoli, ker želimo dobiti zvezen potek <em>faze</em> moramo izvesti t.i. <em>razvijanje faze</em> (angl.: <a class="reference external" href="https://ccrma.stanford.edu/~jos/fp/Phase_Unwrapping.html">phase unwrapping</a>). Osnovna ideja (enostavnega algoritma za razvijanje faze) je, da se <em>pomikamo</em> po <em>fazi</em> in spremljamo, kje se pojavijo nezveznosti. Od tega mesta naprej prištejemo ali odštejemo <span class="math notranslate nohighlight">\(2\pi\)</span>, odvisno od tega, v katero smer se pojavi nezveznost.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#skopirajte vrednosti iz spremenljivke phase v spremenljivko phase_unwrapped</span>
+<span class="n">phase_unwrapped</span> <span class="o">=</span> <span class="n">phase</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#&quot;za vsako vrstico&quot;</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+    <span class="c1">#spremenljivko phase_offset nastavite na vrednosti 0</span>
+    <span class="n">phase_offset</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">#&quot;za vsak element v vrstici&quot;</span>
+    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+        <span class="c1">#preberite prejšnjo vrednost v vrstici</span>
+        <span class="n">p_previous</span> <span class="o">=</span> <span class="n">phase</span><span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="c1">#preberite trenutno vrednost v vrstici</span>
+        <span class="n">p_current</span> <span class="o">=</span> <span class="n">phase</span><span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span>
+        
+        <span class="c1">#če je &quot;stopnica&quot; od trenute do prejšnje vrednosti večja od π</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p_current</span> <span class="o">-</span> <span class="n">p_previous</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">π</span><span class="p">:</span>
+            <span class="c1">#vrednosti phase_offset odštejte 2π</span>
+            <span class="n">phase_offset</span> <span class="o">-=</span> <span class="n">π2</span>
+        <span class="c1">#če je &quot;stopnica&quot; od trenutne do prejšnje manjša večja od -π</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p_current</span> <span class="o">-</span> <span class="n">p_previous</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">π</span><span class="p">:</span>
+            <span class="c1">#vrednosti phase_offset prištejte 2π</span>
+            <span class="n">phase_offset</span> <span class="o">+=</span> <span class="n">π2</span>
+        
+        <span class="c1">#vrednosti phase prištejete phase_offset in jo zapišite v phase_unwrapped</span>
+        <span class="n">phase_unwrapped</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">phase</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">phase_offset</span>
+</pre></div>
+</td></tr></table></div>
+<p>Vizualizirajte rezultat.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;phaseUW&#39;</span><span class="p">,</span> <span class="n">phase_unwrapped</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<span class="n">save_float_mtx</span><span class="p">(</span><span class="s1">&#39;e:</span><span class="se">\\</span><span class="s1">temp</span><span class="se">\\</span><span class="s1">phsUW&#39;</span><span class="p">,</span><span class="n">phase_unwrapped</span><span class="p">)</span>
+<span class="c1">#save_float_mtx(&#39;e:\\temp\\phs&#39;,phase)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Precej verjetno vidite naj podobnega srednjemu stolpcu na spodnji sliki. Želimo pa rezultat, kot je v zadnjem stolpcu.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/uw-1smer.png"><img alt="reStructuredText, the markup syntax" src="_images/uw-1smer.png" style="width: 524.4px; height: 295.8px;" /></a>
+<p class="caption"><span class="caption-text">Slika 1. Izvorne <em>faze</em> (prvi stolpec), <em>faza</em> kot bo razvita po našem algoritmu (sredinski stolpec) in rezultat, kot ga želimo (zadnji stolpec).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Težava je v tem, da našo <em>sliko faze</em> razvijamo samo z leve proti desni, v primeru kot je zgoraj levo na <em>sliki 1</em> pa se do sredinskega polja pa nabere že kar nekaj <em>napake</em>.</p>
+<p>Postopek razvijanja moramo zato ponoviti še enkrat, tokrat v navpični smeri.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#vrednost phase_unwrapped skopirajte v phase</span>
+<span class="n">phase_unwrapped2</span> <span class="o">=</span> <span class="n">phase_unwrapped</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1">#izračunajte indeks sredinskega stolpca</span>
+<span class="n">u_scan</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#postavite vrednost phase_offset na 0</span>
+<span class="n">phase_offset</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#&quot;za vsako vrstico&quot;</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+    <span class="c1">#preberite vrednost prejšnjega elementa v sredinski vrstici</span>
+    <span class="n">p_previous</span> <span class="o">=</span> <span class="n">phase_unwrapped</span><span class="p">[</span><span class="n">v</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">u_scan</span><span class="p">]</span>
+    <span class="c1">#preberite vrednost trenutnega elementa v sredinski vrstici</span>
+    <span class="n">p_current</span> <span class="o">=</span> <span class="n">phase_unwrapped</span><span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="n">u_scan</span><span class="p">]</span>
+    
+    <span class="c1">#izračunajte razliko med trenutno in prejšnjo</span>
+    <span class="n">diff_c_p</span> <span class="o">=</span> <span class="n">p_current</span> <span class="o">-</span> <span class="n">p_previous</span>
+    <span class="c1">#če je &quot;stopnica&quot; od prejšnje do trenutne vrednosti večja od π</span>
+<span class="c1">#     if diff_c_p &gt; π:</span>
+<span class="c1">#         #deljite z 2π</span>
+<span class="c1">#         diff_c_p /= π2</span>
+<span class="c1">#         #zaikrožite</span>
+<span class="c1">#         diff_c_p = np.round(diff_c_p)</span>
+<span class="c1">#         #pomnožite z 2π</span>
+<span class="c1">#         diff_c_p *= π2</span>
+<span class="c1">#         #odštejte vrednost od phase_offset</span>
+<span class="c1">#         phase_offset -= diff_c_p</span>
+        
+<span class="c1">#     #če je &quot;stopnica&quot; od trenutne do prejšnje vrednosti večja od π</span>
+<span class="c1">#     if diff_c_p &lt; -π:</span>
+    <span class="c1">#deljite z 2π</span>
+    <span class="n">diff_c_p</span> <span class="o">/=</span> <span class="n">π2</span>
+    <span class="c1">#zaikrožite</span>
+    <span class="n">diff_c_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">diff_c_p</span><span class="p">)</span>
+    <span class="c1">#pomnožite z 2π</span>
+    <span class="n">diff_c_p</span> <span class="o">*=</span> <span class="n">π2</span>
+    <span class="c1">#odštejte vrednost od phase_offset</span>
+    <span class="n">phase_offset</span> <span class="o">-=</span> <span class="n">diff_c_p</span>
+       
+    <span class="c1">#celotni treutni vrstici prištejte vrednost phase_offset</span>
+    <span class="n">phase_unwrapped2</span><span class="p">[</span><span class="n">v</span><span class="p">,:]</span> <span class="o">+=</span> <span class="n">phase_offset</span>
+</pre></div>
+</td></tr></table></div>
+<p>Vizualizirajte rezultat <em>faze</em>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#prikažite končni rezultat</span>
+<span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;phaseUW&#39;</span><span class="p">,</span> <span class="n">phase_unwrapped2</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+<span class="n">save_float_mtx</span><span class="p">(</span><span class="s2">&quot;e:</span><span class="se">\\</span><span class="s2">temp</span><span class="se">\\</span><span class="s2">srf&quot;</span><span class="p">,</span><span class="n">phase_unwrapped2</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Če vas moti <em>šum</em> okoli faze (ljubkovalno imenovan tudi “šavje”), lahko preverite vidljivost signala na posameznem mestu in izrišete le točke, z visoko vidljivostjo.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#prikažite končni rezultat z upoštevanjem ROI</span>
+
+<span class="c1">#izračunajte standardno deviacijo med slikami</span>
+<span class="n">STD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">images</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">#preverite, kje je STD večji od 0.01</span>
+<span class="n">ROI</span> <span class="o">=</span> <span class="n">STD</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">;</span>
+<span class="c1">#skopirajte razvito sliko v phsUW </span>
+<span class="n">phsUW</span> <span class="o">=</span> <span class="n">phase_unwrapped2</span><span class="o">.</span><span class="n">copy</span><span class="p">();</span>
+<span class="c1">#v phsUW nastavite vrednosti, kjer je ROI enak Fasle na NaN</span>
+<span class="n">phsUW</span><span class="p">[</span><span class="n">ROI</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">;</span>
+
+<span class="c1">#izrišite sliko</span>
+<span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;STD&#39;</span><span class="p">,</span> <span class="n">phsUW</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="laserskiprofilomer.html" class="btn btn-neutral float-right" title="Razvoj programske opreme laserskega 3D merilnika" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="uvod_py_opencv.html" class="btn btn-neutral float-left" title="Uvod v računalniško obdelavo slik" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Obdelava 3D meritev &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vlakenski senzorji" href="vlakenski_senzorji.html" />
+    <link rel="prev" title="Umeritev laserskega 3D merilnika" href="kalibracija.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Obdelava 3D meritev</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#uvod">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#izmerite-merjeni-objekt-iz-vec-pogledov">Izmerite merjeni objekt iz več pogledov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uvoz-mnozice-meritev-v-gm">Uvoz množice meritev v GM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#priprava-meritev">Priprava meritev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rocna-poravnava-sestavljanje">Ročna poravnava (sestavljanje)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#globalna-poravnava">Globalna poravnava</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#koncna-obdelava">Končna obdelava</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Obdelava 3D meritev</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/obdelava_3D_meritev.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="obdelava-3d-meritev">
+<span id="id1"></span><h1>Obdelava 3D meritev<a class="headerlink" href="#obdelava-3d-meritev" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Permalink to this headline">¶</a></h2>
+<p>Pri tej nalogi boste z rotacijskim laserskim profilomerom, ki smo ga umerili na prejšnji vaji, izmerili serijo meritev istega objekta z več različnih pogledov. Meritve boste nato obdelali, sestavili in poravnali v programskem okolju Geomagic Studio (GM).</p>
+</div>
+<div class="section" id="izmerite-merjeni-objekt-iz-vec-pogledov">
+<h2>Izmerite merjeni objekt iz več pogledov<a class="headerlink" href="#izmerite-merjeni-objekt-iz-vec-pogledov" title="Permalink to this headline">¶</a></h2>
+<p>Merjeni objekt postavite pred merilnik na primerno oddaljenost in ga izmerite. Pri tem poskrbite, da se med zajemanjem posamezne meritve merilnik in merjeni objekt ne bosta premikala. V nasprotnem primeru lahko pride do nenatančnih meritev, ki jih ne bo mogoče poravnati. Zato bodite med merjenjem <strong>pazljivi in natančni</strong>.
+Objekt izmerite iz toliko pogledov, da bo izmerjena celotna površina. Pazite, da bo med dvema sosednjima meritvama dovolj prekrivanja (priporočamo približno 30 % prekrivanje) in da je na območju prekrivanja kakšna značilka (angl.: <em>feature</em>).</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/prekrivanje.jpg"><img alt="reStructuredText, the markup syntax" src="_images/prekrivanje.jpg" style="width: 553.2px; height: 279.2px;" /></a>
+<p class="caption"><span class="caption-text">Slika 1. Prenizka stopnja prekrivanja (levo), primerna stopnja prekrivanja (desno).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="uvoz-mnozice-meritev-v-gm">
+<h2>Uvoz množice meritev v GM<a class="headerlink" href="#uvoz-mnozice-meritev-v-gm" title="Permalink to this headline">¶</a></h2>
+<p>V GM bomo meritve uvozili v obliki standardnega trikotniškega formata <em>.VRML</em> (včasih imenovan tudi <em>.wrl</em>) s funkcijo <em>Import</em> (<strong>File → Import</strong>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Naslednjo meritev izberete s tipko <em>F3</em>, prejšnjo s tipko <em>F4</em>, vse meritve izberete s tipko <em>F5</em>, vse, razen izbranih meritev pa skrijete s tipko <em>F2</em>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Zaradi velike količine podatkov, ki jih GM obdela ob vsakem klicu funkcije, funkcija <em>UNDO</em> deluje le izjemoma, zato <strong>vmesne rezultate shranjujte sproti pod različnimi imeni</strong>.</p>
+</div>
+</div>
+<div class="section" id="priprava-meritev">
+<h2>Priprava meritev<a class="headerlink" href="#priprava-meritev" title="Permalink to this headline">¶</a></h2>
+<p>Precej verjetno je, da je merilnik poleg samega merjenega objekta izmeril tudi del okolice. Ta ni predmet naloge in bo le oteževala poravnavo. Posamezno meritev zato najprej »očistite«; izbrišite vse površine, ki ne pripadajo merjenem objektu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Izberite vsaj eno točko na površinah, ki jih želite obdržati in izberite <em>Bounded Components</em> (<strong>Select→Select Components→Bounded Components</strong>), nato pa desni klik in <em>Reverse Selection</em> (<strong>RMC→Reverse Selection</strong>). Tako boste izbrali vse površine, ki niso sklenjene z na začetku izbranimi točkami.</p>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/izvorna_vs_ociscena.jpg"><img alt="reStructuredText, the markup syntax" src="_images/izvorna_vs_ociscena.jpg" style="width: 600.0px; height: 300.0px;" /></a>
+<p class="caption"><span class="caption-text">Slika 2. Izvorna meritev (levo) in “očiščena” meritev (desno).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="rocna-poravnava-sestavljanje">
+<h2>Ročna poravnava (sestavljanje)<a class="headerlink" href="#rocna-poravnava-sestavljanje" title="Permalink to this headline">¶</a></h2>
+<p>Meritve najprej poravnajte ročno. Pri tem koraku ne izgubljajte preveč časa s pretirano natančno poravnavo, saj boste to storili v naslednjem koraku z uporabo temu namenjenih funkcij. Dovolj je, da so meritve vsaj približno pravilno medsebojno orientirane.
+Najprej izberite vse meritve, ki jih želite poravnati in izberite <em>Manual Registration</em> (<strong>Alignment→Manual Registration</strong>). Na levi se odpre pogovorno okno, kjer izberete način poravnave (<strong>A</strong>), površino, ki bo fiksna (<strong>B</strong>) in površino, ki jo bomo poravnali na fiksno (<strong>C</strong>). Izbirate lahko med poravnavo z določitvijo ene soležne točke (<em>1RP</em>) ali več kot treh soležnih točk (<em>NPR</em>). Način <em>1RP</em> je uporaben predvsem v primerih, ko ne najdete veliko soležnih točk, hkrati pa je prekrivanje razmeroma veliko. Pred uporabo tega načina je priporočljivo, da obe površini orientirate v približno enak pogled. Način <em>NPR</em> uporabljate kadar lahko najdete množico soležnih točk, želite hitreje zlagati površine ali poravnava z <em>1PR</em> ne uspe. Ni potrebe, da bi določili <em>N</em> povsem istih točk; manjše razlike v mestu klika nimajo vpliva na algoritem, saj se nato običajno naknadno sproži še funkcija <em>Register</em> (<strong>D</strong>), ki odpravi manjše odstopke med poravnanima površinama. Če ste z rezultatom zadovoljni pritisnite gumb <em>Next</em> (<strong>E</strong>) in na poravnani površini poravnajte naslednjo površino. Tako (na grobo) zložite skupaj vse meritve. Pomembno je, da ob tem vizualno preverjate, kako so površine medsebojno orientirane, saj lahko kakšna površina »uide«.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/UI2.jpg"><img alt="reStructuredText, the markup syntax" src="_images/UI2.jpg" style="width: 598.8px; height: 521.4px;" /></a>
+<p class="caption"><span class="caption-text">Slika 3. Slika uporabniškega vmesnika z označenimi osnovnimi gumbi, ki jih boste potrebovali.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="globalna-poravnava">
+<h2>Globalna poravnava<a class="headerlink" href="#globalna-poravnava" title="Permalink to this headline">¶</a></h2>
+<p>Ko ste »na grobo« poravnali oz. sestavili vse površine zaženite funkcijo <em>Global Registration</em> (<strong>Alignment→Global Registration</strong>). Tako bo algoritem »na fino« poravnal vse površine med seboj. Rezultat vizualno preverite, predvsem na mestih, kjer bi bila morebitna neuspešna poravnava še posebej očitna.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/GR-pred-po.jpg"><img alt="reStructuredText, the markup syntax" src="_images/GR-pred-po.jpg" style="width: 560.0px; height: 320.0px;" /></a>
+<p class="caption"><span class="caption-text">Slika 4. Meritvi po ročni on pred globalno poravnavo (leva), meritvi po globalni poravnavi (desno).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="koncna-obdelava">
+<h2>Končna obdelava<a class="headerlink" href="#koncna-obdelava" title="Permalink to this headline">¶</a></h2>
+<p>Ko so vse površine poravnane tudi »na fino« jih združite v eno samo površino. To storite z ukazom <em>Merge</em> (<strong>Polygons→Merge</strong>). Po želji nastavite lokalno in globalno filtriranje, želeno število točk, dodatno globalno poravnavo ipd…
+Na mestih, kjer se posamezne meritve prekrivajo ali je prisotnega nekoliko več šuma pogosto pride do nepravilnega kombiniranja meritev, kar ima za posledico nepravilno obliko površin. GM nam ponuja vrsto orodij, s pomočjo katerih lahko te nepravilnosti odpravimo. V tej fazi se lotite tudi morebitnega odstranjevanja reliefnih markerjev (če ste jih uporabljali). Prva metoda je, da reliefne markerje iz površin enostavno izrežemo, druga pa, da uporabite funkcijo <em>Defeature</em> (<strong>Polygons→Defeature</strong>). Ker je uporaba markerjev potrebna le na površinah, ki nimajo izrazitih geometrijskih značilnosti, se interpolacijske metode zapolnjevanja lukenj izkažejo za precej uspešne in na površini ni vidnih ostankov markerja. Če so ti prisotni, je bilo izbrano mesto izbrano neposrečeno.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/final.jpg"><img alt="reStructuredText, the markup syntax" src="_images/final.jpg" style="width: 600.0px; height: 320.0px;" /></a>
+<p class="caption"><span class="caption-text">Slika 5. Poravnane meritve (levo), združene meritve (sredina), končni rezultat merjenja z zapolnjenimi luknjami in zglajenimi vidnimi šivi (desno).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="vlakenski_senzorji.html" class="btn btn-neutral float-right" title="Vlakenski senzorji" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kalibracija.html" class="btn btn-neutral float-left" title="Umeritev laserskega 3D merilnika" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

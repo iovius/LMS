@@ -1,0 +1,8 @@
+.. _walkthrough:
+
+PCL Walkthrough
+---------------
+
+This tutorials will walk you through the components of your PCL installation, providing short descriptions of the modules, indicating where they are located and also listing the interaction between different components.
+
+Top_

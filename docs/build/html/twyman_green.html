@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Twyman-Greenov interferometer &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Uvod v računalniško obdelavo slik" href="uvod_py_opencv.html" />
+    <link rel="prev" title="Fizeauev interferometer" href="fizeau.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Twyman-Greenov interferometer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prakticne-naloge">Praktične naloge:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Twyman-Greenov interferometer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/twyman_green.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="twyman-greenov-interferometer">
+<span id="twyman-green"></span><h1>Twyman-Greenov interferometer<a class="headerlink" href="#twyman-greenov-interferometer" title="Permalink to this headline">¶</a></h1>
+<p>Navodila za laboratorijsko vajo so zaenkrat dostopna le v <em>.pdf</em> verziji na povezavi <a class="reference download internal" download="" href="_downloads/c161646130fb0f2856061cc66860ed96/Twyman-Green.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Twyman-Greenov</span> <span class="pre">interferometer</span> <span class="pre">s</span> <span class="pre">faznim</span> <span class="pre">zamikanjem</span></code></a></p>
+<p>Pri tej vaji boste uporabljali polariziran <em>He-Ne</em> laser z valovno dolžino <em>633 nm</em> in premerom žarka <em>0.8 mm</em>.</p>
+<div class="section" id="prakticne-naloge">
+<h2>Praktične naloge:<a class="headerlink" href="#prakticne-naloge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Razširjevalnik žarka je sestavljen iz leč <em>f</em><sub>1</sub>= <em>7,5 mm</em> in <em>f</em><sub>2</sub>= <em>150 mm</em> ter zaslonke za prostorsko filtriranje žarka. Razdaljo med lečama nastavite z uporabo strižnega interferometra. V ta namen uporabite okroglo plan-paralelno steklo premera <em>40 mm</em>, s katero boste razdelili žarek za razširjevalnikom in žarka medsebojno prečno zamaknili, kakor je prikazano na sliki 3.6. Fotografirajte in razložite interferograme, ko je kolimacijska leča preblizu, predaleč in v pravilni poziciji.</p></li>
+<li><p>Sestavite <em>Twyman-Greenov</em> interferometer. Pri tem uporabite ploščati delilnik žarka dimenzij <em>25×35 mm</em>, kvadratno zrcalo <em>25×25 mm</em> (kot referenčno zrcalo – <em>M1</em>) in zrcalo (<em>M2</em>), katerega obliko površine morate izmeriti. Sestavljajte po naslednjem vrstnem redu:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Za kolimator postavite delilnik žarka pod kotom <em>45°</em>. Delilnik vpnite v prijemalo tako, da zagotovite nemoteno širjenje prepuščenega in odbitega žarka!</p></li>
+<li><p>Kakšna mora biti smer polarizacije glede na delilnik žarka, da je sekundarni odboj z delilnika žarka minimalen? Skicirajte! Laserja ne obračajte, da se ne spremeni lokacija žarka glede na zaslonko v razširjevalniku žarka!</p></li>
+<li><p>Zrcali postavite tako, da sta pravokotni glede na posamezen žarek. Postopek je enak, kot pri <em>Fizeaujevem</em> interferometru.</p></li>
+<li><p>S finim nastavljanjem orientacije enega od zrcal skušajte doseči interferogram, ki bo imel približno deset prog orientiranih enkrat vertikalno in drugič horizontalno. Interferograma fotografirajte in razložite, kakšna je ukrivljenost valovnih front.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Pripravite mehanizem za fazno zamikanje zrcala <em>M2</em>. Na optično letev, za merjeno površino, namestite pozicionirno mizico z mikrometrskim vijakom. Pozicionirno mizico in nosilec merjene površine povežite z natezno vzmetjo. Razmik med obema elementoma nastavite tako, da bo vzmet raztegnjena za približno <em>10 %</em> glede na prvotno dolžino. Preverite, da so vse mehanske komponente dobro pritrjene! Slabo stisnjeni kontaktni spoji imajo namreč izrazito nelinearno karakteristiko deformacije v odvisnosti od obremenitve. Sprva je krivulja strma, nato pa vedno položnejša. Še večjo nevšečnost predstavlja kontaktno trenje, ki rezultira k veliki histerezi omenjene karakteristike.</p></li>
+<li><p>Opravite umeritev aktuacijskega mehanizma tako, da povečate fazo merilnemu žarku petkrat po <span class="math notranslate nohighlight">\({2\pi}\)</span> in pri tem izmerite potreben pomik pozicionirne mizice. Spremembo faze izmerite s štetjem interferenčnih maksimumov. Rezultat umeritve prikažite na diagramu <span class="math notranslate nohighlight">\({\Delta\phi}\)</span> (sprememba faze) v odvisnosti od <span class="math notranslate nohighlight">\({\Delta x_{poz.miz}}\)</span> (premik pozicionirne mizice). V kolikor je nelinearnost večja od <em>20 %</em>, preverite pritrditev vseh komponent. Poizkusite tudi s povečanjem prednapetja natezne vzmeti.</p></li>
+<li><p>Fotoaparat brez objektiva namestite na mesto kjer sicer uporabljate zaslon za vizualno opazovanje interferograma. Preverite, da je na fotoaparatu izbran ročni način osvetlitve (program <em>M</em>), ter da je občutljivost <em>ISO</em> enaka <em>100</em> ter izbran najkrajši čas osvetlitve (<em>1/4000 s</em>). Interferogram centrirajte na sredino senzorskega elementa s premikanjem nosilne plošče fotoaparata. Pri tem imejte na fotoaparatu vključen predogled slike (<em>angl.: Liveview</em>). Izvedite poskusno fotografijo in preverite osvetljenost slike. V ta namen uporabite histogram intenzitete, ki ga fotoaparat prikaže ob posneti sliki. Rdeča barva se nikakor ne sme prelivati v rumeno oziroma belo! Če se to vseeno zgodi, dodajte pred fotoaparat atenuator – zatemnjeno steklo.</p></li>
+<li><p>Zrcalo <em>M2</em> naravnajte tako, da bo približno <em>8</em> interferenčnih prog v vertikalni smeri in posnemite serijo 10-ih fotografij, med katerimi povečujete fazo po <span class="math notranslate nohighlight">\({\pi/2}\)</span>! Med meritvijo skušajte zagotoviti čim boljše pogoje v smislu zmanjšanja vibracij. Na koncu serijo fotografij vizualno preverite v smislu kontrole enakomernega premikanja interferenčnih prog v vertikalni smeri.</p></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="uvod_py_opencv.html" class="btn btn-neutral float-right" title="Uvod v računalniško obdelavo slik" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fizeau.html" class="btn btn-neutral float-left" title="Fizeauev interferometer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

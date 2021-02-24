@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ogrodje programa (Python) &mdash; Vaje pri predmetu Laserski merilni sistemi 23.2.2021 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="master_document.html" class="icon icon-home"> Vaje pri predmetu Laserski merilni sistemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="prostorskofiltriranje.html">Prostorsko fitriranje in razširjevalnik laserskega snopa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslo.html">Preračun optičnega sistema s programom OSLO LT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fizeau.html">Fizeauev interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="twyman_green.html">Twyman-Greenov interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod_py_opencv.html">Uvod v računalniško obdelavo slik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_interferogramov.html">Računalniška analiza interferogramov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="laserskiprofilomer.html">Razvoj programske opreme laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kalibracija.html">Umeritev laserskega 3D merilnika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="obdelava_3D_meritev.html">Obdelava 3D meritev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vlakenski_senzorji.html">Vlakenski senzorji</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="master_document.html">Vaje pri predmetu Laserski merilni sistemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="master_document.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Ogrodje programa (Python)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/priloga3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ogrodje-programa-python">
+<span id="priloga3"></span><h1>Ogrodje programa (Python)<a class="headerlink" href="#ogrodje-programa-python" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#funkcija za shranjevanje matrik</span>
+<span class="k">def</span> <span class="nf">save_float_mtx</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
+   <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span>
+   <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+   <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+      <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+   <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#funkcija za detekcijo profila na sliki</span>
+<span class="c1">#image ... slika, na kateri iščemo profil</span>
+<span class="c1">#profile ... list, kamor zapišemo profil</span>
+<span class="c1">#filter_size ... dimenzija filtra</span>
+
+<span class="k">def</span> <span class="nf">detect_profile</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">):</span>
+   <span class="c1">#preberite dimenzije slike; h ... višina slike, w ... širina slike</span>
+
+   <span class="c1">#filtrirajte vstopno sliko; cv2.GaussianBlur()</span>
+   <span class="n">image_flt</span> <span class="o">=</span>
+   <span class="c1">#izračunajte odvod filtrirane slike; cv2.Sobel()</span>
+   <span class="n">derivative</span> <span class="o">=</span>
+
+   <span class="c1">#&quot;za vsako vrstico&quot;</span>
+   <span class="k">for</span> <span class="n">v</span>
+      <span class="c1">#maksimalna intenziteta je enaka nič</span>
+      <span class="n">maxInty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="c1">#&quot;za vsak element v vrstici&quot;</span>
+      <span class="k">for</span> <span class="n">u</span>
+         <span class="c1">#preberite trenutni element odvoda v vrstici</span>
+         <span class="n">p_drv</span> <span class="o">=</span>
+         <span class="c1">#preberite naslednji element odvoda v vrstici</span>
+         <span class="n">p_drv_next</span> <span class="o">=</span>
+         <span class="c1">#preberite trenutno vrednost intenzitete</span>
+         <span class="n">p_inty</span> <span class="o">=</span>
+
+         <span class="c1">#preverite, ali je to mesto prevoja</span>
+         <span class="c1">#&quot;če je trenutna vrednost odvoda večja ali enaka 0 in hkrati naslednja vrednost odvoda manjša od 0&quot;</span>
+         <span class="k">if</span>
+             <span class="c1">#je intenziteta na mestu tega prevoja večja kot na prejšnjem</span>
+             <span class="k">if</span>
+                 <span class="c1">#v mesto profila, ki pripada tej vrstici zapišite lokacijo prevoja</span>
+                 <span class="n">profile</span><span class="p">[]</span> <span class="o">=</span>
+                 <span class="c1">#nastavite trenutno inteziteto kot maksimalno intenziteto</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#nastavite ime mape, kjer se nahajajo slike kot path</span>
+<span class="n">path</span> <span class="o">=</span>
+<span class="c1">#nastavite število slik, ki jih želite obdelati</span>
+<span class="n">n_of_imgs</span> <span class="o">=</span>
+<span class="c1">#nastavite indeks prve slike</span>
+<span class="n">start_ind</span> <span class="o">=</span>
+<span class="c1">#inicializirajte matriko profilov, vsaka vrstica te matrike pripada svoji sliki, tip naj bo float32</span>
+<span class="n">profiles</span> <span class="o">=</span>
+
+<span class="c1">#&quot;za vsako sliko&quot;</span>
+<span class="k">for</span> <span class="n">i</span>
+   <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">n_of_imgs</span><span class="p">)</span>
+   <span class="c1">#preberite BW sliko</span>
+   <span class="n">image</span> <span class="o">=</span>
+   <span class="c1">#spremenite podatkovni tip iz uint8 v float32 in ustrezno skalirajte</span>
+
+   <span class="c1">#uporabite funkcijo detect_profile</span>
+   <span class="n">detect_profile</span><span class="p">()</span>
+
+<span class="n">alpha</span> <span class="o">=</span>  <span class="c1">#triangulacijski kot</span>
+<span class="n">Py</span> <span class="o">=</span>  <span class="c1">#razdalja med kamero in projektorjem v Y smeri - &quot;baseline&quot;</span>
+<span class="n">f</span> <span class="o">=</span>  <span class="c1">#goriščna razdalja objektiva</span>
+<span class="n">cu</span> <span class="o">=</span>  <span class="c1">#sredina slike v U smeri (horizontalni) merjeno od levega roba</span>
+<span class="n">cv</span> <span class="o">=</span>  <span class="c1">#sredina slike v V smeri (vertikalni) merjeno od zgornjega roba</span>
+<span class="n">du</span> <span class="o">=</span>  <span class="c1">#dimenzija slikovnega elementa v U smeri</span>
+<span class="n">dv</span> <span class="o">=</span>  <span class="c1">#dimenzija slikovnega elementa v V smeri</span>
+<span class="n">dx</span> <span class="o">=</span>  <span class="c1"># korak mize med dvema zaporednima slikama v Y smeri</span>
+<span class="c1">#preberite število profilov in dolžino profilov</span>
+<span class="n">n_of_prf</span><span class="p">,</span> <span class="n">l_of_prf</span> <span class="o">=</span>
+<span class="c1">#inicializirajte matriko Xov tipa float32</span>
+<span class="n">X</span> <span class="o">=</span>
+<span class="c1">#inicializirajte matriko Yov tipa float32</span>
+<span class="n">Y</span> <span class="o">=</span>
+<span class="c1">#inicializirajte matriko Zov tipa float32</span>
+<span class="n">Z</span> <span class="o">=</span>
+
+<span class="c1">#&quot;za vsak profil&quot;</span>
+   <span class="k">for</span>
+      <span class="c1">#&quot;za vsak element v profilu&quot;</span>
+      <span class="k">for</span> <span class="n">u</span>
+         <span class="c1">#izračunajte smerni vektor v U smeri</span>
+         <span class="n">un</span> <span class="o">=</span>
+         <span class="c1">#izračunajte smerni vektor v V smeri</span>
+         <span class="n">vn</span> <span class="o">=</span>
+         <span class="c1">#izračunajte Z koordinato merjene točke in jo zapišite na pripadajoče mesto v Z matriki</span>
+         <span class="n">Z</span> <span class="o">=</span>
+         <span class="c1">#izračunajte Y koordinato merjene točke in jo zapišite na pripadajoče mesto v Y matriki</span>
+         <span class="n">Y</span> <span class="o">=</span>
+         <span class="c1">#izračunajte X koordinato merjene točke in jo zapišite na pripadajoče mesto v X matriki</span>
+         <span class="n">X</span> <span class="o">=</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="o">-</span><span class="n">Z</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Urban Pavlovčič.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

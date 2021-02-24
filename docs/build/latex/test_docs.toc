@@ -1,0 +1,53 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Prostorsko fitriranje in raz\IeC {\v s}irjevalnik laserskega snopa}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Naloge}{3}{section.1.1}
+\contentsline {chapter}{\numberline {2}Prera\IeC {\v c}un opti\IeC {\v c}nega sistema s programom OSLO LT}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Naloge}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Zagon programa}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Vnos geometrijskih podatkov}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Izris opti\IeC {\v c}nega sistema}{11}{section.2.4}
+\contentsline {section}{\numberline {2.5}Karakterizacija preslikave to\IeC {\v c}kovnega svetlobnega izvora}{14}{section.2.5}
+\contentsline {section}{\numberline {2.6}Primerjava treh tipov le\IeC {\v c} pri preslikavi iz neskon\IeC {\v c}nosti v kon\IeC {\v c}nost}{16}{section.2.6}
+\contentsline {chapter}{\numberline {3}Fizeauev interferometer}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Prakti\IeC {\v c}ne naloge:}{20}{section.3.1}
+\contentsline {chapter}{\numberline {4}Twyman\sphinxhyphen {}Greenov interferometer}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Prakti\IeC {\v c}ne naloge:}{21}{section.4.1}
+\contentsline {chapter}{\numberline {5}Uvod v ra\IeC {\v c}unalni\IeC {\v s}ko obdelavo slik}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Uvod}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Vaja 1: branje in pisanje slik z diska}{23}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Vaja 2: zajemanje in prikazovanje slike s kamere}{27}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Vaja 3: globina slike (\sphinxstyleemphasis {image depth}) in prikazovanje slike}{29}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Vaja 4: filtriranje slik}{30}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Median filter}{32}{section.5.2}
+\contentsline {chapter}{\numberline {6}Ra\IeC {\v c}unalni\IeC {\v s}ka analiza interferogramov}{35}{chapter.6}
+\contentsline {chapter}{\numberline {7}Razvoj programske opreme laserskega 3D merilnika}{37}{chapter.7}
+\contentsline {section}{\numberline {7.1}Uvod}{37}{section.7.1}
+\contentsline {section}{\numberline {7.2}Oprema}{37}{section.7.2}
+\contentsline {section}{\numberline {7.3}Potek vaje}{37}{section.7.3}
+\contentsline {section}{\numberline {7.4}Osnovni pojmi}{38}{section.7.4}
+\contentsline {section}{\numberline {7.5}Glavni program}{39}{section.7.5}
+\contentsline {section}{\numberline {7.6}Funkcija \sphinxstyleliteralintitle {\sphinxupquote {detect\_profile(...)}}}{40}{section.7.6}
+\contentsline {section}{\numberline {7.7}Rekonstrukcija povr\IeC {\v s}ine}{40}{section.7.7}
+\contentsline {section}{\numberline {7.8}Vizualizacija rezultatov}{41}{section.7.8}
+\contentsline {section}{\numberline {7.9}Priloge}{41}{section.7.9}
+\contentsline {chapter}{\numberline {8}Umeritev laserskega 3D merilnika}{43}{chapter.8}
+\contentsline {section}{\numberline {8.1}Uvod}{43}{section.8.1}
+\contentsline {section}{\numberline {8.2}Oprema}{43}{section.8.2}
+\contentsline {section}{\numberline {8.3}Potek vaje}{43}{section.8.3}
+\contentsline {section}{\numberline {8.4}Predstavitev parametrov rekonstrukcije}{43}{section.8.4}
+\contentsline {section}{\numberline {8.5}Nastavitev programa}{44}{section.8.5}
+\contentsline {section}{\numberline {8.6}Zagon optimizacije}{45}{section.8.6}
+\contentsline {section}{\numberline {8.7}Zabele\IeC {\v z}ite rezultate}{45}{section.8.7}
+\contentsline {chapter}{\numberline {9}Obdelava 3D meritev}{47}{chapter.9}
+\contentsline {section}{\numberline {9.1}Uvod}{47}{section.9.1}
+\contentsline {section}{\numberline {9.2}Izmerite merjeni objekt iz ve\IeC {\v c} pogledov}{47}{section.9.2}
+\contentsline {section}{\numberline {9.3}Uvoz mno\IeC {\v z}ice meritev v GM}{48}{section.9.3}
+\contentsline {section}{\numberline {9.4}Priprava meritev}{48}{section.9.4}
+\contentsline {section}{\numberline {9.5}Ro\IeC {\v c}na poravnava (sestavljanje)}{49}{section.9.5}
+\contentsline {section}{\numberline {9.6}Globalna poravnava}{50}{section.9.6}
+\contentsline {section}{\numberline {9.7}Kon\IeC {\v c}na obdelava}{50}{section.9.7}
+\contentsline {chapter}{\numberline {10}Vlakenski senzorji}{53}{chapter.10}
+\contentsline {section}{\numberline {10.1}Uvod}{53}{section.10.1}
+\contentsline {section}{\numberline {10.2}Vlakenski senzor pomika}{53}{section.10.2}
+\contentsline {section}{\numberline {10.3}Vlakenski fluorescentni termometer}{54}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}Potek vaje}{55}{subsection.10.3.1}
