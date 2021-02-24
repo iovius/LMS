@@ -189,9 +189,9 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1">#definiramo spremenjivko π</span>
-<span class="n">π</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">π</span> <span class="o">=</span>
 <span class="c1">#definiramo spremenjivko 2*π</span>
-<span class="n">π2</span> <span class="o">=</span> <span class="n">π</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">π2</span> <span class="o">=</span>
 </pre></div>
 </td></tr></table></div>
 <p>V naslednji celici bomo napisali funkcijo, ki bo prebrala in sprocesirala posamezno sliko. Definicijo funkcije moramo začeti z ukazom <code class="docutils literal notranslate"><span class="pre">def</span></code>. <code class="docutils literal notranslate"><span class="pre">read_and_process_image(filename,</span> <span class="pre">images,</span> <span class="pre">resize_factor)</span></code> pomeni, da je <em>read_and_process_image</em> ime funkcije, <em>filename</em>, <em>images</em> in <em>resize_factor</em> pa so argumenti, ki jih bomo morali podati.</p>
@@ -219,19 +219,19 @@
 <span class="c1">#resize_factor ... faktor, za keterega spremenimo velikost slik</span>
 <span class="k">def</span> <span class="nf">read_and_process_image</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">images</span><span class="p">,</span> <span class="n">resize_factor</span><span class="p">):</span>
     <span class="c1">#preberite sliko v barvah s funkcijo cv2.imread()</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span>
     <span class="c1">#preberite dimenzije slike z metodo .shape</span>
-    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span>
     <span class="c1">#spremenite dimenzije slike s funkcijo cv2.resize()</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">fx</span> <span class="o">=</span> <span class="n">resize_factor</span><span class="p">,</span> <span class="n">fy</span> <span class="o">=</span> <span class="n">resize_factor</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span>
     <span class="c1">#&quot;razbite&quot; sliko po posameznih kanalih; cv2.split()</span>
-    <span class="p">[</span><span class="n">B</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">R</span><span class="p">]</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
-    <span class="c1">#filtrirajte sliko; cv2.GaussianBlur()</span>
-    <span class="n">R_f</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">R</span><span class="p">,(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="c1">#filtrirajte sliko - razmislite, kateri kanal; cv2.GaussianBlur()</span>
+
     <span class="c1">#spremenite podatkovni tip vrednosti v float32 in ustrezno skalirajte</span>
-    <span class="n">R_f</span> <span class="o">=</span> <span class="n">R_f</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">/</span><span class="mi">255</span>
+
     <span class="c1">#v seznam images dodajte končno sliko</span>
-    <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R_f</span><span class="p">)</span>
+    <span class="n">images</span><span class="o">.</span><span class="n">append</span>
 </pre></div>
 </td></tr></table></div>
 <p>V tej celici podamo imena posameznih slik in jih zapišemo v <em>list</em>.</p>
