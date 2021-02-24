@@ -489,7 +489,7 @@ na mestu najmanjše točke (\sphinxstylestrong{autofocus \textendash{} minimal R
 
 
 \chapter{Fizeauev interferometer}
-\label{\detokenize{fizeau:fizeauev-interferometer}}\label{\detokenize{fizeau::doc}}
+\label{\detokenize{fizeau:fizeauev-interferometer}}\label{\detokenize{fizeau:fizeau}}\label{\detokenize{fizeau::doc}}
 \sphinxAtStartPar
 Navodila za laboratorijsko vajo so zaenkrat dostopna le v \sphinxstyleemphasis{.pdf} verziji na povezavi \sphinxcode{\sphinxupquote{Fizeaujev interferometer}}
 
@@ -509,7 +509,7 @@ Pri tej vaji boste uporabljali polariziran He\sphinxhyphen{}Ne laser z valovno d
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-Tik za laserski izvor postavite razširjevalnik snopa. Prva leča naj ima goriščno razdaljo \sphinxstyleemphasis{7,5 mm}, druga pa \sphinxstyleemphasis{150 mm}. Na ustrezno mesto vstavite zaslonko (premera \sphinxstyleemphasis{15} \({\mu}m\)) za prostorsko filtriranje žarka. Drugo lečo postavite na takšno razdaljo, da bo žarek na izhodu kolimiran.
+Tik za laserski izvor postavite razširjevalnik snopa. Prva leča naj ima goriščno razdaljo \sphinxstyleemphasis{7,5 mm}, druga pa \sphinxstyleemphasis{150 mm}. Na ustrezno mesto vstavite zaslonko (premera \sphinxstyleemphasis{15 μm}) za prostorsko filtriranje žarka. Drugo lečo postavite na takšno razdaljo, da bo žarek na izhodu kolimiran.
 
 \item {} 
 \sphinxAtStartPar
@@ -1067,6 +1067,9 @@ V vrsticah \sphinxstyleemphasis{7} in \sphinxstyleemphasis{8} generiamo \sphinxs
 \caption{Slika 7. Izvorna in filtrirana slika z \sphinxstyleemphasis{median} filtrom.}\label{\detokenize{uvod_py_opencv:id8}}\end{figure}
 
 
+\subsection{Vaja 5: \sphinxstyleemphasis{kopiranje} slik}
+\label{\detokenize{uvod_py_opencv:vaja-5-kopiranje-slik}}
+
 \chapter{Računalniška analiza interferogramov}
 \label{\detokenize{obdelava_interferogramov:racunalniska-analiza-interferogramov}}\label{\detokenize{obdelava_interferogramov:obdelava-interferogramov}}\label{\detokenize{obdelava_interferogramov::doc}}
 \begin{sphinxadmonition}{note}{Note:}
@@ -1075,7 +1078,265 @@ V vrsticah \sphinxstyleemphasis{7} in \sphinxstyleemphasis{8} generiamo \sphinxs
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-Na prejšnji vaji smo zajeli slike interferogramov, ki jih želimo sedaj računalniško obdelati.
+Na prejšnji vaji smo zajeli slike interferogramov, ki jih želimo sedaj računalniško obdelati. Ker bo skripta razmeroma dolga, jo bomo razdelili na več celic. Sledite navodilom, ki so zapisana v komentarjih.
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Če ne uporabljate \sphinxstyleemphasis{Jupyter Notebooka}, boste morali vse celice zapisati v eno skripto.
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Besedilo se vedno nanaša na \sphinxstylestrong{sledečo celico}.
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+V prvi celici bomo uvozili knjižnice, ki jih potrebujemo (\sphinxcode{\sphinxupquote{cv2}} in \sphinxcode{\sphinxupquote{numpy}}). Prav tako lahko definiramo spremenljivki π in 2π (ker se ime spremenljivke v Pythonu ne sme začeti s števil, jo bomo poimenovali π2).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{k+kn}{import} \PYG{n+nn}{cv2}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{c+c1}{\PYGZsh{}definiramo spremenjivko π}
+\PYG{n}{π} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{}definiramo spremenjivko 2*π}
+\PYG{n}{π2} \PYG{o}{=}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+V naslednji celici bomo napisali funkcijo, ki bo prebrala in sprocesirala posamezno sliko. Definicijo funkcije moramo začeti z ukazom \sphinxcode{\sphinxupquote{def}}. \sphinxcode{\sphinxupquote{read\_and\_process\_image(filename, images, resize\_factor)}} pomeni, da je \sphinxstyleemphasis{read\_and\_process\_image} ime funkcije, \sphinxstyleemphasis{filename}, \sphinxstyleemphasis{images} in \sphinxstyleemphasis{resize\_factor} pa so argumenti, ki jih bomo morali podati.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{}funkcija za branje in procesiranje slik}
+\PYG{c+c1}{\PYGZsh{}filename ... lokacija slike na disku}
+\PYG{c+c1}{\PYGZsh{}images ... seznam, kamor shranimo slike}
+\PYG{c+c1}{\PYGZsh{}resize\PYGZus{}factor ... faktor, za keterega spremenimo velikost slik}
+\PYG{k}{def} \PYG{n+nf}{read\PYGZus{}and\PYGZus{}process\PYGZus{}image}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,} \PYG{n}{images}\PYG{p}{,} \PYG{n}{resize\PYGZus{}factor}\PYG{p}{)}\PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{}preberite sliko v barvah s funkcijo cv2.imread()}
+    \PYG{n}{im} \PYG{o}{=}
+    \PYG{c+c1}{\PYGZsh{}preberite dimenzije slike z metodo .shape}
+    \PYG{n}{h}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=}
+    \PYG{c+c1}{\PYGZsh{}spremenite dimenzije slike s funkcijo cv2.resize()}
+    \PYG{n}{im} \PYG{o}{=} \PYG{n}{cv2}\PYG{o}{.}\PYG{n}{resize}
+    \PYG{c+c1}{\PYGZsh{}\PYGZdq{}razbite\PYGZdq{} sliko po posameznih kanalih; cv2.split()}
+
+    \PYG{c+c1}{\PYGZsh{}filtrirajte sliko \PYGZhy{} razmislite, kateri kanal; cv2.GaussianBlur()}
+
+    \PYG{c+c1}{\PYGZsh{}spremenite podatkovni tip vrednosti v float32 in ustrezno skalirajte}
+
+    \PYG{c+c1}{\PYGZsh{}v seznam images dodajte končno sliko}
+    \PYG{n}{images}\PYG{o}{.}\PYG{n}{append}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+V tej celici podamo imena posameznih slik in jih zapišemo v \sphinxstyleemphasis{list}.
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+Spomnite se, kako navajamo poti na disku!
+\end{sphinxadmonition}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{n}{filenames} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{}dodajte ime prve slike}
+
+\PYG{c+c1}{\PYGZsh{}dodajte ime druge slike}
+
+\PYG{c+c1}{\PYGZsh{}dodajte ime tretje slike}
+
+\PYG{c+c1}{\PYGZsh{}dodajte ime četrte slike}
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+S sledčo celico bomo prebrali slike, jih dodali v \sphinxstyleemphasis{list} \sphinxcode{\sphinxupquote{images}} in prikazali.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{n}{images} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{} \PYGZdq{}za vsako ime v seznamu filenames\PYGZdq{}}
+
+    \PYG{c+c1}{\PYGZsh{} uporabite funkcijo read\PYGZus{}and\PYGZus{}process\PYGZus{}image}
+
+    
+\PYG{c+c1}{\PYGZsh{} preberite dimenzije slike; h ... višina, w ... širina}
+\PYG{n}{h}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=}
+
+\PYG{c+c1}{\PYGZsh{} pojdite čez slike in vsako prikažite}
+\PYG{k}{for} \PYG{n}{i}\PYG{p}{,}  \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}  \PYG{p}{)}\PYG{p}{:}
+
+
+\PYG{c+c1}{\PYGZsh{} spomnite se, kaj morate storiti po tem, ko slike prikažete}
+
+\PYG{c+c1}{\PYGZsh{} zaprite vsa okna}
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Sedaj bomo začeli z izračunom. V pomoč naj vam bodo \sphinxstyleemphasis{slajdi} s predavanj (\DUrole{xref,std,std-ref}{carre}). V tej celici želimo izračunati vrednost \({\alpha}(x,y)\). Če pogledate, kaj bomo morali storiti v naslednjem koraku, vidite, da je izračun \(arctan\) nekoliko nesmiselen, saj bomo morali potem v naslednjem koraku izračunati \(tan\), tako da namesto \({\alpha}(x,y)\) izračunajmo kar \(tan({\alpha}(x,y))\).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{}odštejte vrednosti slike 2 od vrednosti slike 1}
+\PYG{n}{I1m2} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{}odštejte vrednosti slike 3 od vrednosti slike 0}
+\PYG{n}{I0m3} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{}izračunajte števec}
+\PYG{n}{dividend} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{}izračunajte imenovalec}
+\PYG{n}{divisor} \PYG{o}{=}
+
+\PYG{c+c1}{\PYGZsh{}preverite, da imenovalec ni enak 0}
+\PYG{n}{divisor}\PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{divisor}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{0.0000001}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mf}{0.0000001}
+
+\PYG{c+c1}{\PYGZsh{}izračunajte tan\PYGZus{}alpha}
+\PYG{n}{tan\PYGZus{}alpha} \PYG{o}{=}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Ko smo izračunali \(tan({\alpha}(x,y))\) nadaljujemo z izračunom \sphinxstyleemphasis{faze} (\({\Delta}{\Phi}(x,y)\)).
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Izračun \sphinxstyleemphasis{arkustangensa kvocienta dveh števil} je precej “zahtevna” operacija, saj imamo \sphinxstyleemphasis{6} možnih primerov. Zato ima praktično vsaka \sphinxstyleemphasis{matematična} knjižnica (ki da kaj nase) fukcijo \sphinxhref{https://en.wikipedia.org/wiki/Atan2}{atan2}. V \sphinxcode{\sphinxupquote{numpy}} jo najdemo kot \sphinxcode{\sphinxupquote{arctan2}}.
+\end{sphinxadmonition}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{} izračunajte sinusni del}
+\PYG{n}{sine} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{} pomnožite sinusni del z tan\PYGZus{}alpha}
+
+\PYG{c+c1}{\PYGZsh{} izračunajte cosinusni del}
+\PYG{n}{cosine} \PYG{o}{=}
+
+\PYG{c+c1}{\PYGZsh{} izračunajte fazo; namig (atan2)}
+\PYG{n}{phase} \PYG{o}{=}
+
+\PYG{c+c1}{\PYGZsh{} prikažite sliko}
+
+
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Ker smo za izračun faze uporabili fukcijo \(arctan\) (v našem primeru v resnici \(arctan2\)) je \sphinxstyleemphasis{faza} omejena na inteval \([-\frac{\pi}{2}, \frac{\pi}{2} ]\) (ker smo uporabili \(arctan2\) smo v resnici omejeni na inteval \([-\pi, \pi ]\)). Kakorkoli, ker želimo dobiti zvezen potek \sphinxstyleemphasis{faze} moramo izvesti t.i. \sphinxstyleemphasis{razvijanje faze} (angl.: \sphinxhref{https://ccrma.stanford.edu/~jos/fp/Phase\_Unwrapping.html}{phase unwrapping}). Osnovna ideja (enostavnega algoritma za razvijanje faze) je, da se \sphinxstyleemphasis{pomikamo} po \sphinxstyleemphasis{fazi} in spremljamo, kje se pojavijo nezveznosti. Od tega mesta naprej prištejemo ali odštejemo \(2\pi\), odvisno od tega, v katero smer se pojavi nezveznost.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{}skopirajte vrednosti iz spremenljivke phase v spremenljivko phase\PYGZus{}unwrapped}
+\PYG{n}{phase\PYGZus{}unwrapped} \PYG{o}{=}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZdq{}za vsako vrstico\PYGZdq{}}
+
+    \PYG{c+c1}{\PYGZsh{}spremenljivko phase\PYGZus{}offset nastavite na vrednosti 0}
+
+    \PYG{c+c1}{\PYGZsh{}\PYGZdq{}za vsak element v vrstici\PYGZdq{}}
+
+        \PYG{c+c1}{\PYGZsh{}preberite prejšnjo vrednost v vrstici}
+        \PYG{n}{p\PYGZus{}previous} \PYG{o}{=}
+        \PYG{c+c1}{\PYGZsh{}preberite trenutno vrednost v vrstici}
+        \PYG{n}{p\PYGZus{}current} \PYG{o}{=}
+        
+        \PYG{c+c1}{\PYGZsh{}če je \PYGZdq{}stopnica\PYGZdq{} od trenute do prejšnje vrednosti večja od π}
+
+            \PYG{c+c1}{\PYGZsh{}vrednosti phase\PYGZus{}offset odštejte 2π}
+
+        \PYG{c+c1}{\PYGZsh{}če je \PYGZdq{}stopnica\PYGZdq{} od trenutne do prejšnje manjša večja od \PYGZhy{}π}
+
+            \PYG{c+c1}{\PYGZsh{}vrednosti phase\PYGZus{}offset prištejte 2π}
+
+        
+        \PYG{c+c1}{\PYGZsh{}vrednosti phase prištejete phase\PYGZus{}offset in jo zapišite v phase\PYGZus{}unwrapped}
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Vizualizirajte rezultat.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{} prikažite sliko razvite faze}
+
+
+\PYG{c+c1}{\PYGZsh{} zaprite vsa okna}
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Precej verjetno vidite naj podobnega srednjemu stolpcu na spodnji sliki. Želimo pa rezultat, kot je v zadnjem stolpcu.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.6]{{uw-1smer}.png}
+\caption{Slika 1. Izvorne \sphinxstyleemphasis{faze} (prvi stolpec), \sphinxstyleemphasis{faza} kot bo razvita po našem algoritmu (sredinski stolpec) in rezultat, kot ga želimo (zadnji stolpec).}\label{\detokenize{obdelava_interferogramov:id1}}\end{figure}
+
+\sphinxAtStartPar
+Težava je v tem, da našo \sphinxstyleemphasis{sliko faze} razvijamo samo z leve proti desni, v primeru kot je zgoraj levo na \sphinxstyleemphasis{sliki 1} pa se do sredinskega polja pa nabere že kar nekaj \sphinxstyleemphasis{napake}.
+
+\sphinxAtStartPar
+Postopek razvijanja moramo zato ponoviti še enkrat, tokrat v navpični smeri.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{} vrednost phase\PYGZus{}unwrapped skopirajte v phase\PYGZus{}unwrapped2}
+\PYG{n}{phase\PYGZus{}unwrapped2} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{} izračunajte indeks sredinskega stolpca; pazite na tip!!}
+\PYG{n}{u\PYGZus{}scan} \PYG{o}{=}
+\PYG{c+c1}{\PYGZsh{} postavite vrednost phase\PYGZus{}offset na 0}
+\PYG{n}{phase\PYGZus{}offset} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZdq{}za vsako vrstico\PYGZdq{}}
+
+    \PYG{c+c1}{\PYGZsh{} preberite vrednost prejšnjega elementa v sredinski vrstici}
+    \PYG{n}{p\PYGZus{}previous} \PYG{o}{=}
+    \PYG{c+c1}{\PYGZsh{} preberite vrednost trenutnega elementa v sredinski vrstici}
+    \PYG{n}{p\PYGZus{}current} \PYG{o}{=}
+    
+    \PYG{c+c1}{\PYGZsh{} izračunajte razliko med trenutno in prejšnjo}
+    \PYG{n}{diff\PYGZus{}c\PYGZus{}p} \PYG{o}{=}
+
+    \PYG{c+c1}{\PYGZsh{}deljite z 2π}
+    \PYG{n}{diff\PYGZus{}c\PYGZus{}p}
+    \PYG{c+c1}{\PYGZsh{}zaikrožite}
+    \PYG{n}{diff\PYGZus{}c\PYGZus{}p} \PYG{o}{=}
+    \PYG{c+c1}{\PYGZsh{}pomnožite z 2π}
+    \PYG{n}{diff\PYGZus{}c\PYGZus{}p}
+    \PYG{c+c1}{\PYGZsh{}odštejte vrednost od phase\PYGZus{}offset}
+    \PYG{n}{phase\PYGZus{}offset}
+       
+    \PYG{c+c1}{\PYGZsh{}celotni treutni vrstici prištejte vrednost phase\PYGZus{}offset}
+    \PYG{n}{phase\PYGZus{}unwrapped2}\PYG{p}{[}\PYG{n}{v}\PYG{p}{,}\PYG{p}{:}\PYG{p}{]}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Vizualizirajte rezultat \sphinxstyleemphasis{faze}.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{} prikažite končni rezultat}
+
+
+\PYG{c+c1}{\PYGZsh{} zaprite vsa okna}
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Če vas moti \sphinxstyleemphasis{šum} okoli faze (ljubkovalno imenovan tudi “šavje”), lahko preverite vidljivost signala na posameznem mestu in izrišete le točke, z visoko vidljivostjo.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{c+c1}{\PYGZsh{} prikažite končni rezultat z upoštevanjem ROI}
+
+\PYG{c+c1}{\PYGZsh{} izračunajte standardno deviacijo med slikami}
+\PYG{n}{STD} \PYG{o}{=} 
+\PYG{c+c1}{\PYGZsh{} preverite, kje je STD večji od 0.01}
+\PYG{n}{ROI} \PYG{o}{=} 
+\PYG{c+c1}{\PYGZsh{} skopirajte razvito sliko v phsUW }
+
+\PYG{c+c1}{\PYGZsh{} v phsUW nastavite vrednosti, kjer je ROI enak Fasle na NaN}
+
+
+\PYG{c+c1}{\PYGZsh{} izrišite sliko}
+\PYG{n}{imshow}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{STD}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{phsUW}\PYG{p}{)}
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{waitKey}\PYG{p}{(}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} zaprite vsa okna}
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{destroyAllWindows}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
 
 
 \chapter{Razvoj programske opreme laserskega 3D merilnika}

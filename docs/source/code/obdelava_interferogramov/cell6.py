@@ -1,14 +1,17 @@
 images = []
-#"za vsako ime v seznamu filenames"
-for filename in filenames:
-    #uporabite funkcijo read_and_process_image
-    read_and_process_image(filename, images, 1.2)
+# "za vsako ime v seznamu filenames"
+
+    # uporabite funkcijo read_and_process_image
+
     
-#preberite dimenzije slike; h ... višina, w ... širina
-h, w = images[0].shape
+# preberite dimenzije slike; h ... višina, w ... širina
+h, w =
 
-for i,image in enumerate(images):
-    cv2.imshow("slika"+str(i), image)
+# pojdite čez slike in vsako prikažite
+for i,  in enumerate(  ):
 
-cv2.waitKey()
-cv2.destroyAllWindows()
+
+# spomnite se, kaj morate storiti po tem, ko slike prikažete
+
+# zaprite vsa okna
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.2.24)  24 FEB 2021 08:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.2.24)  24 FEB 2021 11:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1201,7 +1201,10 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 ]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 87.
- (./test_docs.toc)
+ (./test_docs.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+)
 \tf@toc=\write6
 \openout6 = `test_docs.toc'.
 
@@ -1217,19 +1220,19 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<razsirjevalnik.png, id=49, 760.8425pt x 283.0575pt>
+<razsirjevalnik.png, id=88, 760.8425pt x 283.0575pt>
 File: razsirjevalnik.png Graphic file (type png)
 <use razsirjevalnik.png>
 Package pdftex.def Info: razsirjevalnik.png  used on input line 108.
 (pdftex.def)             Requested size: 469.76707pt x 174.76822pt.
  [3 <./razsirjevalnik.png>] [4]
 Chapter 2.
-<1.png, id=71, 458.71375pt x 167.62625pt>
+<1.png, id=110, 458.71375pt x 167.62625pt>
 File: 1.png Graphic file (type png)
 <use 1.png>
 Package pdftex.def Info: 1.png  used on input line 186.
 (pdftex.def)             Requested size: 458.71263pt x 167.62582pt.
-<2.png, id=72, 1124.2pt x 939.51pt>
+<2.png, id=111, 1124.2pt x 939.51pt>
 File: 2.png Graphic file (type png)
 <use 2.png>
 Package pdftex.def Info: 2.png  used on input line 200.
@@ -1237,84 +1240,82 @@ Package pdftex.def Info: 2.png  used on input line 200.
 [5
 
  <./1.png>] [6 <./2.png>]
-<3.png, id=92, 603.25375pt x 276.03125pt>
+<3.png, id=131, 603.25375pt x 276.03125pt>
 File: 3.png Graphic file (type png)
 <use 3.png>
 Package pdftex.def Info: 3.png  used on input line 217.
 (pdftex.def)             Requested size: 469.75362pt x 214.9539pt.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 227.
-<4.png, id=93, 596.2275pt x 343.2825pt>
+<4.png, id=132, 596.2275pt x 343.2825pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
 Package pdftex.def Info: 4.png  used on input line 234.
 (pdftex.def)             Requested size: 469.75908pt x 270.4621pt.
-<5.png, id=94, 677.53125pt x 445.665pt>
+<5.png, id=133, 677.53125pt x 445.665pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
 Package pdftex.def Info: 5.png  used on input line 248.
 (pdftex.def)             Requested size: 469.77148pt x 308.99844pt.
-<6.png, id=95, 603.25375pt x 317.185pt>
+<6.png, id=134, 603.25375pt x 317.185pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
 Package pdftex.def Info: 6.png  used on input line 270.
 (pdftex.def)             Requested size: 469.75362pt x 247.00157pt.
-<7.png, id=96, 602.25pt x 313.17pt>
+<7.png, id=135, 602.25pt x 313.17pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
 Package pdftex.def Info: 7.png  used on input line 284.
 (pdftex.def)             Requested size: 469.77148pt x 244.28116pt.
-<8.png, id=97, 600.2425pt x 254.9525pt>
+<8.png, id=136, 600.2425pt x 254.9525pt>
 File: 8.png Graphic file (type png)
 <use 8.png>
 Package pdftex.def Info: 8.png  used on input line 298.
 (pdftex.def)             Requested size: 469.77176pt x 199.53903pt.
-<9.png, id=98, 599.23875pt x 311.1625pt>
+<9.png, id=137, 599.23875pt x 311.1625pt>
 File: 9.png Graphic file (type png)
 <use 9.png>
 Package pdftex.def Info: 9.png  used on input line 312.
 (pdftex.def)             Requested size: 469.7634pt x 243.926pt.
  [7 <./3.png>] [8 <./4.png> <./5.png>] [9 <./6.png> <./7.png>] [10 <./8.png> <.
 /9.png>]
-<10.png, id=131, 692.5875pt x 504.88625pt>
+<10.png, id=170, 692.5875pt x 504.88625pt>
 File: 10.png Graphic file (type png)
 <use 10.png>
 Package pdftex.def Info: 10.png  used on input line 335.
 (pdftex.def)             Requested size: 469.76964pt x 342.44754pt.
-<11.png, id=132, 950.55125pt x 333.245pt>
+<11.png, id=171, 950.55125pt x 333.245pt>
 File: 11.png Graphic file (type png)
 <use 11.png>
 Package pdftex.def Info: 11.png  used on input line 360.
 (pdftex.def)             Requested size: 469.76285pt x 164.68982pt.
-<12.png, id=133, 652.4375pt x 338.26375pt>
+<12.png, id=172, 652.4375pt x 338.26375pt>
 File: 12.png Graphic file (type png)
 <use 12.png>
 Package pdftex.def Info: 12.png  used on input line 369.
 (pdftex.def)             Requested size: 469.77455pt x 243.55486pt.
-<13.png, id=134, 693.59125pt x 504.88625pt>
+<13.png, id=173, 693.59125pt x 504.88625pt>
 File: 13.png Graphic file (type png)
 <use 13.png>
 Package pdftex.def Info: 13.png  used on input line 383.
 (pdftex.def)             Requested size: 469.77315pt x 341.9545pt.
  [11 <./10.png>] [12 <./11.png> <./12.png>]
 [13 <./13.png>]
-<14.png, id=159, 601.24625pt x 352.31625pt>
+<14.png, id=198, 601.24625pt x 352.31625pt>
 File: 14.png Graphic file (type png)
 <use 14.png>
 Package pdftex.def Info: 14.png  used on input line 400.
 (pdftex.def)             Requested size: 469.76834pt x 275.26251pt.
-<15.png, id=160, 696.6025pt x 501.875pt>
+<15.png, id=199, 696.6025pt x 501.875pt>
 File: 15.png Graphic file (type png)
 <use 15.png>
 Package pdftex.def Info: 15.png  used on input line 409.
 (pdftex.def)             Requested size: 469.7506pt x 338.45999pt.
-<16.png, id=161, 564.1075pt x 319.1925pt>
+<16.png, id=200, 564.1075pt x 319.1925pt>
 File: 16.png Graphic file (type png)
 <use 16.png>
 Package pdftex.def Info: 16.png  used on input line 430.
 (pdftex.def)             Requested size: 469.75845pt x 265.80638pt.
  [14 <./14.png>] [15 <./15.png> <./16.png>]
-<17.png, id=176, 692.5875pt x 452.69125pt>
+<17.png, id=215, 692.5875pt x 452.69125pt>
 File: 17.png Graphic file (type png)
 <use 17.png>
 Package pdftex.def Info: 17.png  used on input line 443.
@@ -1329,12 +1330,25 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 ]
 Chapter 3.
-<shema.png, id=196, 720.6925pt x 474.77374pt>
+<shema.png, id=234, 720.6925pt x 474.77374pt>
 File: shema.png Graphic file (type png)
 <use shema.png>
 Package pdftex.def Info: shema.png  used on input line 503.
 (pdftex.def)             Requested size: 469.7532pt x 309.47585pt.
-[19 <./shema.png>] [20]
+[19 <./shema.png>]
+
+! Package inputenc Error: Unicode char μ (U+3BC)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.512 ...nko (premera \sphinxstyleemphasis{15 μm}
+                                                  ) za prostorsko filtriranj...
+
+? 
+[20]
 Chapter 4.
 [21
 
@@ -1349,7 +1363,7 @@ File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 ) [23
 
 ]
-<Lenna_(test_image).png, id=254, 519.9425pt x 551.05875pt>
+<Lenna_(test_image).png, id=290, 519.9425pt x 551.05875pt>
 File: Lenna_(test_image).png Graphic file (type png)
 <use Lenna_(test_image).png>
 Package pdftex.def Info: Lenna_(test_image).png  used on input line 704.
@@ -1368,12 +1382,12 @@ l.718 ...ay milliseconds, when it is positive.”}
 
 ? 
 [24] [25 <./Lenna_(test_image).png>]
-<Lenna+merged.png, id=270, 1055.945pt x 550.055pt>
+<Lenna+merged.png, id=306, 1055.945pt x 550.055pt>
 File: Lenna+merged.png Graphic file (type png)
 <use Lenna+merged.png>
 Package pdftex.def Info: Lenna+merged.png  used on input line 764.
 (pdftex.def)             Requested size: 469.7571pt x 244.70236pt.
-<channels.png, id=271, 1580.90625pt x 556.0775pt>
+<channels.png, id=307, 1580.90625pt x 556.0775pt>
 File: channels.png Graphic file (type png)
 <use channels.png>
 Package pdftex.def Info: channels.png  used on input line 771.
@@ -1389,24 +1403,24 @@ LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 880.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <12> not available
 (Font)              Font shape `T1/phv/b/sl' tried instead on input line 880.
-<w_s_b.png, id=300, 1529.715pt x 539.01375pt>
+<w_s_b.png, id=337, 1529.715pt x 539.01375pt>
 File: w_s_b.png Graphic file (type png)
 <use w_s_b.png>
 Package pdftex.def Info: w_s_b.png  used on input line 922.
 (pdftex.def)             Requested size: 469.74852pt x 165.5216pt.
-<w_s_b_f32.png, id=301, 1544.77126pt x 543.02875pt>
+<w_s_b_f32.png, id=338, 1544.77126pt x 543.02875pt>
 File: w_s_b_f32.png Graphic file (type png)
 <use w_s_b_f32.png>
 Package pdftex.def Info: w_s_b_f32.png  used on input line 932.
 (pdftex.def)             Requested size: 469.75206pt x 165.13051pt.
  [29 <./w_s_b.png>] [30 <./w_s_b_f32.png>]
-<moving_average.png, id=320, 1022.82124pt x 541.02126pt>
+<moving_average.png, id=356, 1022.82124pt x 541.02126pt>
 File: moving_average.png Graphic file (type png)
 <use moving_average.png>
 Package pdftex.def Info: moving_average.png  used on input line 1026.
 (pdftex.def)             Requested size: 469.75435pt x 248.47653pt.
  [31]
-<median.png, id=325, 1019.81pt x 539.01375pt>
+<median.png, id=361, 1019.81pt x 539.01375pt>
 File: median.png Graphic file (type png)
 <use median.png>
 Package pdftex.def Info: median.png  used on input line 1066.
@@ -1416,15 +1430,170 @@ Package pdftex.def Info: median.png  used on input line 1066.
 
 ]
 Chapter 6.
-[35] [36
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1094 ...v tako lahko definiramo spremenljivki π
+                                                   in 2π (ker se ime spreme...
+
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1094 ...lahko definiramo spremenljivki π in 2π
+                                                   (ker se ime spremenljivke...
+
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1094 ...ačeti s števil, jo bomo poimenovali π
+                                                  2).
+? 
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 1100.
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1100 ...c1}{\PYGZsh{}definiramo spremenjivko π}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1101 \PYG{n}{π} \PYG{o}{=}
+                             
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1102 ...}{\PYGZsh{}definiramo spremenjivko 2*π}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1103 \PYG{n}{π2} \PYG{o}{=}
+                              
+? 
+[35] [36]
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1237 ...ute do prejšnje vrednosti večja od π}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1239 ...osti phase\PYGZus{}offset odštejte 2π}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1241 ...prejšnje manjša večja od \PYGZhy{}π}
+                                                  
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1243 ...sti phase\PYGZus{}offset prištejte 2π}
+                                                  
+? 
+[37]
+<uw-1smer.png, id=397, 877.2775pt x 494.84875pt>
+File: uw-1smer.png Graphic file (type png)
+<use uw-1smer.png>
+Package pdftex.def Info: uw-1smer.png  used on input line 1268.
+(pdftex.def)             Requested size: 469.7605pt x 264.97177pt.
+
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1295     \PYG{c+c1}{\PYGZsh{}deljite z 2π}
+                                             
+? 
+
+! Package inputenc Error: Unicode char π (U+3C0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1299     \PYG{c+c1}{\PYGZsh{}pomnožite z 2π}
+                                                
+? 
+[38 <./uw-1smer.png>] [39] [40
 
 ]
 Chapter 7.
-[37]
-<triangulacija2.png, id=363, 5018.75pt x 3168.83875pt>
+[41]
+<triangulacija2.png, id=422, 5018.75pt x 3168.83875pt>
 File: triangulacija2.png Graphic file (type png)
 <use triangulacija2.png>
-Package pdftex.def Info: triangulacija2.png  used on input line 1143.
+Package pdftex.def Info: triangulacija2.png  used on input line 1404.
 (pdftex.def)             Requested size: 469.74086pt x 296.59438pt.
 
 
@@ -1435,28 +1604,28 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1154 ...vnino pod kotom \sphinxstyleemphasis{α}
+l.1415 ...vnino pod kotom \sphinxstyleemphasis{α}
                                                    glede na optično os obje...
 
 ? 
-<merilna_slikaT.jpg, id=364, 369.5406pt x 489.9906pt>
+<merilna_slikaT.jpg, id=423, 369.5406pt x 489.9906pt>
 File: merilna_slikaT.jpg Graphic file (type jpg)
 <use merilna_slikaT.jpg>
-Package pdftex.def Info: merilna_slikaT.jpg  used on input line 1160.
+Package pdftex.def Info: merilna_slikaT.jpg  used on input line 1421.
 (pdftex.def)             Requested size: 73.9068pt x 97.99638pt.
-[38 <./triangulacija2.png> <./merilna_slikaT.jpg>]
-<zapisovanje_profilov.jpg, id=373, 361.35pt x 126.4725pt>
+[42 <./triangulacija2.png> <./merilna_slikaT.jpg>]
+<zapisovanje_profilov.jpg, id=432, 361.35pt x 126.4725pt>
 File: zapisovanje_profilov.jpg Graphic file (type jpg)
 <use zapisovanje_profilov.jpg>
-Package pdftex.def Info: zapisovanje_profilov.jpg  used on input line 1203.
+Package pdftex.def Info: zapisovanje_profilov.jpg  used on input line 1464.
 (pdftex.def)             Requested size: 46.97714pt x 16.442pt.
- [39 <./zapisovanje_profilov.jpg>]
+ [43 <./zapisovanje_profilov.jpg>]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 1247.
-<subpixel_accuracy.jpg, id=388, 361.35pt x 106.4537pt>
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 1508.
+<subpixel_accuracy.jpg, id=446, 361.35pt x 106.4537pt>
 File: subpixel_accuracy.jpg Graphic file (type jpg)
 <use subpixel_accuracy.jpg>
-Package pdftex.def Info: subpixel_accuracy.jpg  used on input line 1286.
+Package pdftex.def Info: subpixel_accuracy.jpg  used on input line 1547.
 (pdftex.def)             Requested size: 28.90858pt x 8.51646pt.
 
 
@@ -1467,102 +1636,102 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1317 kjer je α
+l.1578 kjer je α
                   triangulacijski kot in \sphinxstyleemphasis{P}$_{\text{X}}...
 
 ? 
-[40 <./subpixel_accuracy.jpg>] [41] [42
+[44 <./subpixel_accuracy.jpg>] [45] [46
 
 ]
 Chapter 8.
-[43] [44] [45] [46
+[47] [48] [49] [50
 
 ]
 Chapter 9.
-<prekrivanje.jpg, id=455, 1041.1397pt x 525.46312pt>
+<prekrivanje.jpg, id=512, 1041.1397pt x 525.46312pt>
 File: prekrivanje.jpg Graphic file (type jpg)
 <use prekrivanje.jpg>
-Package pdftex.def Info: prekrivanje.jpg  used on input line 1662.
+Package pdftex.def Info: prekrivanje.jpg  used on input line 1923.
 (pdftex.def)             Requested size: 416.4485pt x 210.18152pt.
-[47 <./prekrivanje.jpg>]
-<izvorna_vs_ociscena.jpg, id=464, 1129.21875pt x 564.60938pt>
+[51 <./prekrivanje.jpg>]
+<izvorna_vs_ociscena.jpg, id=521, 1129.21875pt x 564.60938pt>
 File: izvorna_vs_ociscena.jpg Graphic file (type jpg)
 <use izvorna_vs_ociscena.jpg>
-Package pdftex.def Info: izvorna_vs_ociscena.jpg  used on input line 1696.
+Package pdftex.def Info: izvorna_vs_ociscena.jpg  used on input line 1957.
 (pdftex.def)             Requested size: 451.6795pt x 225.83974pt.
- [48 <./izvorna_vs_ociscena.jpg>]
-<UI2.jpg, id=472, 751.30687pt x 654.19406pt>
+ [52 <./izvorna_vs_ociscena.jpg>]
+<UI2.jpg, id=529, 751.30687pt x 654.19406pt>
 File: UI2.jpg Graphic file (type jpg)
 <use UI2.jpg>
-Package pdftex.def Info: UI2.jpg  used on input line 1710.
+Package pdftex.def Info: UI2.jpg  used on input line 1971.
 (pdftex.def)             Requested size: 450.7876pt x 392.51945pt.
- [49 <./UI2.jpg>]
-<GR-pred-po.jpg, id=479, 1053.9375pt x 602.25pt>
+ [53 <./UI2.jpg>]
+<GR-pred-po.jpg, id=536, 1053.9375pt x 602.25pt>
 File: GR-pred-po.jpg Graphic file (type jpg)
 <use GR-pred-po.jpg>
-Package pdftex.def Info: GR-pred-po.jpg  used on input line 1723.
+Package pdftex.def Info: GR-pred-po.jpg  used on input line 1984.
 (pdftex.def)             Requested size: 421.56754pt x 240.89572pt.
-<final.jpg, id=480, 1129.21875pt x 602.25pt>
+<final.jpg, id=537, 1129.21875pt x 602.25pt>
 File: final.jpg Graphic file (type jpg)
 <use final.jpg>
-Package pdftex.def Info: final.jpg  used on input line 1737.
+Package pdftex.def Info: final.jpg  used on input line 1998.
 (pdftex.def)             Requested size: 451.6795pt x 240.89572pt.
 
-[50 <./GR-pred-po.jpg>] [51 <./final.jpg>] [52
+[54 <./GR-pred-po.jpg>] [55 <./final.jpg>] [56
 
 ]
 Chapter 10.
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
 .
 
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
 .
 
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
 .
 
 
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
-.
-
-Missing character: There is no � in font cmr10!
-Missing character: There is no � in font cmr10!
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
-.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
-.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
-.
-
-
-LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 1758
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
 .
 
 Missing character: There is no � in font cmr10!
 Missing character: There is no � in font cmr10!
-<bend_radius.png, id=498, 536.4843pt x 239.4546pt>
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
+.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
+.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
+.
+
+
+LaTeX Warning: Command \texttwosuperior invalid in math mode on input line 2019
+.
+
+Missing character: There is no � in font cmr10!
+Missing character: There is no � in font cmr10!
+<bend_radius.png, id=554, 536.4843pt x 239.4546pt>
 File: bend_radius.png Graphic file (type png)
 <use bend_radius.png>
-Package pdftex.def Info: bend_radius.png  used on input line 1770.
+Package pdftex.def Info: bend_radius.png  used on input line 2031.
 (pdftex.def)             Requested size: 160.94652pt x 71.83693pt.
-<vilice.png, id=499, 477.2229pt x 191.7564pt>
+<vilice.png, id=555, 477.2229pt x 191.7564pt>
 File: vilice.png Graphic file (type png)
 <use vilice.png>
-Package pdftex.def Info: vilice.png  used on input line 1780.
+Package pdftex.def Info: vilice.png  used on input line 2041.
 (pdftex.def)             Requested size: 143.16797pt x 57.52734pt.
-[53 <./bend_radius.png>]
-<rubinovi_laserski_nivoji.png, id=510, 477.4638pt x 326.4195pt>
+[57 <./bend_radius.png>]
+<rubinovi_laserski_nivoji.png, id=565, 477.4638pt x 326.4195pt>
 File: rubinovi_laserski_nivoji.png Graphic file (type png)
 <use rubinovi_laserski_nivoji.png>
-Package pdftex.def Info: rubinovi_laserski_nivoji.png  used on input line 1794.
+Package pdftex.def Info: rubinovi_laserski_nivoji.png  used on input line 2055.
 
 (pdftex.def)             Requested size: 143.24023pt x 97.92659pt.
 
@@ -1574,7 +1743,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1801 ...razpolovni čas \sphinxstyleemphasis{τ}
+l.2062 ...razpolovni čas \sphinxstyleemphasis{τ}
                                                   . Ta pa je odvisen predvse...
 
 ? 
@@ -1586,7 +1755,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1801 ...bo izkoristek), \sphinxstyleemphasis{τ}
+l.2062 ...bo izkoristek), \sphinxstyleemphasis{τ}
                                                    pa se bo skrajšal.
 ? 
 
@@ -1597,7 +1766,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1806 ...} \cdot  e ^ {- \frac{t}{τ}}\end{split}
+l.2067 ...} \cdot  e ^ {- \frac{t}{τ}}\end{split}
                                                   
 ? 
 
@@ -1608,12 +1777,12 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1806 ...} \cdot  e ^ {- \frac{t}{τ}}\end{split}
+l.2067 ...} \cdot  e ^ {- \frac{t}{τ}}\end{split}
                                                   
 ? 
 File: vilice.png Graphic file (type png)
 <use vilice.png>
-Package pdftex.def Info: vilice.png  used on input line 1815.
+Package pdftex.def Info: vilice.png  used on input line 2076.
 (pdftex.def)             Requested size: 143.16797pt x 57.52734pt.
 
 ! Package inputenc Error: Unicode char τ (U+3C4)
@@ -1623,44 +1792,38 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1816 ...vanjem temperature snovi se τ krajša.}
+l.2077 ...vanjem temperature snovi se τ krajša.}
                                                   \label{\detokenize{vlakens...
 
 ? 
-[54 <./vilice.png> <./rubinovi_laserski_nivoji.png>]
-<vlakno.png, id=521, 435.0654pt x 556.9608pt>
+[58 <./vilice.png> <./rubinovi_laserski_nivoji.png>]
+<vlakno.png, id=576, 435.0654pt x 556.9608pt>
 File: vlakno.png Graphic file (type png)
 <use vlakno.png>
-Package pdftex.def Info: vlakno.png  used on input line 1828.
+Package pdftex.def Info: vlakno.png  used on input line 2089.
 (pdftex.def)             Requested size: 130.52061pt x 167.08952pt.
  (./test_docs.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1835.
- [55 <./vlakno.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1835.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2096.
+ [59 <./vlakno.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2096.
  (./test_docs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1835.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1835.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2096.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2096.
 
+Package rerunfilecheck Info: File `test_docs.out' has not changed.
+(rerunfilecheck)             Checksum: F8DE42A215FBC6A20709CFD6EFDECB99;2243.
 
-
-Package rerunfilecheck Warning: File `test_docs.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `test_docs.out':
-(rerunfilecheck)             Before: 41ECFD744621E0BE6E71CB45AE1E7971;799
-(rerunfilecheck)             After:  F8DE42A215FBC6A20709CFD6EFDECB99;2243.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1835.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2096.
  ) 
 Here is how much of TeX's memory you used:
- 14347 strings out of 494847
- 200042 string characters out of 6179080
- 321234 words of memory out of 5000000
- 17093 multiletter control sequences out of 15000+600000
- 60969 words of font info for 81 fonts, out of 8000000 for 9000
+ 14374 strings out of 494847
+ 200387 string characters out of 6179080
+ 326091 words of memory out of 5000000
+ 17110 multiletter control sequences out of 15000+600000
+ 61706 words of font info for 83 fonts, out of 8000000 for 9000
  60 hyphenation exceptions out of 8191
  37i,19n,48p,1615b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -1673,14 +1836,15 @@ fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on test_docs.pdf (59 pages, 9056588 bytes).
+texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on test_docs.pdf (63 pages, 9396225 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
- 212 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 689 PDF objects out of 1000 (max. 8388607)
+ 525 compressed objects within 6 object streams
+ 218 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 
