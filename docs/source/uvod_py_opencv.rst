@@ -1,5 +1,8 @@
 .. _uvod_py_opencv:
 
+.. |geq| replace:: :math:`{\leq }'`
+
+
 Uvod v računalniško obdelavo slik
 --------------------------------------------
 
@@ -16,12 +19,12 @@ Uvod
 Na današnji vaji bomo spoznali osnovno fukcionalnost, trike in pasti.
 
 .. note::
-   Kot velikokrat v življenju, tudi v programiraju velja, da do končnega cilja ne vodi le ena (pravilna) pot, ampak je le-teh (skorajda *neskončno*) mnogo. Različne poti se lahko bolj ali manj primerne, boli ali manj upoštavajo različne konvencije ipd... Pri predmetu LMS se bomo poskušali čim bolj držati pravil, ki ste jih spoznali pri predmetu `Programiranje in numerične metode v ekosistemu Pythona <https://jankoslavic.github.io/pypinm.io/>`_); včasih najbrž neuspešno. Koda, ki jo bomo pisali bo daleč od optimalne Python kode, ampak bo zelo *skriptna* in čim bolj podobna `pseudo kodi <https://en.wikipedia.org/wiki/Pseudocode>`_. 
+   Kot velikokrat v življenju, tudi v programiraju velja, da do končnega cilja ne vodi le ena (pravilna) pot, ampak je le-teh (skorajda *neskončno*) mnogo. Različne poti so lahko bolj ali manj primerne, boli ali manj upoštavajo različne konvencije ipd... Pri predmetu LMS se bomo poskušali čim bolj držati pravil, ki ste jih spoznali pri predmetu `Programiranje in numerične metode v ekosistemu Pythona <https://jankoslavic.github.io/pypinm.io/>`_); včasih najbrž neuspešno. Koda, ki jo bomo pisali bo daleč od optimalne Python kode, ampak bo zelo *skriptna* in čim bolj podobna `pseudo kodi <https://en.wikipedia.org/wiki/Pseudocode>`_. 
 
-Vaja 1: branje in pisanje slik z diska
-=============================================
+Vaja 1: Branje in pisanje slik z diska
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Napišimo za začetek enostaven *Python* skripto, ki bo z diska prebrala sliko in jo prikazala.
+Napišimo za začetek enostavno *Python* skripto, ki bo z diska prebrala sliko in jo prikazala.
 
 .. literalinclude:: images/uvod_v_py/vaja1.py
 	:language: python
@@ -39,16 +42,16 @@ V prvi vrstici vljučimo *OpenCV*.
 	:language: python
 	:lines: 3
 
-V vrstici *3* preberemo sliko z diska s klicom ``cv2.imread()``. ``cv.`` pomeni, da bomo sedaj klicali funkcijo iz knjičnice, ``imread`` pa je ime funkcije. Vidite lahko, da funkcija sprejme samo en argument. Ta je tipa string in opisuje pot na disku do slike.
+V vrstici *3* preberemo sliko z diska s klicem ``cv2.imread()``. ``cv.`` pomeni, da bomo sedaj klicali funkcijo iz knjižnice, ``imread`` pa je ime funkcije. Vidite lahko, da funkcija sprejme samo en argument. Ta je tipa *string* in opisuje pot na disku do slike.
 
 .. note::
 	Ta navodila so pisana v *OS* *Ubuntu/Linux*. Zato so vse poti napisane v Linux "stilu". Če uporabaljte *OS* *Windows*, je zadeva nekoliko bolj zapletena. Za opisovanje poti imate nekako 3 možnosti. Recimo, da je vaša slika na lokaciji ``"C:\SomeFolder\SomeOtherFolder\my_image.jpg"``.
 	
-	1. pot podate z dvojno levo poševnico (*backslash*-om), torej: ``"C:'\\SomeFolder\\SomeOtherFolder\\my_image.jpg"``
-	2. pot podate s poševnico (*slash*-om), torej: ``"C:/SomeFolder/SomeOtherFolder/my_image.jpg"``
+	1. pot podate z **dvojno levo poševnico** (*backslash*-om), torej: ``"C:'\\SomeFolder\\SomeOtherFolder\\my_image.jpg"``
+	2. pot podate s **poševnico** (*slash*-om), torej: ``"C:/SomeFolder/SomeOtherFolder/my_image.jpg"``
 	3. pot podate kot *dobeseden string* (*literal string*), torej: ``r"C:\SomeFolder\SomeOtherFolder\my_image.jpg"``
 	
-	Težava je v tem, da če pot kopirate, bodo v imenu leve poševnice, ti pa so rezervisani za *posebne znake* (*special characters*, npr. ``"\n"`` pomeni novo vrstico, ``"\t"`` pomeni *tab*, ``"\s"`` presledek itd...).
+	Težava je v tem, da če pot kopirate (iz naprimer *Explorerja*), bodo v imenu leve poševnice, te pa so rezervirane za *posebne znake* (*special characters*, npr. ``"\n"`` pomeni novo vrstico, ``"\t"`` pomeni *tab*, ``"\s"`` presledek itd...).
 	Python ne loči med ``"`` in ``'``, torej lahko uporabljete kateregakoli, morata pa biti **v paru enaka znaka**.
 	
 .. warning::
@@ -58,7 +61,7 @@ V vrstici *3* preberemo sliko z diska s klicom ``cv2.imread()``. ``cv.`` pomeni,
 	:language: python
 	:lines: 4
 
-V četrti vrstici sliko prikažemo s klicom funkcije ``cv2.imshow()``. Funkcija ima 2 parametra: prvi je ime okna (glej *sliko 1*), z drugim pa podamo sliko/matriko, ki jo želimo izrisati.
+V četrti vrstici sliko prikažemo s klicem funkcije ``cv2.imshow()``. Funkcija ima 2 parametra: prvi je ime okna (glej *sliko 1*), z drugim pa podamo sliko/matriko, ki jo želimo izrisati.
 
 .. figure:: images/uvod_v_py/images/Lenna_(test_image).png
 	:alt: reStructuredText, the markup syntax
@@ -68,22 +71,22 @@ V četrti vrstici sliko prikažemo s klicom funkcije ``cv2.imshow()``. Funkcija 
 	Slika 1. Prikazana slika.
 
 .. note:: 
-	Slike so v računalništvu matrike. Če ima slika *640x480* (*širina* x *višina*) pikslov, imamo torej matriko *480x640* (pazite, pri matrikah **najprej podamo štelivo vrstic, potem število stolpcev!**) kjer vrednost vsakega elementa popoisuje intenziteto posameznega piksla (v primeru sivinske - *grayscale* slike). Če imamo opravka z barvno sliko (npr. *RGB* barvni model) imamo 3 matrike, po eno za posamezen kanal (barvo).
+	Slike so v računalništvu matrike. Če ima slika *640x480* (*širina* x *višina*) slikovnih elementov (*pikslov*), imamo torej matriko *480x640* (pazite, pri matrikah **najprej podamo štelivo vrstic, potem število stolpcev!**) kjer vrednost vsakega elementa popisuje intenziteto posamezne slikovne točke (v primeru sivinske - *grayscale* slike). Če imamo opravka z barvno sliko (npr. *RGB* barvni model) imamo 3 matrike, po eno za posamezen kanal (barvo).
 
 .. literalinclude:: images/uvod_v_py/vaja1.py
 	:language: python
 	:lines: 5
 	
 V peti vrstici s fukcijo ``cv2.waitKey()`` čakamo na pritisk katerikoli tipke. 
-Če pogledamo v `dokumentacijo <https://docs.opencv.org/4.0.0/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7>`_ fukcije, je tam zapisamo ``retval = cv.waitKey([, delay] )``. Branje in razumevanje dokumentacije je ena najpomembnejših vrlin, ki jo kot programerji moramo osvojiti. Poglejmo, kaj lahko iz tega razberemo. Znotaj ``()`` vidimo ``[, delay]``. To pomeni, da fukcija sprejme 1 argument, ki pa je opcijski (to povesta ``[]``): to pomeni, da ga lahko podamo, ni pa nujno. Če nadalnje preberemo dokumentacijo piše: *"The function waitKey waits for a key event infinitely (when delay≤0 ) or for delay milliseconds, when it is positive."*. Torej, če argumenta ``delay`` ne podamo, bo funkcija čakala na pritist tipke "v neskončnost", če pa jo, bo počakala samo število milisekund, kot smo ga podali s parametrom ``delay``.
-Vidimo lahko tudi, da fukcija vrne ``retval``. V dokumentacij piše: *"It returns the code of the pressed key or -1 if no key was pressed before the specified time had elapsed."*. Ugotovimo lahko, katero tipko smo pritisni (vrne **ASCII** kodo, najdete jo lahko v stolpcu **Dec** v `tabeli <https://en.wikipedia.org/wiki/ASCII#Printable_characters>`_, ali s *Python* klicom ``ord('<vaša črka>')``).
+Če pogledamo v `dokumentacijo <https://docs.opencv.org/4.0.0/d7/dfc/group__highgui.html#ga5628525ad33f52eab17feebcfba38bd7>`_ fukcije, je tam zapisamo ``retval = cv.waitKey([, delay] )``. Branje in razumevanje dokumentacije je ena najpomembnejših vrlin, ki jo kot "programerji" moramo osvojiti. Poglejmo, kaj lahko iz tega razberemo. Znotaj ``()`` vidimo ``[, delay]``. To pomeni, da fukcija sprejme 1 argument, ki pa je **opcijski** (to povesta ``[]``). *Opcijske argumente* lahko podamo če želimo, ni pa nujno. Če nadaljnje preberemo dokumentacijo piše: *"The function waitKey waits for a key event infinitely (when delay≤0 ) or for delay milliseconds, when it is positive."*. Torej, če argumenta ``delay`` ne podamo, bo funkcija čakala na pritist tipke "v neskončnost", če pa jo, bo počakala samo število milisekund, kot smo ga podali z argumentom ``delay``.
+Vidimo lahko tudi, da fukcija vrne ``retval``. V dokumentacij piše: *"It returns the code of the pressed key or -1 if no key was pressed before the specified time had elapsed."*. Prek te spremenljivke lahko ugotovimo, katero tipko smo pritisnili (vrne **ASCII** kodo, najdete jo lahko v stolpcu **Dec** v `tabeli <https://en.wikipedia.org/wiki/ASCII#Printable_characters>`_, ali s *Python* klicom ``ord('<vaša črka>')``).
 
-Po 5. vrstici bi se torej izvajanje programa moralo ustaviti in prikazati sliko. Ko pritisnemo tipko ze izvajanje skripte nadaljuje z zadnjo vrstico, kjer vsa odprta okna zapremo.
+Po 5. vrstici bi se torej izvajanje programa moralo ustaviti in prikazati sliko. Ko pritisnemo tipko se izvajanje skripte nadaljuje z zadnjo vrstico, kjer vsa odprta okna zapremo.
 
 .. note::
 	Če ne kličemo funkcije ``cv2.destroyAllWindows()`` običajno okno ostane odprto in neodzivno (ne moremo ga zapreti), kar je lahko moteče.
 
-Kot lahko vidimo, je prikazana slika barvna, torej jo sestavljajo 3 kanali, rdeč, zelen in model. Dopolnimo skripto tako, da sliko razdelimo na posamezne kanale, jih prikažemo, premešamo in sliko spet shranimo.
+Kot lahko vidimo, je prikazana slika barvna, torej jo sestavljajo 3 kanali: *rdeč*, *zelen* in *moder*. Dopolnimo skripto tako, da sliko razdelimo na posamezne kanale, jih prikažemo, premešamo in sliko spet shranimo.
 
 .. literalinclude:: code/uvod_v_py/vaja1a.py
 	:language: python
@@ -100,17 +103,17 @@ Dodali smo vrstice *5-10*, *12* in *15*.
 	:alt: reStructuredText, the markup syntax
 	:align: center
 	
-	Slika 2. Originalna *Lenna* in *Lenna* s premešanimi kanali.
+	Slika 2. *Lenna* s premešanimi kanali in originalna *Lenna*.
 
 .. figure:: images/uvod_v_py/images/channels.png
 	:alt: reStructuredText, the markup syntax
 	:align: center
 	
-	Slika 3. Posamezni kanali.
+	Slika 3. Posamezni kanali; rdeč (levo), zelen (v sredini) in moder (desno).
 	
 	
-Vaja 2: zajemanje in prikazovanje slike s kamere
-=======================================================================
+Vaja 2: Zajemanje in prikazovanje slike s kamere
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 V tem delu vaje bomo pogledali, kako s pomočjo *OpenCV*-ja zajamemo sliko s kamere, ki je priklopljena na računalnik.
 
@@ -124,7 +127,7 @@ Skripta je sedaj nekoliko daljša.
 	:language: python
 	:lines: 3
 
-Najpomembnejša razlika v primerjavi s prejšnjo skripto je vrstica *3*. ``VideoCapture`` je `razred <https://en.wikipedia.org/wiki/Class_(computer_programming)>`_ za zajem videa iz različnih video datotek, sekvenc slik in *hardware*-a - kamer. Če podrobneje pogledamo `dokumentacij <https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html#details>`_ omenjenega razreda lahko vidimo, da imamo na voljo 5 razlčnih `konstruktorjev <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ :
+Najpomembnejša razlika v primerjavi s prejšnjo skripto je vrstica *3*. ``VideoCapture`` je `razred <https://en.wikipedia.org/wiki/Class_(computer_programming)>`_ za zajem videa iz različnih video datotek, sekvenc slik in *hardware*-a - kamer. Če podrobneje pogledamo `dokumentacijo <https://docs.opencv.org/3.4/d8/dfe/classcv_1_1VideoCapture.html#details>`__ omenjenega razreda lahko vidimo, da imamo na voljo 5 razlčnih `konstruktorjev <https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)>`_ :
 
 1. ``<VideoCapture object> = cv.VideoCapture( )`` ... *default* konstruktor, za enkrat za nas ni zanimiv
 2. ``<VideoCapture object> = cv.VideoCapture( filename )`` ... "odpremo" video datototeko
@@ -133,7 +136,7 @@ Najpomembnejša razlika v primerjavi s prejšnjo skripto je vrstica *3*. ``Video
 5. ``<VideoCapture object> = cv.VideoCapture( index, apiPreference )`` ... "odpremo" kamero in določimo s katero *video* knjižnico
 
 .. warning::
-	Kadarkoli "odpremo" nek kos *hardware*-a, ga moramo potem tudi zapreti (glejte vrstico *20*). Če tega ne storimo, v ob naslednjem poskusu odpiranja to ne bo mogoče, saj je npr. kamera že odprta. Tudi v dokumentaciji piše: *In C API, when you finished working with video, release CvCapture structure with cvReleaseCapture()...*
+	Kadarkoli "odpremo" nek *hardware*, ga moramo potem tudi zapreti (glejte vrstico *20*). Če tega ne storimo, ob naslednjem poskusu odpiranja to ne bo mogoče, saj je npr. kamera že odprta. Tudi v dokumentaciji piše: *In C API, when you finished working with video, release CvCapture structure with cvReleaseCapture()...*
 	
 .. note::
 	Dokumentacija *OpenCV*-ja je primarno napisana za *C++*; za *Python* je precej skopa in moramo velikokrat prebrati kaj piše za *C++* in to "preversti" v *Python*.
@@ -144,13 +147,13 @@ V vrstici *3* lahko vidite, da smo uporabiti opcijo *4*. ``index`` je tipa ``int
 	*Python* tako kot vsak resen programski jezik začenja šteti z **0** in ne z **1** (*I'm looking at you, MATLAB!*); torej, *index prvega elementa* je *0*!
 	
 
-Klic nam vrne `objekt <https://en.wikipedia.org/wiki/Object_(computer_science)>`_ tipa *VideoCapture*, ki ga "ujamemo" v spremenljivo ``cam``. V vrstivi 6 začnemo neskončno **while** zanko.
+Klic nam vrne `objekt <https://en.wikipedia.org/wiki/Object_(computer_science)>`_ tipa *VideoCapture*, ki ga "ujamemo" v spremenljivo ``cam``. V vrstivi *6* začnemo neskončno **while** zanko.
 
 .. literalinclude:: images/uvod_v_py/vaja2.py
 	:language: python
 	:lines: 7
 	
-V vrstici *7* kličemo metodo razreda *VideoCapture* ``read()``. V dokumentaciji lahko preberemo, da metoda *Grabs, decodes and returns the next video frame.*. Sintaksa je zapisana kot ``retval, image = cv.VideoCapture.read( [, image] )``. Spet lahko vidimo, da sprejme en opcijski parameter ``image``, ki pa ga lahko "ujamemo" tudi na izhodnji strani. Glede ``retval`` pa piše *false if no frames has been grabbed*. Tako v vrsticah *8-9* preverim, ali je branje uspelo in če ni *neskončno* zanko zaključimo.
+V vrstici *7* kličemo metodo razreda *VideoCapture* ``read()``. V dokumentaciji lahko preberemo, da metoda *Grabs, decodes and returns the next video frame.*. Sintaksa je zapisana kot ``retval, image = cv.VideoCapture.read( [, image] )``. Spet lahko vidimo, da sprejme en opcijski parameter ``image``, ki pa ga lahko "ujamemo" tudi na izhodnji strani. Glede ``retval`` pa piše *false if no frames has been grabbed*. Tako v vrsticah *8-9* preverimo, ali je branje uspelo in če ni *neskončno* zanko zaključimo.
 
 V vrstici *10* preverimo, kakšno je treutno stanje spremenljivke ``flip`` in eventuelno izvedemo vrstico *11*. **Vaša naloga je**, da na spletu poiščete dokumentacijo *OpenCV* funkcije ``cv2.flip()`` in **ugotovite**, kaj funkcija naredi in kaj sta oba parametra.
 
@@ -160,8 +163,8 @@ V vrstici *10* preverimo, kakšno je treutno stanje spremenljivke ``flip`` in ev
 
 V vrsticah *14-17* imamo 2 klica povezana s tipko, ki smo jo (eventuelno) pritisnili v vrstici *13*. *27* je koda tipke *ESC* in v tem primeru zanko zaključimo, če pa pritisnemo tipko *f* spremenimo *True/False* stanje spremenljivke ``flip``.
 
-Vaja 3: globina slike (*image depth*) in prikazovanje slike
-==========================================================================
+Vaja 3: Globina slike (*image depth*) in prikazovanje slike
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Če uporabljate *Jupyter Notebook*, spremenljivke ostanejo v spominu tudi, ko se izvajanje skripte konča. V naslednjo celico napišite klic:
 
@@ -171,9 +174,9 @@ Vaja 3: globina slike (*image depth*) in prikazovanje slike
 	
 	output: <class 'numpy.uint8'>
    
-Slika v spremenljivki ``frame`` je v resnici trodimenzionalna matrika, vredsnoti znotraj oglatih oklepajev pa koordinata piksla, ki ga želimo izpisati: *prva* vrednost določa vrstico, *druga* stolpec in *tretja* kanal, če imamo RGB sliko. Če je slika sivinska moramo podati samo 2 vrednosti. Vidimo lahko, da je element tipa ``uint8``. To pomeni, da je *unsigned integer* (celo število brez predznaka) popisan z osmimi biti. Najmanjša vrednost, ki jo torej lahko opišemo je torej '0' (binarno *0000 0000*, hex *00*), največja pa *255* (binarno *1111 1111*, hex *ff*). **Vprašanje:** kaj se zgodi, če *uint8* spemelnjivki z vrednostjo *255* prištejemo *1*?
+Slika v spremenljivki ``frame`` je v resnici trodimenzionalna matrika, vrednosti znotraj oglatih oklepajev pa "koordinata" slikovnega elementa, ki ga želimo izpisati: *prva* vrednost določa vrstico, *druga* stolpec in *tretja* kanal, če imamo RGB sliko. Če je slika sivinska moramo podati samo 2 vrednosti. Vidimo lahko, da je element tipa ``uint8``. To pomeni, da je *unsigned integer* (celo število brez predznaka) popisan z osmimi biti. Najmanjša vrednost, ki jo lahko opišemo je torej '0' (binarno *0000 0000*, hex *00*), največja pa *255* (binarno *1111 1111*, hex *ff*). **Vprašanje:** kaj se zgodi, če *uint8* spremenljivki z vrednostjo *255* prištejemo *1*?
 
-Napišimo kratko skripto, ki bo izrisala 3 slike: črno, sivo in belo.
+Napišimo kratko skripto, ki bo izrisala 3 slike: *črno*, *sivo* in *belo*.
 
 .. literalinclude:: images/uvod_v_py/vaja3.py
 	:language: python
@@ -203,8 +206,8 @@ Opazimo lahko, da sta sedaj tako slika *gray* kot slika *white* beli. Zakaj?
 .. note::
 	**Zapomnite si:** če z *OpenCV* funkcijo ``imshow()`` izrisujemo slike *globine* **integer**, bo **0 ... črna**, **255 ... bela**, če pa izrisujemo slike *globine* **float**, bo **0.0 ... črna**, **1.0 ... bela**!
 	
-Vaja 4: filtriranje slik
-=============================================
+Vaja 4: Filtriranje slik
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Pri procesiranju slik se pogosto poslužujemo različnih filtriranj. Filtriranje običajno temelji na principu `konvolucije <https://towardsdatascience.com/intuitively-understanding-convolutions-for-deep-learning-1f6f42faee1>`_. V *OpenCV*-ju imamo na voljo različne predefinirane filtre, lahko pa ga ustvarimo sami. Karakteristike filtra določa njegovo *jedro* (*angl. kernel*). Poglejmo si primer enega najbolj uporablajnih filtrov - *Gaussov filter*.
 
@@ -224,9 +227,9 @@ Pri procesiranju slik se pogosto poslužujemo različnih filtriranj. Filtriranje
 	difference:
 	 0.0
 
-V vrstici *7* uporabimo predefiniran *Gaussov* filter v funkciji ``GaussianBlur``. Medtem v vrstici 9 generiramo eno-dimenzionalen Gaussov filter z enakimi parametri, potem pa ga uporabimo v ``sepFilter2D``. Tej funkciji podamo posebej tilter v *X* in *Y* smeri. V *output* oknu lahko vidimo izpisa; vrednosti *kernela* in pa razliko med obema slikama, ki nam potrdi, da smo v obeh primerih sliko enako sfiltrirali. 
+V vrstici *7* uporabimo predefiniran *Gaussov* filter v funkciji ``GaussianBlur``. Medtem v vrstici 9 generiramo eno-dimenzionalen Gaussov filter z enakimi parametri, potem pa ga uporabimo v ``sepFilter2D``. Tej funkciji podamo posebej jedro v *X* in *Y* smeri. V *output* oknu lahko vidimo izpisa; vrednosti *kernela* in pa razliko med obema slikama, ki nam potrdi, da smo v obeh primerih sliko enako sfiltrirali. 
 
-Naredimo sedaj lasten *Moving Average* filter.
+Naredimo sedaj lasten `Moving Average <https://en.wikipedia.org/wiki/Moving_average>`_ filter.
 
 .. literalinclude:: images/uvod_v_py/vaja4a.py
 	:language: python
@@ -256,7 +259,7 @@ V vrsticah *7* in *8* generiamo *11x11* matriko enic in jo v normaliziramo (vsot
 	Slika 6. Izvorna in filtrirana slika.
 	
 Median filter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=======================
 
 *Median* filter je filter, kjer aktivnemu pikslu pripišemo vrednost mediane znotraj konvolucijskega okna. Gre za filter, s katerim lahko odstranimo npr. termičen šum.
 
@@ -270,10 +273,10 @@ Median filter
 	:scale: 60 %
 	:align: center
 	
-	Slika 7. Izvorna in filtrirana slika z *median* filtrom.
+	Slika 7. Izvorna (če dobro pogledate lahko vidite pikice) in filtrirana slika z *median* filtrom.
 	
-Vaja 5: *kopiranje* slik
-=============================================
+Vaja 5: *Kopiranje* slik
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ustvarite povsem črno sliko in jo kopirajte. Potem na kopiji nekaj narišite in prikažite obe sliki.
 

@@ -1,24 +1,26 @@
 .. _fizeau:
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
 Fizeauev interferometer
 ----------------------------------
 
-Navodila za laboratorijsko vajo so zaenkrat dostopna le v *.pdf* verziji na povezavi :download:`Fizeaujev interferometer <Fizeaujev interferometer.pdf>`
 
-Pri tej vaji boste uporabljali polariziran He-Ne laser z valovno dolžino *633 nm* in premerom snopa *0,8 mm*.
+Pri tej vaji boste uporabljali polariziran He-Ne laser z valovno dolžino *633 nm* in premerom snopa *0,8* |nbsp| *mm*.
 
 .. figure:: images/fizeau/shema.png
 	:alt: reStructuredText, the markup syntax
 	:scale: 100 %
 	:align: center
 	
-	Slika 1. Shema refraktorskega Fizeau-jevega interferometra, kjer je kolimator leča.
+	Slika 1. Shema refraktorskega Fizeaujevega interferometra, kjer je kolimator leča.
 
 
 Praktične naloge:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Tik za laserski izvor postavite razširjevalnik snopa. Prva leča naj ima goriščno razdaljo *7,5 mm*, druga pa *150 mm*. Na ustrezno mesto vstavite zaslonko (premera *15 μm*) za prostorsko filtriranje žarka. Drugo lečo postavite na takšno razdaljo, da bo žarek na izhodu kolimiran.
+#. Tik za laserski izvor postavite **razširjevalnik snopa**. Prva leča naj ima goriščno razdaljo *7,5 mm*, druga pa *150 mm*. Na ustrezno mesto vstavite **zaslonko** (premera *15 μm*) za prostorsko filtriranje žarka. Drugo lečo postavite na takšno razdaljo, da bo žarek na izhodu kolimiran.
 #. Med zaslonko in drugo lečo postavite ploščati delilnik žarka tako, da se bo del žarka odbijal pravokotno na optično os laserja. Pazite da nosilec ne bo zastiral žarka.
 #. Izmerite vzporednost prednje in zadnje površine planparalelnih stekel. Meritev izvedite na dveh vzorcih:
 

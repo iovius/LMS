@@ -179,41 +179,41 @@
 <p>Besedilo se vedno nanaša na <strong>sledečo celico</strong>.</p>
 </div>
 <p>V prvi celici bomo uvozili knjižnice, ki jih potrebujemo (<code class="docutils literal notranslate"><span class="pre">cv2</span></code> in <code class="docutils literal notranslate"><span class="pre">numpy</span></code>). Prav tako lahko definiramo spremenljivki π in 2π (ker se ime spremenljivke v Pythonu ne sme začeti s števil, jo bomo poimenovali π2).</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>import cv2
+import numpy as np
 
-<span class="c1">#definiramo spremenjivko π</span>
-<span class="n">π</span> <span class="o">=</span>
-<span class="c1">#definiramo spremenjivko 2*π</span>
-<span class="n">π2</span> <span class="o">=</span>
+#definiramo spremenjivko π
+π =
+#definiramo spremenjivko 2*π
+π2 =
 </pre></div>
 </td></tr></table></div>
 <p>V naslednji celici bomo napisali funkcijo, ki bo prebrala in sprocesirala posamezno sliko. Definicijo funkcije moramo začeti z ukazom <code class="docutils literal notranslate"><span class="pre">def</span></code>. <code class="docutils literal notranslate"><span class="pre">read_and_process_image(filename,</span> <span class="pre">images,</span> <span class="pre">resize_factor)</span></code> pomeni, da je <em>read_and_process_image</em> ime funkcije, <em>filename</em>, <em>images</em> in <em>resize_factor</em> pa so argumenti, ki jih bomo morali podati.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#funkcija za branje in procesiranje slik</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#funkcija za branje in procesiranje slik</span>
 <span class="c1">#filename ... lokacija slike na disku</span>
 <span class="c1">#images ... seznam, kamor shranimo slike</span>
 <span class="c1">#resize_factor ... faktor, za keterega spremenimo velikost slik</span>
@@ -239,15 +239,15 @@
 <p class="admonition-title">Warning</p>
 <p>Spomnite se, kako navajamo poti na disku!</p>
 </div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1">#dodajte ime prve slike</span>
 
 <span class="c1">#dodajte ime druge slike</span>
@@ -258,24 +258,24 @@
 
 </pre></div>
 </td></tr></table></div>
-<p>S sledčo celico bomo prebrali slike, jih dodali v <em>list</em> <code class="docutils literal notranslate"><span class="pre">images</span></code> in prikazali.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+<p>S sledečo celico bomo prebrali slike, jih dodali v <em>list</em> <code class="docutils literal notranslate"><span class="pre">images</span></code> in prikazali.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1"># &quot;za vsako ime v seznamu filenames&quot;</span>
 
     <span class="c1"># uporabite funkcijo read_and_process_image</span>
@@ -295,20 +295,20 @@
 </pre></div>
 </td></tr></table></div>
 <p>Sedaj bomo začeli z izračunom. V pomoč naj vam bodo <em>slajdi</em> s predavanj (<a class="reference internal" href="carre.html#carre"><span class="std std-ref">Carrejev algoritem za izračun faze</span></a>). V tej celici želimo izračunati vrednost <span class="math notranslate nohighlight">\({\alpha}(x,y)\)</span>. Če pogledate, kaj bomo morali storiti v naslednjem koraku, vidite, da je izračun <span class="math notranslate nohighlight">\(arctan\)</span> nekoliko nesmiselen, saj bomo morali potem v naslednjem koraku izračunati <span class="math notranslate nohighlight">\(tan\)</span>, tako da namesto <span class="math notranslate nohighlight">\({\alpha}(x,y)\)</span> izračunajmo kar <span class="math notranslate nohighlight">\(tan({\alpha}(x,y))\)</span>.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#odštejte vrednosti slike 2 od vrednosti slike 1</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#odštejte vrednosti slike 2 od vrednosti slike 1</span>
 <span class="n">I1m2</span> <span class="o">=</span>
 <span class="c1">#odštejte vrednosti slike 3 od vrednosti slike 0</span>
 <span class="n">I0m3</span> <span class="o">=</span>
@@ -329,20 +329,20 @@
 <p class="admonition-title">Note</p>
 <p>Izračun <em>arkustangensa kvocienta dveh števil</em> je precej “zahtevna” operacija, saj imamo <em>6</em> možnih primerov. Zato ima praktično vsaka <em>matematična</em> knjižnica (ki da kaj nase) fukcijo <a class="reference external" href="https://en.wikipedia.org/wiki/Atan2">atan2</a>. V <code class="docutils literal notranslate"><span class="pre">numpy</span></code> jo najdemo kot <code class="docutils literal notranslate"><span class="pre">arctan2</span></code>.</p>
 </div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># izračunajte sinusni del</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># izračunajte sinusni del</span>
 <span class="n">sine</span> <span class="o">=</span>
 <span class="c1"># pomnožite sinusni del z tan_alpha</span>
 
@@ -359,31 +359,31 @@
 </pre></div>
 </td></tr></table></div>
 <p>Ker smo za izračun faze uporabili fukcijo <span class="math notranslate nohighlight">\(arctan\)</span> (v našem primeru v resnici <span class="math notranslate nohighlight">\(arctan2\)</span>) je <em>faza</em> omejena na inteval <span class="math notranslate nohighlight">\([-\frac{\pi}{2}, \frac{\pi}{2} ]\)</span> (ker smo uporabili <span class="math notranslate nohighlight">\(arctan2\)</span> smo v resnici omejeni na inteval <span class="math notranslate nohighlight">\([-\pi, \pi ]\)</span>). Kakorkoli, ker želimo dobiti zvezen potek <em>faze</em> moramo izvesti t.i. <em>razvijanje faze</em> (angl.: <a class="reference external" href="https://ccrma.stanford.edu/~jos/fp/Phase_Unwrapping.html">phase unwrapping</a>). Osnovna ideja (enostavnega algoritma za razvijanje faze) je, da se <em>pomikamo</em> po <em>fazi</em> in spremljamo, kje se pojavijo nezveznosti. Od tega mesta naprej prištejemo ali odštejemo <span class="math notranslate nohighlight">\(2\pi\)</span>, odvisno od tega, v katero smer se pojavi nezveznost.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#skopirajte vrednosti iz spremenljivke phase v spremenljivko phase_unwrapped</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#skopirajte vrednosti iz spremenljivke phase v spremenljivko phase_unwrapped</span>
 <span class="n">phase_unwrapped</span> <span class="o">=</span>
 
 <span class="c1">#&quot;za vsako vrstico&quot;</span>
@@ -411,11 +411,11 @@
 </pre></div>
 </td></tr></table></div>
 <p>Vizualizirajte rezultat.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite sliko razvite faze</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite sliko razvite faze</span>
 
 
 <span class="c1"># zaprite vsa okna</span>
@@ -429,34 +429,34 @@
 </div>
 <p>Težava je v tem, da našo <em>sliko faze</em> razvijamo samo z leve proti desni, v primeru kot je zgoraj levo na <em>sliki 1</em> pa se do sredinskega polja pa nabere že kar nekaj <em>napake</em>.</p>
 <p>Postopek razvijanja moramo zato ponoviti še enkrat, tokrat v navpični smeri.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># vrednost phase_unwrapped skopirajte v phase_unwrapped2</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># vrednost phase_unwrapped skopirajte v phase_unwrapped2</span>
 <span class="n">phase_unwrapped2</span> <span class="o">=</span>
 <span class="c1"># izračunajte indeks sredinskega stolpca; pazite na tip!!</span>
 <span class="n">u_scan</span> <span class="o">=</span>
@@ -487,11 +487,11 @@
 </pre></div>
 </td></tr></table></div>
 <p>Vizualizirajte rezultat <em>faze</em>.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite končni rezultat</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite končni rezultat</span>
 
 
 <span class="c1"># zaprite vsa okna</span>
@@ -499,22 +499,22 @@
 </pre></div>
 </td></tr></table></div>
 <p>Če vas moti <em>šum</em> okoli faze (ljubkovalno imenovan tudi “šavje”), lahko preverite vidljivost signala na posameznem mestu in izrišete le točke, z visoko vidljivostjo.</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite končni rezultat z upoštevanjem ROI</span>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># prikažite končni rezultat z upoštevanjem ROI</span>
 
 <span class="c1"># izračunajte standardno deviacijo med slikami</span>
 <span class="n">STD</span> <span class="o">=</span> 

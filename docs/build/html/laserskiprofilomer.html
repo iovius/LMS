@@ -208,56 +208,32 @@
 <img alt="reStructuredText, the markup syntax" src="_images/triangulacija2.png" />
 <p class="caption"><span class="caption-text">Slika 1. Shema triangulacije z označenimi merami.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Skica merilnega sistema je prikazana na <em>sliki 1</em>. Projektor je postavljen na mestu <em>P</em> in projicira svetlobno
-ravnino proti merjeni površini. Kamera je postavljena na mestu, označenem s <em>C</em>. <em>Koordinatni sistem</em> (<em>k.
-s.</em>) merilnika (<em>KS</em><sub>merilnika</sub>) je postavljen na presečišče laserske ravnine in pravokotne projekcije središčaleče na lasersko ravnino. Model preslikave temelji na uporabi perspektivne projekcije z enostavno
-geometrijo kamere z luknjico (<em>camera obscura</em>, angl. <em>pinhole camera</em>). Senzor je postavljen na razdalji
-<em>f</em> od koordinatnega izhodišča. Optična os objektiva prebada ravnino kamere na koordinati (<em>c</em><sub>U</sub>, <em>c</em><sub>V</sub>, <em>angl. principal point</em>)
-merjeno glede na zgornji levi rob senzorja (standard pri navajanju položaja točke pri senzorjih, zaslonih,
-slikah etc.). Projektor je glede na koordinatno izhodišče premaknjen le v <em>X</em> smeri za razdaljo <em>P</em><sub>X</sub> in
-projicira svetlobno ravnino pod kotom <em>α</em> glede na optično os objektiva kamere.</p>
+<p>Skica merilnega sistema je prikazana na <em>sliki 1</em>. Projektor je postavljen na mestu <em>P</em> in projicira svetlobno ravnino proti merjeni površini. Kamera je postavljena na mestu, označenem s <em>C</em>. <em>Koordinatni sistem</em> (<em>k.s.</em>) merilnika (<em>KS</em><sub>merilnika</sub>) je postavljen na presečišče laserske ravnine in pravokotne projekcije središča leče na lasersko ravnino. Model preslikave temelji na uporabi perspektivne projekcije z enostavno geometrijo kamere z luknjico (<em>camera obscura</em>, angl. <em>pinhole camera</em>). Senzor je postavljen na razdalji <em>f</em> od koordinatnega izhodišča. Optična os objektiva prebada ravnino kamere na koordinati (<em>c</em><sub>U</sub>, <em>c</em><sub>V</sub>, <em>angl. principal point</em>) merjeno glede na zgornji levi rob senzorja (standard pri navajanju položaja točke pri senzorjih, zaslonih, slikah etc.). Projektor je glede na koordinatno izhodišče premaknjen le v <em>X</em> smeri za razdaljo <em>P</em><sub>X</sub> in projicira svetlobno ravnino pod kotom <em>α</em> glede na optično os objektiva kamere.</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/merilna_slikaT.jpg"><img alt="reStructuredText, the markup syntax" src="_images/merilna_slikaT.jpg" style="width: 306.8px; height: 406.8px;" /></a>
 <p class="caption"><span class="caption-text">Slika 2. Ena iz množice slik. Poiskati moramo lokacijo sentra presečne krivulje v k.s. kamere.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Na <em>sliki 2</em> je prikazana slika, kot jo vidi kamera. Vidimo lahko, da je merjena površina v osrednjem delu
-nekoliko dvignjena glede na spodnji in zgornji del. Označena sta <em>k. s.</em> slike (<em>KS</em><sub>slike</sub>) in <em>k. s.</em> kamere
-(<em>KS</em><sub>kamere</sub>), ki leži na mestu preboda optične osi. Označeni sta tudi smer <em>u</em> in <em>v</em>.</p>
+<p>Na <em>sliki 2</em> je prikazana slika, kot jo vidi kamera. Vidimo lahko, da je merjena površina v osrednjem delu nekoliko dvignjena glede na spodnji in zgornji del. Označena sta <em>k. s.</em> slike (<em>KS</em><sub>slike</sub>) in <em>k. s.</em> kamere (<em>KS</em><sub>kamere</sub>), ki leži na mestu preboda optične osi. Označeni sta tudi smer <em>u</em> in <em>v</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>Slika 2</em> je transponirana, kar pomeni, da sta smeri <em>v</em> in <em>u</em> zamenjani. Sliko transponiramo zato, ker se je laže premikati po vrstici, kot po stolpcu.</p>
 </div>
-<p>Merilnik se med merjenjem translatorno premika v <em>X</em> smeri in ob tem zajel <em>N</em> slik. Glede na to, da sta
-hitrosti premikanja in zajemanja slik konstantni, lahko določimo premik merilnika med dvema
-zaporednima slikama kot:</p>
+<p>Merilnik se med merjenjem translatorno premika v <em>X</em> smeri in ob tem zajel <em>N</em> slik. Glede na to, da sta hitrosti premikanja in zajemanja slik konstantni, lahko določimo premik merilnika med dvema zaporednima slikama kot:</p>
 <div class="math notranslate nohighlight">
 \[x_{\text{STEP}} = \frac{ x_{\text{MOVE}}}{N}\]</div>
 <p>kjer sta <em>x</em><sub>MOVE</sub> celoten premik med merjenjem in <em>x</em><sub>STEP</sub> premik med dvema zaporednima slikama. Z vsake slike pa lahko razberemo obliko osvetljenega profila površine in tako dobimo površino kot množico zaporednih profilov.
-Za izračun koordinate posamezne točke profila v <em>k. s.</em> merilnika, moramo najprej poiskati koordinate
-posamezne točke profila v <em>k. s.</em> kamere (na senzorju) na posamezni sliki. V praksi to pomeni, da moramo
-v vsaki vrstici (za vsak <em>v</em>) poiskati center presečne krivulje v smeri <em>u</em> (koordinato <em>u</em>) (glejte <em>sliko 2</em>).</p>
+Za izračun koordinate posamezne točke profila v <em>k. s.</em> merilnika, moramo najprej poiskati koordinate posamezne točke profila v <em>k. s.</em> kamere (na senzorju) na posamezni sliki. V praksi to pomeni, da moramo v vsaki vrstici (za vsak <em>v</em>) poiskati center presečne krivulje v smeri <em>u</em> (koordinato <em>u</em>) (glejte <em>sliko 2</em>).</p>
 </div>
 <div class="section" id="glavni-program">
 <h2>Glavni program<a class="headerlink" href="#glavni-program" title="Permalink to this headline">¶</a></h2>
-<p>V tem delu programa bomo spisali ogrodje programa. Njegova glavna naloga je, da prebere vsako sliko
-in s pomočjo funkcije za iskanje presečne krivulje (ki jo bomo napisali ločeno) na vsaki sliki najde
-lokacijo maksimumov intenzitete.
-Uporabljali bomo programski jezik <em>Python</em> v kombinaciji s knjižnico <em>OpenCV</em>. V pomoč pri izdelavi
-programa naj vam bo diagram poteka (glejte <a class="reference internal" href="priloga1.html#priloga1"><span class="std std-ref">Flow chart osnovnega programa</span></a>). Na predvideno mesto (osnova je že
-pripravljena) napišete jedro programa. Rekonstrukcijo površine boste naredili posebej, kot funkcijo na
-vnaprej pripravljenem mestu. Bodite pozorni, kako se naslavlja elemente v matriki (primer: <span class="math notranslate nohighlight">\(B(i,j)\)</span>  … je <em>i</em>
-koordinata vrstice ali stolpca ?).</p>
+<p>V tem delu programa bomo spisali ogrodje programa. Njegova glavna naloga je, da prebere vsako sliko in s pomočjo funkcije za iskanje presečne krivulje (ki jo bomo napisali ločeno) na vsaki sliki najde lokacijo maksimumov intenzitete. Uporabljali bomo programski jezik <em>Python</em> v kombinaciji s knjižnico <em>OpenCV</em>. V pomoč pri izdelavi programa naj vam bo diagram poteka (glejte <a class="reference internal" href="priloga1.html#priloga1"><span class="std std-ref">Flow chart osnovnega programa</span></a>). Na predvideno mesto (osnova je že pripravljena) napišete jedro programa. Rekonstrukcijo površine boste naredili posebej, kot funkcijo na vnaprej pripravljenem mestu. Bodite pozorni, kako se naslavlja elemente v matriki (primer: <span class="math notranslate nohighlight">\(B(i,j)\)</span>  … je <em>i</em> koordinata vrstice ali stolpca ?).</p>
 <div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="_images/zapisovanje_profilov.jpg"><img alt="reStructuredText, the markup syntax" src="_images/zapisovanje_profilov.jpg" style="width: 650.0px; height: 227.5px;" /></a>
 <p class="caption"><span class="caption-text">Slika 3. Skica povezava funkcije <code class="docutils literal notranslate"><span class="pre">DetectLine()</span></code> in matrike profilov.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Zaznane profile na sliki boste zapisali v matriko profilov. Logiko matrike profilov lahko vidite na sliki 3.
-Dolžina vrstic mora biti enaka dimenziji slike v v smeri (npr. če so slike visoke 640 slikovnih elementov
-(s. e.), mora vsaka vrstica sprejeti po 640 elementov), število vrstic pa mora biti enako številu zajetih
-slik <em>N</em> (npr. če smo zajeli 300 slik, torej mora imeti matrika profilov 300 vrstic). Na vsaki sliki bomo tako
-v vsaki vrstici poiskali položaj presečne krivulje v smeri <em>u</em>. Npr. če je na 17. sliki v 37. vrstici položaj
-presečne krivulje na koordinati 103, bomo zapisali <code class="docutils literal notranslate"><span class="pre">profiles(17,</span> <span class="pre">37)</span> <span class="pre">=</span> <span class="pre">103</span></code>.Pri pisanju programa naj vam bosta v pomoč Priloga 1 in template programa. Sledite naslednjemu
-postopku:</p>
+<p>Zaznane profile na sliki boste zapisali v matriko profilov. Logiko matrike profilov lahko vidite na <em>sliki 3</em>. Dolžina vrstic mora biti enaka dimenziji slike v v smeri (npr. če so slike visoke 640 slikovnih elementov (s. e.), mora vsaka vrstica sprejeti po 640 elementov), število vrstic pa mora biti enako številu zajetih slik <em>N</em> (npr. če smo zajeli 300 slik, torej mora imeti matrika profilov 300 vrstic). Na vsaki sliki bomo tako
+v vsaki vrstici poiskali položaj presečne krivulje v smeri <em>u</em>. Npr. če je na 17. sliki v 37. vrstici položaj presečne krivulje na koordinati 103, bomo zapisali <code class="docutils literal notranslate"><span class="pre">profiles(17,</span> <span class="pre">37)</span> <span class="pre">=</span> <span class="pre">103</span></code>.Pri pisanju programa naj vam bosta v pomoč Priloga 1 in template programa.</p>
+<p>Sledite naslednjemu postopku:</p>
 <ol class="arabic simple">
 <li><p>Na začetku programa najavite in nastavite globalne spremenljivke, ki jih bomo potrebovali tekom celotnega programa (npr. mapa, kjer se nahajajo datoteke, število merilnih slik, alociramo prostor za profile).</p></li>
 <li><p>Začnite zanko.</p></li>

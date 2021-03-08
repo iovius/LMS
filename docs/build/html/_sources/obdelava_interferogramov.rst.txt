@@ -38,7 +38,7 @@ V tej celici podamo imena posameznih slik in jih zapišemo v *list*.
 	:language: python
 	:linenos:
 
-S sledčo celico bomo prebrali slike, jih dodali v *list* ``images`` in prikazali.
+S sledečo celico bomo prebrali slike, jih dodali v *list* ``images`` in prikazali.
 
 .. literalinclude:: code/obdelava_interferogramov/cell6.py
 	:language: python

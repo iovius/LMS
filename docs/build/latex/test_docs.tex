@@ -73,7 +73,7 @@
 
 
 \title{test\_docs Documentation}
-\date{Feb 24, 2021}
+\date{Feb 25, 2021}
 \release{23.2.2021}
 \author{iovius}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -86,7 +86,7 @@
 \pagestyle{plain}
 \sphinxtableofcontents
 \pagestyle{normal}
-\phantomsection\label{\detokenize{master_document::doc}}
+\phantomsection\label{\detokenize{index::doc}}
 
 
 \sphinxAtStartPar
@@ -884,6 +884,7 @@ V vrsticah \sphinxstyleemphasis{14\sphinxhyphen{}17} imamo 2 klica povezana s ti
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 print(type(frame[0, 0, 0]))
+
 output: \PYGZlt{}class \PYGZsq{}numpy.uint8\PYGZsq{}\PYGZgt{}
 \end{sphinxVerbatim}
 
@@ -1069,6 +1070,54 @@ V vrsticah \sphinxstyleemphasis{7} in \sphinxstyleemphasis{8} generiamo \sphinxs
 
 \subsection{Vaja 5: \sphinxstyleemphasis{kopiranje} slik}
 \label{\detokenize{uvod_py_opencv:vaja-5-kopiranje-slik}}
+\sphinxAtStartPar
+Ustvarite povsem črno sliko in jo kopirajte. Potem na kopiji nekaj narišite in prikažite obe sliki.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\},numbers=left,firstnumber=1,stepnumber=1]
+\PYG{k+kn}{import} \PYG{n+nn}{cv2}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{slika1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{uint8}\PYG{p}{)}
+
+\PYG{n}{slika2} \PYG{o}{=} \PYG{n}{slika1}
+
+\PYG{n}{slika2}\PYG{p}{[}\PYG{l+m+mi}{200}\PYG{p}{:}\PYG{l+m+mi}{300}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{:}\PYG{l+m+mi}{300}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{255}
+
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{slika1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{slika1}\PYG{p}{)}
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{imshow}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{slika2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{slika2}\PYG{p}{)}
+
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{waitKey}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{cv2}\PYG{o}{.}\PYG{n}{destroyAllWindows}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Prikazali se bosta sliki, kot ju vidite na \sphinxstyleemphasis{sliki 8}.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.6]{{copy}.png}
+\caption{Slika 8. Izvorna in “kopirana” slika.}\label{\detokenize{uvod_py_opencv:id9}}\end{figure}
+
+\sphinxAtStartPar
+Vidite lahko, da nekaj ni vredu; bel kvadratek naj bi narisali samo na \sphinxcode{\sphinxupquote{slika2}} ampak očitno smo ga tudi na \sphinxcode{\sphinxupquote{slika1}}.
+
+\sphinxAtStartPar
+Spremenite sedaj vrstico \sphinxstyleemphasis{6} v \sphinxcode{\sphinxupquote{slika2 = slika1.copy()}} in ponovno zaženite program. Sedaj mi morali videti pričakovano.
+
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\noindent\sphinxincludegraphics[scale=0.6]{{deep_copy}.png}
+\caption{Slika 8. Izvorna in \sphinxstylestrong{kopirana} slika.}\label{\detokenize{uvod_py_opencv:id10}}\end{figure}
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+Če za \sphinxstyleemphasis{kopiranje} uporabite samo \sphinxcode{\sphinxupquote{=}} slike v resnici ne kopirate, ampak še vedno prek druge spremenljivke dostopate do istega objekta/spomina (v \sphinxstyleemphasis{C++} bi temu rekli \sphinxstyleemphasis{kazalec} (angl: \sphinxstyleemphasis{pointer})). Če želite res \sphinxstyleemphasis{kopirati} sliko, morate skopirati tudi podatke/spomin (t.i. \sphinxstyleemphasis{deep copy}). To naredite z metodo \sphinxcode{\sphinxupquote{copy()}}.
+\end{sphinxadmonition}
+
 
 \chapter{Računalniška analiza interferogramov}
 \label{\detokenize{obdelava_interferogramov:racunalniska-analiza-interferogramov}}\label{\detokenize{obdelava_interferogramov:obdelava-interferogramov}}\label{\detokenize{obdelava_interferogramov::doc}}
