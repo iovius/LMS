@@ -23,7 +23,7 @@ Twyman-Greenov interferometer
 
 Pri tej vaji boste uporabljali polariziran *He-Ne* laser z valovno dolžino *633 nm* in premerom žarka *0,8* |nbsp| *mm*.
 
-.. figure:: images\\twyman_green\\shema.png
+.. figure:: images/twyman_green/shema.png
 	:alt: reStructuredText, the markup syntax
 	:scale: 70 %
 	:align: center
